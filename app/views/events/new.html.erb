@@ -1,0 +1,16 @@
+<%= form_for@event, :url => event_path do |f| %>
+#  <% if @event.errors.any? %>
+#    <%= pluralize(@event.errors.count, "error") %> #prohibited this post from being saved:
+#    <% @event.errors.full_messages.each do |msg| %>
+#      <%= msg %>
+#    <% end %>
+#<% end %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :start_at %>
+    <%= f.datetime_select :start_at %>
+    <%= f.label :end_at %>
+    <%= f.datetime_select :end_at %>
+    <%= f.submit %>
+<% end %>
