@@ -28,4 +28,10 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by(:id => params[:id])
   end
+
+  def delete
+    @event = Event.find_by(:id => params[:id])
+    @event.destroy
+    redirect_to '/calendar'
+  end
 end
