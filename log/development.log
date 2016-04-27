@@ -8488,3 +8488,97 @@ Processing by CalendarController#index as HTML
   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
   Rendered calendar/index.html.erb within layouts/application (5.2ms)
 Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/11" for ::1 at 2016-04-27 14:56:52 +0900
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/11" for ::1 at 2016-04-27 14:59:04 +0900
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered events/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 15:08:33 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  Rendered calendar/index.html.erb within layouts/application (138.7ms)
+Completed 200 OK in 206ms (Views: 188.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-27 15:08:34 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-27 15:08:34 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-27 15:08:34 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:08:34 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 15:08:34 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 15:08:34 +0900
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:08:34 +0900
+
+
+Started GET "/calendar/new" for ::1 at 2016-04-27 15:08:38 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-04-27 15:08:51 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i8DzVCXOq28Jdx0/Gy2cPBI4/iPSoCQsrL9HKWsRVVH3LoKl2gLk6Rh12LtnaiDBw2H4qkB7d4gT2/k109yb1Q==", "event"=>{"name"=>"test", "start_at(1i)"=>"2016", "start_at(2i)"=>"4", "start_at(3i)"=>"27", "start_at(4i)"=>"06", "start_at(5i)"=>"08", "end_at(1i)"=>"2016", "end_at(2i)"=>"4", "end_at(3i)"=>"27", "end_at(4i)"=>"06", "end_at(5i)"=>"08", "place"=>"aaa", "person"=>"s", "baggage"=>"s", "category"=>"s"}, "commit"=>"Create Event"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("name", "place", "person", "baggage", "category", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "test"], ["place", "aaa"], ["person", "s"], ["baggage", "s"], ["category", 0], ["start_at", "2016-04-27 06:08:00.000000"], ["end_at", "2016-04-27 06:08:00.000000"], ["created_at", "2016-04-27 06:08:51.012463"], ["updated_at", "2016-04-27 06:08:51.012463"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 15:08:51 +0900
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  Rendered calendar/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/15" for ::1 at 2016-04-27 15:08:52 +0900
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/15/delete" for ::1 at 2016-04-27 15:08:57 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 15]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 15:08:57 +0900
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  Rendered calendar/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.2ms)
