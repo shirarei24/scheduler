@@ -6999,3 +6999,236 @@ Processing by CalendarController#index as HTML
   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
   Rendered calendar/index.html.erb within layouts/application (3.0ms)
 Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPlaceToEvents (20160427040907)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "events" ADD "Place" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427040907"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPersonToEvents (20160427041000)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "events" ADD "Person" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427041000"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddBaggageToEvents (20160427041100)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "events" ADD "baggage" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427041100"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemovePersonToEvents (20160427041407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime, "Place" varchar, "Person" varchar, "baggage" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "events"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aevents" ("id","name","start_at","end_at","created_at","updated_at","Place","Person","baggage") VALUES (8, '567', '2016-05-01 09:00:00.000000', '2016-05-01 09:00:00.000000', '2016-04-22 09:00:13.507234', '2016-04-22 09:00:13.507234', NULL, NULL, NULL)[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "events"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime, "Place" varchar, "baggage" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aevents"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "events" ("id","name","start_at","end_at","created_at","updated_at","Place","baggage") VALUES (8, '567', '2016-05-01 09:00:00.000000', '2016-05-01 09:00:00.000000', '2016-04-22 09:00:13.507234', '2016-04-22 09:00:13.507234', NULL, NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "aevents"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160427041407"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to RemovePlaceToEvents (20160427041423)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime, "Place" varchar, "baggage" varchar) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "events"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aevents" ("id","name","start_at","end_at","created_at","updated_at","Place","baggage") VALUES (8, '567', '2016-05-01 09:00:00.000000', '2016-05-01 09:00:00.000000', '2016-04-22 09:00:13.507234', '2016-04-22 09:00:13.507234', NULL, NULL)
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "events"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime, "baggage" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aevents"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "events" ("id","name","start_at","end_at","created_at","updated_at","baggage") VALUES (8, '567', '2016-05-01 09:00:00.000000', '2016-05-01 09:00:00.000000', '2016-04-22 09:00:13.507234', '2016-04-22 09:00:13.507234', NULL)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "aevents"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427041423"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveBaggageToEvents (20160427041504)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime, "baggage" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "events"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aevents" ("id","name","start_at","end_at","created_at","updated_at","baggage") VALUES (8, '567', '2016-05-01 09:00:00.000000', '2016-05-01 09:00:00.000000', '2016-04-22 09:00:13.507234', '2016-04-22 09:00:13.507234', NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "events"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "aevents"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "events" ("id","name","start_at","end_at","created_at","updated_at") VALUES (8, '567', '2016-05-01 09:00:00.000000', '2016-05-01 09:00:00.000000', '2016-04-22 09:00:13.507234', '2016-04-22 09:00:13.507234')[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "aevents"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160427041504"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPlaceToEvents (20160427041828)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "events" ADD "place" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427041828"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddPersonToEvents (20160427041844)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "events" ADD "person" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427041844"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddBaggageToEvents (20160427041926)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "events" ADD "baggage" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427041926"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddCategoryToEvents (20160427041953)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "events" ADD "category" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427041953"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveCategoryToEvents (20160427042031)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime, "place" varchar, "person" varchar, "baggage" varchar, "category" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "events"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aevents" ("id","name","start_at","end_at","created_at","updated_at","place","person","baggage","category") VALUES (8, '567', '2016-05-01 09:00:00.000000', '2016-05-01 09:00:00.000000', '2016-04-22 09:00:13.507234', '2016-04-22 09:00:13.507234', NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "events"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime, "place" varchar, "person" varchar, "baggage" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aevents"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "events" ("id","name","start_at","end_at","created_at","updated_at","place","person","baggage") VALUES (8, '567', '2016-05-01 09:00:00.000000', '2016-05-01 09:00:00.000000', '2016-04-22 09:00:13.507234', '2016-04-22 09:00:13.507234', NULL, NULL, NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "aevents"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160427042031"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddCategoryToEvents (20160427042118)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "events" ADD "category" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427042118"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/calendar/new" for ::1 at 2016-04-27 13:23:36 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 247ms (Views: 230.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-04-27 13:24:07 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i3aNAyeo4ApeP2iYbFaXRZKEP2bUQkcU+qfrxHPCxyX3mPzy2GSvjE89rRwQESu4Q90570aZFLBFw1XYyw8JoQ==", "event"=>{"name"=>"meeting", "start_at(1i)"=>"2016", "start_at(2i)"=>"4", "start_at(3i)"=>"27", "start_at(4i)"=>"04", "start_at(5i)"=>"23", "end_at(1i)"=>"2016", "end_at(2i)"=>"4", "end_at(3i)"=>"27", "end_at(4i)"=>"04", "end_at(5i)"=>"23", "place"=>"home", "person"=>"takashi", "baggage"=>"pencil", "category"=>"1"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "category", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "meeting"], ["place", "home"], ["person", "takashi"], ["baggage", "pencil"], ["category", 1], ["start_at", "2016-04-27 04:23:00.000000"], ["end_at", "2016-04-27 04:23:00.000000"], ["created_at", "2016-04-27 04:24:07.720439"], ["updated_at", "2016-04-27 04:24:07.720439"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 13:24:07 +0900
+Processing by CalendarController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  Rendered calendar/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 13:46:57 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  Rendered calendar/index.html.erb within layouts/application (141.0ms)
+Completed 200 OK in 296ms (Views: 265.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 13:46:58 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-27 13:46:58 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-27 13:46:58 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 13:46:58 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-27 13:46:58 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 13:46:58 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 13:46:58 +0900
+
+
+Started GET "/events/9" for ::1 at 2016-04-27 13:47:00 +0900
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered events/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-04-27 13:47:09 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 78ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 13:48:08 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  Rendered calendar/index.html.erb within layouts/application (155.9ms)
+Completed 200 OK in 257ms (Views: 236.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 13:48:08 +0900
+Processing by CalendarController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  Rendered calendar/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/9" for ::1 at 2016-04-27 13:48:10 +0900
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 17.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 13:49:59 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  Rendered calendar/index.html.erb within layouts/application (137.8ms)
+Completed 200 OK in 209ms (Views: 187.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-04-27 13:50:03 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 63ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-04-27 13:50:39 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WCIdIc/yHqxEZnml6sneFzPU3cQm3boWzUMGHRy1XVMkzGzQMD5RKlVkvCGWjmLq4o3bTbQG6bJyJ7gBpHiT1w==", "event"=>{"name"=>"test", "start_at(1i)"=>"2016", "start_at(2i)"=>"4", "start_at(3i)"=>"29", "start_at(4i)"=>"04", "start_at(5i)"=>"50", "end_at(1i)"=>"2016", "end_at(2i)"=>"4", "end_at(3i)"=>"30", "end_at(4i)"=>"04", "end_at(5i)"=>"50", "place"=>"school", "person"=>"takeru", "baggage"=>"notebook", "category"=>"2"}, "commit"=>"Create Event"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("name", "place", "person", "baggage", "category", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "test"], ["place", "school"], ["person", "takeru"], ["baggage", "notebook"], ["category", 2], ["start_at", "2016-04-29 04:50:00.000000"], ["end_at", "2016-04-30 04:50:00.000000"], ["created_at", "2016-04-27 04:50:39.799664"], ["updated_at", "2016-04-27 04:50:39.799664"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/calendar" for ::1 at 2016-04-27 13:50:39 +0900
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  Rendered calendar/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/10" for ::1 at 2016-04-27 13:50:42 +0900
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 31.8ms | ActiveRecord: 0.2ms)
