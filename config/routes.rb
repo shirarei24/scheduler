@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'calendar/new' => 'events#new', :as => :event
   post'calendar/new' => 'events#create'
 
-  get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  get '/calendar(/:id(/:year(/:month)))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   get '/events/:id' => 'events#show'
   get '/events/:id/delete' => 'events#delete'

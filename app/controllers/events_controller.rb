@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     params.permit!
     @event = Event.new(params[:event])
     @event.save
-    redirect_to '/calendar'
+    redirect_to '/calendar/0'
 
 #    respond_to do |format|
 #      if @event.save
