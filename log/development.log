@@ -16635,3 +16635,452 @@ Processing by CalendarController#index as HTML
   Rendered calendar/_detail.html.erb (0.1ms)
   Rendered calendar/index.html.erb within layouts/application (6.4ms)
 Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:38:09 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 267ms (Views: 250.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:38:12 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rLunHSFka+b2Zm5wEjJiswD2od/MBmby/C4NVHJloQHQVdbs3qgkYOdkq/Rudd5O0a+nVl7dNVZDSrNIyqhvhQ==", "event"=>{"name"=>"esg", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"38", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"38", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "esg"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-05-05 14:38:00.000000"], ["end_at", "2016-05-05 14:38:00.000000"], ["created_at", "2016-05-05 14:38:12.922920"], ["updated_at", "2016-05-05 14:38:12.922920"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 3.3ms)
+
+NoMethodError (undefined method `month' for nil:NilClass):
+  app/controllers/events_controller.rb:16:in `create'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (134.5ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:39:58 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 255ms (Views: 237.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:40:10 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nexbIybxMjEq88et8UytMSBpWuG6GVci2Eu2Ysnwb0ThAirS2T19tzvxAimNCxHM8TBcaCjCBIZnLwh+cT2hwA==", "event"=>{"name"=>"tets", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"39", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"39", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "tets"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-06-05 14:39:00.000000"], ["end_at", "2016-06-05 14:39:00.000000"], ["created_at", "2016-05-05 14:40:10.980965"], ["updated_at", "2016-05-05 14:40:10.980965"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.5ms)
+
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  app/controllers/events_controller.rb:16:in `create'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.1ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:43:49 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 273ms (Views: 256.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:44:01 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lmz4YnzzVNiB7HWfDkTFmA0TP1BcAU1nztdsXSoXoLhSgomTgz8bXpDusBtyA3ll3Eo52c7aHsNxs9JBktpuPA==", "event"=>{"name"=>"teset", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"43", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"43", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "teset"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-06-05 14:43:00.000000"], ["end_at", "2016-06-05 14:43:00.000000"], ["created_at", "2016-05-05 14:44:01.471070"], ["updated_at", "2016-05-05 14:44:01.471070"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `[]' for Sun, 05 Jun 2016 14:43:00 UTC +00:00:Time):
+  app/controllers/events_controller.rb:16:in `create'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.4ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:45:56 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lmz4YnzzVNiB7HWfDkTFmA0TP1BcAU1nztdsXSoXoLhSgomTgz8bXpDusBtyA3ll3Eo52c7aHsNxs9JBktpuPA==", "event"=>{"name"=>"teset", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"43", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"43", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "teset"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-06-05 14:43:00.000000"], ["end_at", "2016-06-05 14:43:00.000000"], ["created_at", "2016-05-05 14:45:57.041254"], ["updated_at", "2016-05-05 14:45:57.041254"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.0ms)
+
+NoMethodError (undefined method `month' for nil:NilClass):
+  app/controllers/events_controller.rb:16:in `create'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (143.7ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:46:53 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lmz4YnzzVNiB7HWfDkTFmA0TP1BcAU1nztdsXSoXoLhSgomTgz8bXpDusBtyA3ll3Eo52c7aHsNxs9JBktpuPA==", "event"=>{"name"=>"teset", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"43", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"43", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "teset"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-06-05 14:43:00.000000"], ["end_at", "2016-06-05 14:43:00.000000"], ["created_at", "2016-05-05 14:46:53.120861"], ["updated_at", "2016-05-05 14:46:53.120861"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.4ms)
+
+NoMethodError (undefined method `mon' for nil:NilClass):
+  app/controllers/events_controller.rb:16:in `create'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.5ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:47:16 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lmz4YnzzVNiB7HWfDkTFmA0TP1BcAU1nztdsXSoXoLhSgomTgz8bXpDusBtyA3ll3Eo52c7aHsNxs9JBktpuPA==", "event"=>{"name"=>"teset", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"43", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"43", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "teset"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-06-05 14:43:00.000000"], ["end_at", "2016-06-05 14:43:00.000000"], ["created_at", "2016-05-05 14:47:16.855317"], ["updated_at", "2016-05-05 14:47:16.855317"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar/index/45/2016
+Completed 302 Found in 29ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/calendar/index/45/2016" for ::1 at 2016-05-05 23:47:17 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"45", "year"=>"2016"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 45]]
+  Rendered calendar/_detail.html.erb (1.0ms)
+  Rendered calendar/index.html.erb within layouts/application (151.7ms)
+Completed 200 OK in 262ms (Views: 251.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-05 23:47:17 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-05 23:47:17 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-05 23:47:17 +0900
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-05 23:47:17 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-05 23:47:17 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-05 23:47:17 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-05 23:47:17 +0900
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:50:57 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 258ms (Views: 241.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:51:00 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GK5NRgZuRimilkHyjEb4jCWVRp05Y5iRc3oWdpCkLCxkQDy3+aIJr7OUhHbwAURx9MxAFKu4yzXMHqhqKGniqA==", "event"=>{"name"=>"w", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"50", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"50", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "w"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-05-05 14:50:00.000000"], ["end_at", "2016-05-05 14:50:00.000000"], ["created_at", "2016-05-05 14:51:00.312760"], ["updated_at", "2016-05-05 14:51:00.312760"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar/index/46/5
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/calendar/index/46/5" for ::1 at 2016-05-05 23:51:00 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"46", "year"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('0005-04-25 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '0005-06-06 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 46]]
+  Rendered calendar/_detail.html.erb (2.1ms)
+  Rendered calendar/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 55ms (Views: 42.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:51:44 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 225ms (Views: 209.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:51:46 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"blQ1ldXEXnZjnE596+Lii0UrUPeNWB3nreGO3kVbTogSukRkKggR8HKei/mXpV52lHJWfh+DTkMShTDC/ZaADA==", "event"=>{"name"=>"f", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"51", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"51", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "f"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-05-05 14:51:00.000000"], ["end_at", "2016-05-05 14:51:00.000000"], ["created_at", "2016-05-05 14:51:46.923128"], ["updated_at", "2016-05-05 14:51:46.923128"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar/index/47/5/2016
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/calendar/index/47/5/2016" for ::1 at 2016-05-05 23:51:46 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47", "year"=>"5", "month"=>"2016"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ArgumentError (invalid date):
+  app/controllers/calendar_controller.rb:7:in `civil'
+  app/controllers/calendar_controller.rb:7:in `index'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.7ms)
+
+
+Started GET "/calendar/index/47/5/2016" for ::1 at 2016-05-05 23:52:09 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47", "year"=>"5", "month"=>"2016"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+ArgumentError (invalid date):
+  app/controllers/calendar_controller.rb:7:in `civil'
+  app/controllers/calendar_controller.rb:7:in `index'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (118.9ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:52:12 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 286ms (Views: 278.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:52:13 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"imfBFH42ODViB+IpucRQvBjPPdIKFz6On31zgZlzWa32ibDlgfp3s3MFJ63Fg+xByZY7W5jMbSogGc2dIb6XKQ==", "event"=>{"name"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"52", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"52", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", ""], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-05-05 14:52:00.000000"], ["end_at", "2016-05-05 14:52:00.000000"], ["created_at", "2016-05-05 14:52:13.929234"], ["updated_at", "2016-05-05 14:52:13.929234"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar/index/48/5/5
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/calendar/index/48/5/5" for ::1 at 2016-05-05 23:52:13 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"48", "year"=>"5", "month"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('0005-04-25 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '0005-06-06 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 48]]
+  Rendered calendar/_detail.html.erb (0.9ms)
+  Rendered calendar/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 45ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:52:41 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 239ms (Views: 220.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:52:44 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ra2PflEkjGVmQf8iBLNoG0CJYcNrz2PlCU2ZajB9dGjRQ/6PrujD43dDOqZ49NTmkdBnSvkUMEG2KSd2iLC67A==", "event"=>{"name"=>"gg", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"52", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"52", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "gg"], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-05-05 14:52:00.000000"], ["end_at", "2016-05-05 14:52:00.000000"], ["created_at", "2016-05-05 14:52:44.234091"], ["updated_at", "2016-05-05 14:52:44.234091"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar/index/49/2016/5
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/calendar/index/49/2016/5" for ::1 at 2016-05-05 23:52:44 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"49", "year"=>"2016", "month"=>"5"}
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 49]]
+  Rendered calendar/_detail.html.erb (1.2ms)
+  Rendered calendar/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 49ms (Views: 40.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:52:48 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:52:54 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M4rh9tu9TLxUOa040pJ4+F6czvuBfOC8z+7JdeNb8KpPZJAHJHEDOkU7aLyu1cQFj8XIchOnsxhwindpW5Y+Lg==", "event"=>{"name"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"52", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"52", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["name", ""], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-06-05 14:52:00.000000"], ["end_at", "2016-06-05 14:52:00.000000"], ["created_at", "2016-05-05 14:52:54.162850"], ["updated_at", "2016-05-05 14:52:54.162850"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar/index/50/2016/6
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/calendar/index/50/2016/6" for ::1 at 2016-05-05 23:52:54 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (0.8ms)
+  Rendered calendar/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 90ms (Views: 85.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/calendar/index/50/2016/5" for ::1 at 2016-05-05 23:52:58 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (1.0ms)
+  Rendered calendar/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/calendar/index/50/2016/4" for ::1 at 2016-05-05 23:52:58 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"4"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (0.5ms)
+  Rendered calendar/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:53:02 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 25ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/calendar/index/50/2016/5" for ::1 at 2016-05-05 23:53:06 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (0.7ms)
+  Rendered calendar/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-05 23:53:07 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/calendar/new" for ::1 at 2016-05-05 23:53:14 +0900
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RydHNr9sjuQhLL3aXaQUZVc0YC5fKx6fC1GIiQ6z/hE7yTbHQKDBYjAueF4h46iYhm1mp83wTTu0NTaVtn4wlQ==", "event"=>{"name"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"4", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"53", "end_at(1i)"=>"2016", "end_at(2i)"=>"4", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"53", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("name", "place", "person", "baggage", "start_at", "end_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", ""], ["place", ""], ["person", ""], ["baggage", ""], ["start_at", "2016-04-05 14:53:00.000000"], ["end_at", "2016-04-05 14:53:00.000000"], ["created_at", "2016-05-05 14:53:14.073764"], ["updated_at", "2016-05-05 14:53:14.073764"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar/index/51/2016/4
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/calendar/index/51/2016/4" for ::1 at 2016-05-05 23:53:14 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"51", "year"=>"2016", "month"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-03-26 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-04-30 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered calendar/_detail.html.erb (0.6ms)
+  Rendered calendar/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/delete/51" for ::1 at 2016-05-05 23:53:17 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>"51"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 51]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 51]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/calendar" for ::1 at 2016-05-05 23:53:17 +0900
+Processing by CalendarController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1
+  Rendered calendar/_detail.html.erb (0.0ms)
+  Rendered calendar/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.4ms)
