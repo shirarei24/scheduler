@@ -30,7 +30,8 @@ class EventsController < ApplicationController
   end
 
   def delete
-    @event = Event.find_by(:id => params[:id])
+    @event = Event.find_by(:id => params[:event])
+    #@event = params[:event]
     if @event.present?
       @event.destroy
     end
