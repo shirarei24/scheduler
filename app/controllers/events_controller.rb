@@ -31,7 +31,9 @@ class EventsController < ApplicationController
 
   def delete
     @event = Event.find_by(:id => params[:id])
-    @event.destroy
+    if @event.present?
+      @event.destroy
+    end
     redirect_to '/calendar'
   end
 end

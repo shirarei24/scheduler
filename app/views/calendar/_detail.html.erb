@@ -6,3 +6,4 @@
 <p><b>相手: </b><%= if !event.nil? then event.person end%>
 <p><b>持ち物: </b><%= if !event.nil? then event.baggage end%>
 <p><b>カテゴリ: </b><%= if !event.nil? then event.category end%>
+<%= link_to "削除", controller:"events", action:"delete" %>
