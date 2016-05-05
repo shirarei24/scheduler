@@ -12,8 +12,8 @@ class EventsController < ApplicationController
     params.permit!
     @event = Event.new(params[:event])
     @event.save
-    redirect_to '/calendar/0'
-
+    #redirect_to '/calendar/id/:event'
+    redirect_to controller: "calendar", action: "index", id: @event.id
 #    respond_to do |format|
 #      if @event.save
 #        format.any { redirect_to(@event, :notice => 'Event was successfully created.') }
