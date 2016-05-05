@@ -17084,3 +17084,316 @@ Processing by CalendarController#index as HTML
   Rendered calendar/_detail.html.erb (0.0ms)
   Rendered calendar/index.html.erb within layouts/application (8.2ms)
 Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/calendar/index/48" for ::1 at 2016-05-05 23:54:20 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 48]]
+  Rendered calendar/_detail.html.erb (0.8ms)
+  Rendered calendar/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/40" for ::1 at 2016-05-05 23:54:21 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 40]]
+  Rendered calendar/_detail.html.erb (0.6ms)
+  Rendered calendar/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/40" for ::1 at 2016-05-05 23:54:24 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 40]]
+  Rendered calendar/_detail.html.erb (0.4ms)
+  Rendered calendar/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/48" for ::1 at 2016-05-05 23:54:25 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 48]]
+  Rendered calendar/_detail.html.erb (0.4ms)
+  Rendered calendar/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/46" for ::1 at 2016-05-05 23:54:26 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 46]]
+  Rendered calendar/_detail.html.erb (0.7ms)
+  Rendered calendar/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/40" for ::1 at 2016-05-05 23:54:28 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 40]]
+  Rendered calendar/_detail.html.erb (0.5ms)
+  Rendered calendar/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/47" for ::1 at 2016-05-05 23:54:29 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 47]]
+  Rendered calendar/_detail.html.erb (0.4ms)
+  Rendered calendar/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/49" for ::1 at 2016-05-05 23:54:30 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 49]]
+  Rendered calendar/_detail.html.erb (0.4ms)
+  Rendered calendar/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/48" for ::1 at 2016-05-05 23:54:31 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 48]]
+  Rendered calendar/_detail.html.erb (0.4ms)
+  Rendered calendar/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/delete/48" for ::1 at 2016-05-05 23:54:33 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>"48"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 48]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 48]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/calendar
+Completed 302 Found in 4ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/calendar" for ::1 at 2016-05-05 23:54:33 +0900
+Processing by CalendarController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1
+  Rendered calendar/_detail.html.erb (0.1ms)
+  Rendered calendar/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/calendar/index/49" for ::1 at 2016-05-05 23:54:35 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 49]]
+  Rendered calendar/_detail.html.erb (0.4ms)
+  Rendered calendar/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/46" for ::1 at 2016-05-05 23:54:35 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 46]]
+  Rendered calendar/_detail.html.erb (0.3ms)
+  Rendered calendar/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/28" for ::1 at 2016-05-05 23:54:37 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 28]]
+  Rendered calendar/_detail.html.erb (0.3ms)
+  Rendered calendar/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/40" for ::1 at 2016-05-06 00:01:09 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"40"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 40]]
+  Rendered calendar/_detail.html.erb (9.6ms)
+  Rendered calendar/index.html.erb within layouts/application (148.0ms)
+Completed 200 OK in 246ms (Views: 216.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/calendar/index/40" for ::1 at 2016-05-06 00:03:06 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"40"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 40]]
+  Rendered calendar/_detail.html.erb (8.0ms)
+  Rendered calendar/index.html.erb within layouts/application (191.2ms)
+Completed 200 OK in 302ms (Views: 265.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-06 00:03:07 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-06 00:03:07 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-06 00:03:07 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-06 00:03:07 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-06 00:03:07 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-06 00:03:07 +0900
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-06 00:03:07 +0900
+
+
+Started GET "/calendar/index/47" for ::1 at 2016-05-06 00:03:10 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered calendar/_detail.html.erb (1.4ms)
+  Rendered calendar/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/46" for ::1 at 2016-05-06 00:03:12 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 46]]
+  Rendered calendar/_detail.html.erb (1.1ms)
+  Rendered calendar/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/47" for ::1 at 2016-05-06 00:03:14 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered calendar/_detail.html.erb (1.3ms)
+  Rendered calendar/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calendar/index/46" for ::1 at 2016-05-06 00:03:15 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 46]]
+  Rendered calendar/_detail.html.erb (1.3ms)
+  Rendered calendar/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calendar/index/46" for ::1 at 2016-05-06 00:03:16 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 46]]
+  Rendered calendar/_detail.html.erb (0.7ms)
+  Rendered calendar/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/28" for ::1 at 2016-05-06 00:03:17 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 28]]
+  Rendered calendar/_detail.html.erb (0.7ms)
+  Rendered calendar/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/40" for ::1 at 2016-05-06 00:03:19 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"40"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 40]]
+  Rendered calendar/_detail.html.erb (0.8ms)
+  Rendered calendar/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/28" for ::1 at 2016-05-06 00:03:20 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 28]]
+  Rendered calendar/_detail.html.erb (1.1ms)
+  Rendered calendar/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/46" for ::1 at 2016-05-06 00:03:23 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 46]]
+  Rendered calendar/_detail.html.erb (0.9ms)
+  Rendered calendar/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/47" for ::1 at 2016-05-06 00:03:24 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered calendar/_detail.html.erb (1.6ms)
+  Rendered calendar/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/47" for ::1 at 2016-05-06 00:03:25 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered calendar/_detail.html.erb (1.0ms)
+  Rendered calendar/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/28" for ::1 at 2016-05-06 00:03:27 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 28]]
+  Rendered calendar/_detail.html.erb (1.1ms)
+  Rendered calendar/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/47" for ::1 at 2016-05-06 00:03:29 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered calendar/_detail.html.erb (0.9ms)
+  Rendered calendar/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.2ms)
