@@ -1,9 +1,31 @@
+<%#<h1>詳細</h1>
+<%#<h1><%= if !event.nil? then event.name end%></h1>
+<%#<p><b>開始時間: </b><%= if !event.nil? then text_field :event, :start_at end%>
+<%#<p><b>終了時間: </b><%= if !event.nil? then text_field :event, :end_at end%>
+<%#<p><b>場所: </b><%= if !event.nil? then text_field :event, :place end%>
+<%#<p><b>相手: </b><%= if !event.nil? then text_field :event, :person end%>
+<%#<p><b>持ち物: </b><%= if !event.nil? then text_field :event, :baggage end%>
+<%#<p><b>カテゴリ: </b><%= if !event.nil? then text_field :event, :category end%>
+<%#<%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end%>
+
 <h1>詳細</h1>
-<h1><%= if !event.nil? then event.name end%></h1>
-<p><b>開始時間: </b><%= if !event.nil? then text_field :event, :start_at end%>
-<p><b>終了時間: </b><%= if !event.nil? then text_field :event, :end_at end%>
-<p><b>場所: </b><%= if !event.nil? then text_field :event, :place end%>
-<p><b>相手: </b><%= if !event.nil? then text_field :event, :person end%>
-<p><b>持ち物: </b><%= if !event.nil? then text_field :event, :baggage end%>
-<p><b>カテゴリ: </b><%= if !event.nil? then text_field :event, :category end%>
-<%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end%>
+<%= id %>
+<%= if !event.nil? then form_for event, url:'/calendar/update' do |f| %>
+    <%= f.hidden_field :id %>
+    <p><b><%= f.label :name %></b>
+    <%= f.text_field :name %></p>
+    <p><b><%= f.label :start_at %></b>
+    <%= f.datetime_select :start_at %></p>
+    <p><b><%= f.label :end_at %></b>
+    <%= f.datetime_select :end_at %></p>
+    <p><b><%= f.label :place %></b>
+    <%= f.text_field :place %></p>
+    <p><b><%= f.label :person %></b>
+    <%= f.text_field :person %></p>
+    <p><b><%= f.label :baggage %></b>
+    <%= f.text_field :baggage %></p>
+    <p><b><%= f.label :category %></b>
+    <%= f.text_field :category %></p>
+    <%= f.submit %>
+<% end end%>
+<%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>

@@ -5,4 +5,4 @@
 <%= link_to("new", :controller => "events", :action => "new") %>
 <%= raw(event_calendar) %>
 <%= javascript_include_tag "event_calendar" %>
-<%= render partial: 'detail', locals:{event: @event} %>
+<%= render partial: 'detail', locals:{event: @event, id: params[:id]} %>

@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
     @event.save
     #redirect_to '/calendar/id/:event'
-    redirect_to controller: "calendar", action: "index",  id: @event.id, year: @event.start_at.year, month: @event.start_at.month 
+    redirect_to controller: "calendar", action: "index",  id: @event.id, year: @event.start_at.year, month: @event.start_at.month
 #    respond_to do |format|
 #      if @event.save
 #        format.any { redirect_to(@event, :notice => 'Event was successfully created.') }
@@ -36,5 +36,14 @@ class EventsController < ApplicationController
       @event.destroy
     end
     redirect_to '/calendar'
+  end
+
+  def update
+    params.permit!
+    @old_event = params[:id]
+    if @old_event.present?
+      @old_event.update(params[:event])
+      redirect_to controller: "calendar", action: "index",  id: params[:event][:start_at]
+    end
   end
 end

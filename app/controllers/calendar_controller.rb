@@ -8,9 +8,16 @@ class CalendarController < ApplicationController
 
     @event_strips = Event.event_strips_for_month(@shown_month)
     @event = Event.find_by(:id => params[:id])
-
     #event = args[:event]
     #{}%(<a href="/events/#{event.id}/delete">削除</a>)
   end
 
+  def update
+    params.permit!
+    @old_event = Event.find_by(:id=>params[:event][:id])
+    if @old_event.present?
+      @old_event.update(params[:event])
+      redirect_to controller: "calendar", action: "index",  id: params[:event][:id]
+    end
+  end
 end
