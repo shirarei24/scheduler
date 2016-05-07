@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   get '/calendar/index/:id(/:year(/:month))' => 'calendar#index'
 
-  get '/events/delete/:event' => 'events#delete'
+  get '/events/delete/' => 'events#delete'
   patch '/calendar/update' => 'calendar#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

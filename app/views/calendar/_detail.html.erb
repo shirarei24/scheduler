@@ -9,7 +9,6 @@
 <%#<%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end%>
 
 <h1>詳細</h1>
-<%= id %>
 <%= if !event.nil? then form_for event, url:'/calendar/update' do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name %></b>
@@ -26,6 +25,6 @@
     <%= f.text_field :baggage %></p>
     <p><b><%= f.label :category %></b>
     <%= f.text_field :category %></p>
-    <%= f.submit %>
+    <%= f.submit "更新"%>
+    <%= submit_tag "削除", name:"delete_button" %>
 <% end end%>
-<%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>

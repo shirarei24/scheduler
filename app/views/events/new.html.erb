@@ -1,24 +1,17 @@
 <%= form_for@event, :url => event_path do |f| %>
-#  <% if @event.errors.any? %>
-#    <%= pluralize(@event.errors.count, "error") %> #prohibited this post from being saved:
-#    <% @event.errors.full_messages.each do |msg| %>
-#      <%= msg %>
-#    <% end %>
-#<% end %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :start_at %>
-    <%= f.datetime_select :start_at %>
-    <%= f.label :end_at %>
-    <%= f.datetime_select :end_at %>
-    <%= f.label :place %>
-    <%= f.text_field :place %>
-    <%= f.label :person %>
-    <%= f.text_field :person %>
-    <%= f.label :baggage %>
-    <%= f.text_field :baggage %>
-    <%= f.label :category %>
-    <%= f.text_field :category %>
-    <%= f.submit %>
+    <p><b><%= f.label :name %></b>
+    <%= f.text_field :name %></p>
+    <p><b><%= f.label :start_at %></b>
+    <%= f.datetime_select :start_at %></p>
+    <p><b><%= f.label :end_at %></b>
+    <%= f.datetime_select :end_at %></p>
+    <p><b><%= f.label :place %></b>
+    <%= f.text_field :place %></p>
+    <p><b><%= f.label :person %></b>
+    <%= f.text_field :person %></p>
+    <p><b><%= f.label :baggage %></b>
+    <%= f.text_field :baggage %></p>
+    <p><b><%= f.label :category %></b>
+    <%= f.text_field :category %></p>
+    <%= f.submit "作成"%>
 <% end %>

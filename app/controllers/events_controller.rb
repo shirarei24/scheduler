@@ -30,20 +30,12 @@ class EventsController < ApplicationController
   end
 
   def delete
-    @event = Event.find_by(:id => params[:event])
+    @event = Event.find_by(:id => params[:event][:id])
     #@event = params[:event]
     if @event.present?
       @event.destroy
     end
-    redirect_to '/calendar'
+    redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
   end
 
-  def update
-    params.permit!
-    @old_event = params[:id]
-    if @old_event.present?
-      @old_event.update(params[:event])
-      redirect_to controller: "calendar", action: "index",  id: params[:id]
-    end
-  end
 end

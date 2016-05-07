@@ -28485,3 +28485,1116 @@ Processing by CalendarController#index as HTML
   Rendered calendar/_detail.html.erb (4.7ms)
   Rendered calendar/index.html.erb within layouts/application (9.5ms)
 Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:21:08 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (1.2ms)
+  Rendered calendar/index.html.erb within layouts/application (191.6ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.5ms)
+
+SyntaxError (/Users/Reiki/GitHub/Scheduler/app/views/calendar/_detail.html.erb:30: syntax error, unexpected tLABEL, expecting '='
+...buffer.append=( f.submit, name: "delete_button" );@output_bu...
+...                               ^):
+  app/views/calendar/_detail.html.erb:30: syntax error, unexpected tLABEL, expecting '='
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb__3842508945747171558_70212440613780'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (119.0ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:26:08 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (31.3ms)
+  Rendered calendar/index.html.erb within layouts/application (173.3ms)
+Completed 500 Internal Server Error in 212ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0x007fb787438d48>:0x007fb787428fd8>
+Did you mean?  submit_tag):
+    27:     <p><b><%= f.label :category %></b>
+    28:     <%= f.text_field :category %></p>
+    29:     <%= f.submit %>
+    30:     <%= submit :delete_button %>
+    31: <% end end%>
+    32: <%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>
+  app/views/calendar/_detail.html.erb:30:in `block in _app_views_calendar__detail_html_erb___3375115515260234628_70213128144460'
+  app/views/calendar/_detail.html.erb:13:in `_app_views_calendar__detail_html_erb___3375115515260234628_70213128144460'
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb___1444228344507118590_70213112333300'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (119.6ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:27:14 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (30.7ms)
+  Rendered calendar/index.html.erb within layouts/application (172.1ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0x007fdd6c879fa0>:0x007fdd701719c0>
+Did you mean?  submit_tag):
+    27:     <p><b><%= f.label :category %></b>
+    28:     <%= f.text_field :category %></p>
+    29:     <%= f.submit %>
+    30:     <%= submit "sakujo",:delete_button %>
+    31: <% end end%>
+    32: <%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>
+  app/views/calendar/_detail.html.erb:30:in `block in _app_views_calendar__detail_html_erb__270139287311588294_70294490911640'
+  app/views/calendar/_detail.html.erb:13:in `_app_views_calendar__detail_html_erb__270139287311588294_70294490911640'
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb__686354482263196536_70294514960120'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (119.1ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:27:15 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (35.3ms)
+  Rendered calendar/index.html.erb within layouts/application (41.8ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0x007fdd6c879fa0>:0x007fdd728b66e8>
+Did you mean?  submit_tag):
+    27:     <p><b><%= f.label :category %></b>
+    28:     <%= f.text_field :category %></p>
+    29:     <%= f.submit %>
+    30:     <%= submit "sakujo",:delete_button %>
+    31: <% end end%>
+    32: <%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>
+  app/views/calendar/_detail.html.erb:30:in `block in _app_views_calendar__detail_html_erb__270139287311588294_70294490911640'
+  app/views/calendar/_detail.html.erb:13:in `_app_views_calendar__detail_html_erb__270139287311588294_70294490911640'
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb__686354482263196536_70294514960120'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (116.4ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:27:18 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (18.5ms)
+  Rendered calendar/index.html.erb within layouts/application (22.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0x007fdd6c879fa0>:0x007fdd7207a178>
+Did you mean?  submit_tag):
+    27:     <p><b><%= f.label :category %></b>
+    28:     <%= f.text_field :category %></p>
+    29:     <%= f.submit %>
+    30:     <%= submit "sakujo",:delete_button %>
+    31: <% end end%>
+    32: <%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>
+  app/views/calendar/_detail.html.erb:30:in `block in _app_views_calendar__detail_html_erb__270139287311588294_70294490911640'
+  app/views/calendar/_detail.html.erb:13:in `_app_views_calendar__detail_html_erb__270139287311588294_70294490911640'
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb__686354482263196536_70294514960120'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (114.7ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:27:38 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (20.3ms)
+  Rendered calendar/index.html.erb within layouts/application (163.9ms)
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `stringify_keys' for :delete_button:Symbol):
+    27:     <p><b><%= f.label :category %></b>
+    28:     <%= f.text_field :category %></p>
+    29:     <%= f.submit %>
+    30:     <%= submit_tag "sakujo",:delete_button %>
+    31: <% end end%>
+    32: <%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>
+  app/views/calendar/_detail.html.erb:30:in `block in _app_views_calendar__detail_html_erb__2344027255323257093_70251815120460'
+  app/views/calendar/_detail.html.erb:13:in `_app_views_calendar__detail_html_erb__2344027255323257093_70251815120460'
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb__639548247193633610_70251812709760'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (123.4ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:28:32 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (1.4ms)
+  Rendered calendar/index.html.erb within layouts/application (145.7ms)
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 0.7ms)
+
+SyntaxError (/Users/Reiki/GitHub/Scheduler/app/views/calendar/_detail.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+...pend=( submit_tag "sakujo" name:"delete_button" );@output_bu...
+...                               ^):
+  app/views/calendar/_detail.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb___2087540315019000762_70149563010920'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.8ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:29:05 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (19.2ms)
+  Rendered calendar/index.html.erb within layouts/application (186.0ms)
+Completed 200 OK in 295ms (Views: 267.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-08 01:29:06 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-08 01:29:06 +0900
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-08 01:29:06 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-08 01:29:06 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-08 01:29:06 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-08 01:29:06 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-08 01:29:06 +0900
+
+
+Started GET "/calendar/index/50/2016/7" for ::1 at 2016-05-08 01:29:12 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"7"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-06-25 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-08-06 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (7.5ms)
+  Rendered calendar/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 35ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/50/2016/8" for ::1 at 2016-05-08 01:29:14 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"8"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-07-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-09-03 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (12.9ms)
+  Rendered calendar/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 65ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/50/2016/7" for ::1 at 2016-05-08 01:29:17 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"7"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-06-25 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-08-06 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (10.5ms)
+  Rendered calendar/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/index/50/2016/6" for ::1 at 2016-05-08 01:29:17 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"50", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 50]]
+  Rendered calendar/_detail.html.erb (5.3ms)
+  Rendered calendar/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/60/2016/6" for ::1 at 2016-05-08 01:29:19 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"60", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 60]]
+  Rendered calendar/_detail.html.erb (5.5ms)
+  Rendered calendar/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:29:21 +0900
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G44DSMWyWEH4Np0bJup1utI7m6nsbmitvE4bMRrWpMFnYHK5On4Xx+k0WJ9arclHA2KdIH61OwkDKqUtohtqRQ==", "event"=>{"id"=>"60", "name"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"6", "start_at(4i)"=>"05", "start_at(5i)"=>"28", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"6", "end_at(4i)"=>"05", "end_at(5i)"=>"28", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to http://localhost:3000/events/delete/baggage=&category=&end_at%25281i%2529=2016&end_at%25282i%2529=6&end_at%25283i%2529=6&end_at%25284i%2529=05&end_at%25285i%2529=28&id=60&name=&person=&place=&start_at%25281i%2529=2016&start_at%25282i%2529=6&start_at%25283i%2529=6&start_at%25284i%2529=05&start_at%25285i%2529=28
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 60]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/calendar_controller.rb:21:in `update'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (125.3ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:31:08 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G44DSMWyWEH4Np0bJup1utI7m6nsbmitvE4bMRrWpMFnYHK5On4Xx+k0WJ9arclHA2KdIH61OwkDKqUtohtqRQ==", "event"=>{"id"=>"60", "name"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"6", "start_at(4i)"=>"05", "start_at(5i)"=>"28", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"6", "end_at(4i)"=>"05", "end_at(5i)"=>"28", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to http://localhost:3000/events/delete/baggage=&category=&end_at%25281i%2529=2016&end_at%25282i%2529=6&end_at%25283i%2529=6&end_at%25284i%2529=05&end_at%25285i%2529=28&id=60&name=&person=&place=&start_at%25281i%2529=2016&start_at%25282i%2529=6&start_at%25283i%2529=6&start_at%25284i%2529=05&start_at%25285i%2529=28
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/delete/baggage=&category=&end_at%25281i%2529=2016&end_at%25282i%2529=6&end_at%25283i%2529=6&end_at%25284i%2529=05&end_at%25285i%2529=28&id=60&name=&person=&place=&start_at%25281i%2529=2016&start_at%25282i%2529=6&start_at%25283i%2529=6&start_at%25284i%2529=05&start_at%25285i%2529=28" for ::1 at 2016-05-08 01:31:09 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>"baggage=&category=&end_at%281i%29=2016&end_at%282i%29=6&end_at%283i%29=6&end_at%284i%29=05&end_at%285i%29=28&id=60&name=&person=&place=&start_at%281i%29=2016&start_at%282i%29=6&start_at%283i%29=6&start_at%284i%29=05&start_at%285i%29=28"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/events_controller.rb:33:in `[]'
+  app/controllers/events_controller.rb:33:in `delete'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (123.8ms)
+
+
+Started GET "/events/delete/baggage=&category=&end_at%25281i%2529=2016&end_at%25282i%2529=6&end_at%25283i%2529=6&end_at%25284i%2529=05&end_at%25285i%2529=28&id=60&name=&person=&place=&start_at%25281i%2529=2016&start_at%25282i%2529=6&start_at%25283i%2529=6&start_at%25284i%2529=05&start_at%25285i%2529=28" for ::1 at 2016-05-08 01:32:30 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>"baggage=&category=&end_at%281i%29=2016&end_at%282i%29=6&end_at%283i%29=6&end_at%284i%29=05&end_at%285i%29=28&id=60&name=&person=&place=&start_at%281i%29=2016&start_at%282i%29=6&start_at%283i%29=6&start_at%284i%29=05&start_at%285i%29=28"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/events_controller.rb:33:in `[]'
+  app/controllers/events_controller.rb:33:in `delete'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.7ms)
+
+
+Started GET "/" for ::1 at 2016-05-08 01:32:49 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-08 01:32:51 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/calendar" for ::1 at 2016-05-08 01:32:55 +0900
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.7ms)
+  Rendered calendar/index.html.erb within layouts/application (197.8ms)
+Completed 200 OK in 254ms (Views: 240.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calendar" for ::1 at 2016-05-08 01:32:55 +0900
+Processing by CalendarController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.0ms)
+  Rendered calendar/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/28/2016/5" for ::1 at 2016-05-08 01:32:58 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"28", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 28]]
+  Rendered calendar/_detail.html.erb (49.5ms)
+  Rendered calendar/index.html.erb within layouts/application (55.2ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `submit_tag' for #<ActionView::Helpers::FormBuilder:0x007fa104155430>
+Did you mean?  submit):
+    27:     <p><b><%= f.label :category %></b>
+    28:     <%= f.text_field :category %></p>
+    29:     <%= f.submit %>
+    30:     <%= f.submit_tag "sakujo", name:"delete_button" %>
+    31: <% end end%>
+    32: <%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>
+  app/views/calendar/_detail.html.erb:30:in `block in _app_views_calendar__detail_html_erb___2975811426003388716_70164810633520'
+  app/views/calendar/_detail.html.erb:13:in `_app_views_calendar__detail_html_erb___2975811426003388716_70164810633520'
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb__859706646717934946_70164810349320'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (124.9ms)
+
+
+Started GET "/calendar/index/28/2016/5" for ::1 at 2016-05-08 01:32:58 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"28", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 28]]
+  Rendered calendar/_detail.html.erb (34.2ms)
+  Rendered calendar/index.html.erb within layouts/application (40.6ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `submit_tag' for #<ActionView::Helpers::FormBuilder:0x007fa104082c88>
+Did you mean?  submit):
+    27:     <p><b><%= f.label :category %></b>
+    28:     <%= f.text_field :category %></p>
+    29:     <%= f.submit %>
+    30:     <%= f.submit_tag "sakujo", name:"delete_button" %>
+    31: <% end end%>
+    32: <%= if !event.nil? then link_to "削除", controller:"events", action:"delete" , event: event end %>
+  app/views/calendar/_detail.html.erb:30:in `block in _app_views_calendar__detail_html_erb___2975811426003388716_70164809788220'
+  app/views/calendar/_detail.html.erb:13:in `_app_views_calendar__detail_html_erb___2975811426003388716_70164809788220'
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb__859706646717934946_70164755761880'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (124.6ms)
+
+
+Started GET "/calendar/index/28/2016/5" for ::1 at 2016-05-08 01:33:35 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"28", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 28]]
+  Rendered calendar/_detail.html.erb (16.1ms)
+  Rendered calendar/index.html.erb within layouts/application (162.9ms)
+Completed 200 OK in 263ms (Views: 236.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-08 01:33:35 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-08 01:33:35 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-08 01:33:35 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-08 01:33:35 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-08 01:33:35 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-08 01:33:35 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-08 01:33:35 +0900
+
+
+Started GET "/calendar/index/28/2016/5" for ::1 at 2016-05-08 01:33:36 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"28", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 28]]
+  Rendered calendar/_detail.html.erb (9.2ms)
+  Rendered calendar/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:33:39 +0900
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UzrFPiF4u+4B+83ruLQGsFMxyF7nkx44n/KQeS1A3pYv1LTP3rT0aBD5CG/E87pNgmjO13VITZwgli5llY0QEg==", "event"=>{"id"=>"28", "name"=>"ｓｄｆｇｆｘ", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"20", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"20", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to http://localhost:3000/events/delete/baggage=&category=&end_at%25281i%2529=2016&end_at%25282i%2529=5&end_at%25283i%2529=5&end_at%25284i%2529=14&end_at%25285i%2529=20&id=28&name=%25EF%25BD%2593%25EF%25BD%2584%25EF%25BD%2586%25EF%25BD%2587%25EF%25BD%2586%25EF%25BD%2598&person=&place=&start_at%25281i%2529=2016&start_at%25282i%2529=5&start_at%25283i%2529=5&start_at%25284i%2529=14&start_at%25285i%2529=20
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/delete/baggage=&category=&end_at%25281i%2529=2016&end_at%25282i%2529=5&end_at%25283i%2529=5&end_at%25284i%2529=14&end_at%25285i%2529=20&id=28&name=%25EF%25BD%2593%25EF%25BD%2584%25EF%25BD%2586%25EF%25BD%2587%25EF%25BD%2586%25EF%25BD%2598&person=&place=&start_at%25281i%2529=2016&start_at%25282i%2529=5&start_at%25283i%2529=5&start_at%25284i%2529=14&start_at%25285i%2529=20" for ::1 at 2016-05-08 01:33:39 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>"baggage=&category=&end_at%281i%29=2016&end_at%282i%29=5&end_at%283i%29=5&end_at%284i%29=14&end_at%285i%29=20&id=28&name=%EF%BD%93%EF%BD%84%EF%BD%86%EF%BD%87%EF%BD%86%EF%BD%98&person=&place=&start_at%281i%29=2016&start_at%282i%29=5&start_at%283i%29=5&start_at%284i%29=14&start_at%285i%29=20"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/events_controller.rb:33:in `[]'
+  app/controllers/events_controller.rb:33:in `delete'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (119.4ms)
+
+
+Started GET "/events/delete/baggage=&category=&end_at%25281i%2529=2016&end_at%25282i%2529=5&end_at%25283i%2529=5&end_at%25284i%2529=14&end_at%25285i%2529=20&id=28&name=%25EF%25BD%2593%25EF%25BD%2584%25EF%25BD%2586%25EF%25BD%2587%25EF%25BD%2586%25EF%25BD%2598&person=&place=&start_at%25281i%2529=2016&start_at%25282i%2529=5&start_at%25283i%2529=5&start_at%25284i%2529=14&start_at%25285i%2529=20" for ::1 at 2016-05-08 01:34:25 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>"baggage=&category=&end_at%281i%29=2016&end_at%282i%29=5&end_at%283i%29=5&end_at%284i%29=14&end_at%285i%29=20&id=28&name=%EF%BD%93%EF%BD%84%EF%BD%86%EF%BD%87%EF%BD%86%EF%BD%98&person=&place=&start_at%281i%29=2016&start_at%282i%29=5&start_at%283i%29=5&start_at%284i%29=14&start_at%285i%29=20"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/events_controller.rb:33:in `[]'
+  app/controllers/events_controller.rb:33:in `delete'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (121.3ms)
+
+
+Started GET "/calendar/index/47/2016/5" for ::1 at 2016-05-08 01:34:32 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"47", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 47]]
+  Rendered calendar/_detail.html.erb (15.1ms)
+  Rendered calendar/index.html.erb within layouts/application (204.5ms)
+Completed 200 OK in 257ms (Views: 243.1ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:34:38 +0900
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZobYpNL8ufLqs1deQHcuctLul+lr/EOEtwY/vVyX9qEaaKlVLTD2dPuxkto8MJKPA7eRYPknECAIYoGh5Fo4JQ==", "event"=>{"id"=>"47", "name"=>"f", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"51", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"51", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to 
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"delete", :controller=>"events"}):
+  app/controllers/calendar_controller.rb:18:in `update'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.8ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.8ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:37:07 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZobYpNL8ufLqs1deQHcuctLul+lr/EOEtwY/vVyX9qEaaKlVLTD2dPuxkto8MJKPA7eRYPknECAIYoGh5Fo4JQ==", "event"=>{"id"=>"47", "name"=>"f", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"51", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"51", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to 
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"delete", :controller=>"events", :id=>"47", :month=>"5", :year=>"2016"}):
+  app/controllers/calendar_controller.rb:18:in `update'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (130.1ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:37:58 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZobYpNL8ufLqs1deQHcuctLul+lr/EOEtwY/vVyX9qEaaKlVLTD2dPuxkto8MJKPA7eRYPknECAIYoGh5Fo4JQ==", "event"=>{"id"=>"47", "name"=>"f", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"51", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"51", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to http://localhost:3000/events/delete?id=47&month=5&year=2016
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/delete?id=47&month=5&year=2016" for ::1 at 2016-05-08 01:37:58 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"47", "month"=>"5", "year"=>"2016"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 47]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar/2016/5
+Completed 302 Found in 25ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/calendar/2016/5" for ::1 at 2016-05-08 01:37:58 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.9ms)
+  Rendered calendar/index.html.erb within layouts/application (162.7ms)
+Completed 200 OK in 243ms (Views: 239.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-08 01:37:58 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-08 01:37:58 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-08 01:37:58 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-08 01:37:58 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-08 01:37:58 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-08 01:37:58 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-08 01:37:58 +0900
+
+
+Started GET "/calendar/index/58/2016/5" for ::1 at 2016-05-08 01:38:01 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"58", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 58]]
+  Rendered calendar/_detail.html.erb (19.6ms)
+  Rendered calendar/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:38:04 +0900
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L4nwFdVRuwcI8a8bbLCtCDiunM9TJZOjRZ+WgvDkendTZ4HkKp30gRnzap8Q9xH16feaRsH+wAf6+yieSCm08w==", "event"=>{"id"=>"58", "name"=>"egrdhkl", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"6", "start_at(4i)"=>"04", "start_at(5i)"=>"46", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"6", "end_at(4i)"=>"04", "end_at(5i)"=>"46", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to http://localhost:3000/events/delete?id=58&month=5&year=2016
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/delete?id=58&month=5&year=2016" for ::1 at 2016-05-08 01:38:04 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"58", "month"=>"5", "year"=>"2016"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 58]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 58]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar/2016/5
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/calendar/2016/5" for ::1 at 2016-05-08 01:38:04 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.1ms)
+  Rendered calendar/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 53ms (Views: 49.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/calendar/2016/5" for ::1 at 2016-05-08 01:39:32 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.7ms)
+  Rendered calendar/index.html.erb within layouts/application (145.0ms)
+Completed 200 OK in 221ms (Views: 194.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-08 01:39:32 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-08 01:39:32 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-08 01:39:32 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-08 01:39:32 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-08 01:39:32 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-08 01:39:32 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-08 01:39:32 +0900
+
+
+Started GET "/calendar/index/57/2016/5" for ::1 at 2016-05-08 01:39:35 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"57", "year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 57]]
+  Rendered calendar/_detail.html.erb (18.0ms)
+  Rendered calendar/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 62ms (Views: 58.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:39:37 +0900
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nu1BlFMvPue9adO1q4oK1N2ppjySNfZ85RIXfI6sE7PiAzBlrONxYaxrFjHXzbYpDPCgtQDupdhadqlgNmHdNw==", "event"=>{"id"=>"57", "name"=>"fdghjghkjlm", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"6", "start_at(4i)"=>"04", "start_at(5i)"=>"46", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"6", "end_at(4i)"=>"04", "end_at(5i)"=>"46", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to http://localhost:3000/events/delete?event%5Bbaggage%5D=&event%5Bcategory%5D=&event%5Bend_at%281i%29%5D=2016&event%5Bend_at%282i%29%5D=5&event%5Bend_at%283i%29%5D=6&event%5Bend_at%284i%29%5D=04&event%5Bend_at%285i%29%5D=46&event%5Bid%5D=57&event%5Bname%5D=fdghjghkjlm&event%5Bperson%5D=&event%5Bplace%5D=&event%5Bstart_at%281i%29%5D=2016&event%5Bstart_at%282i%29%5D=5&event%5Bstart_at%283i%29%5D=6&event%5Bstart_at%284i%29%5D=04&event%5Bstart_at%285i%29%5D=46
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/delete?event%5Bbaggage%5D=&event%5Bcategory%5D=&event%5Bend_at%281i%29%5D=2016&event%5Bend_at%282i%29%5D=5&event%5Bend_at%283i%29%5D=6&event%5Bend_at%284i%29%5D=04&event%5Bend_at%285i%29%5D=46&event%5Bid%5D=57&event%5Bname%5D=fdghjghkjlm&event%5Bperson%5D=&event%5Bplace%5D=&event%5Bstart_at%281i%29%5D=2016&event%5Bstart_at%282i%29%5D=5&event%5Bstart_at%283i%29%5D=6&event%5Bstart_at%284i%29%5D=04&event%5Bstart_at%285i%29%5D=46" for ::1 at 2016-05-08 01:39:37 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>{"baggage"=>"", "category"=>"", "end_at(1i)"=>"2016", "end_at(2i)"=>"5", "end_at(3i)"=>"6", "end_at(4i)"=>"04", "end_at(5i)"=>"46", "id"=>"57", "name"=>"fdghjghkjlm", "person"=>"", "place"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"5", "start_at(3i)"=>"6", "start_at(4i)"=>"04", "start_at(5i)"=>"46"}}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 57]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 57]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar/2016/5
+Completed 302 Found in 5ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/calendar/2016/5" for ::1 at 2016-05-08 01:39:37 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"5"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-04-30 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-06-04 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.1ms)
+  Rendered calendar/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 62ms (Views: 50.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/calendar/2016/6" for ::1 at 2016-05-08 01:39:41 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.0ms)
+  Rendered calendar/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/44/2016/6" for ::1 at 2016-05-08 01:39:42 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"44", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 44]]
+  Rendered calendar/_detail.html.erb (6.7ms)
+  Rendered calendar/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:39:44 +0900
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vFPBjiCKyVOMmt0JE/kbx876btPLpgOYie+FnW0ZZPHAvbB/30aG1Z2YGI1vvqc6H6NoWll9UDw2izuB1dSqdQ==", "event"=>{"id"=>"44", "name"=>"teset", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"43", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"43", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to http://localhost:3000/events/delete?event%5Bbaggage%5D=&event%5Bcategory%5D=&event%5Bend_at%281i%29%5D=2016&event%5Bend_at%282i%29%5D=6&event%5Bend_at%283i%29%5D=5&event%5Bend_at%284i%29%5D=14&event%5Bend_at%285i%29%5D=43&event%5Bid%5D=44&event%5Bname%5D=teset&event%5Bperson%5D=&event%5Bplace%5D=&event%5Bstart_at%281i%29%5D=2016&event%5Bstart_at%282i%29%5D=6&event%5Bstart_at%283i%29%5D=5&event%5Bstart_at%284i%29%5D=14&event%5Bstart_at%285i%29%5D=43
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/delete?event%5Bbaggage%5D=&event%5Bcategory%5D=&event%5Bend_at%281i%29%5D=2016&event%5Bend_at%282i%29%5D=6&event%5Bend_at%283i%29%5D=5&event%5Bend_at%284i%29%5D=14&event%5Bend_at%285i%29%5D=43&event%5Bid%5D=44&event%5Bname%5D=teset&event%5Bperson%5D=&event%5Bplace%5D=&event%5Bstart_at%281i%29%5D=2016&event%5Bstart_at%282i%29%5D=6&event%5Bstart_at%283i%29%5D=5&event%5Bstart_at%284i%29%5D=14&event%5Bstart_at%285i%29%5D=43" for ::1 at 2016-05-08 01:39:44 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>{"baggage"=>"", "category"=>"", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"43", "id"=>"44", "name"=>"teset", "person"=>"", "place"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"43"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 44]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 44]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar/2016/6
+Completed 302 Found in 3ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/calendar/2016/6" for ::1 at 2016-05-08 01:39:44 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.1ms)
+  Rendered calendar/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 69ms (Views: 64.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/calendar/index/43/2016/6" for ::1 at 2016-05-08 01:39:48 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"43", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 43]]
+  Rendered calendar/_detail.html.erb (11.5ms)
+  Rendered calendar/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:39:50 +0900
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z7uDs4ZMQ7qJbcIHEB+24boWmTFKf1IFfVubN/sx12YbVfJCeYAMPJhvB4NsWAoca0+fuNikAaHCPyUrQ/wZ4g==", "event"=>{"id"=>"43", "name"=>"tesethbjnkm.", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"43", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"43", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"sakujo"}
+Redirected to http://localhost:3000/events/delete?event%5Bbaggage%5D=&event%5Bcategory%5D=&event%5Bend_at%281i%29%5D=2016&event%5Bend_at%282i%29%5D=6&event%5Bend_at%283i%29%5D=5&event%5Bend_at%284i%29%5D=14&event%5Bend_at%285i%29%5D=43&event%5Bid%5D=43&event%5Bname%5D=tesethbjnkm.&event%5Bperson%5D=&event%5Bplace%5D=&event%5Bstart_at%281i%29%5D=2016&event%5Bstart_at%282i%29%5D=6&event%5Bstart_at%283i%29%5D=5&event%5Bstart_at%284i%29%5D=14&event%5Bstart_at%285i%29%5D=43
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/delete?event%5Bbaggage%5D=&event%5Bcategory%5D=&event%5Bend_at%281i%29%5D=2016&event%5Bend_at%282i%29%5D=6&event%5Bend_at%283i%29%5D=5&event%5Bend_at%284i%29%5D=14&event%5Bend_at%285i%29%5D=43&event%5Bid%5D=43&event%5Bname%5D=tesethbjnkm.&event%5Bperson%5D=&event%5Bplace%5D=&event%5Bstart_at%281i%29%5D=2016&event%5Bstart_at%282i%29%5D=6&event%5Bstart_at%283i%29%5D=5&event%5Bstart_at%284i%29%5D=14&event%5Bstart_at%285i%29%5D=43" for ::1 at 2016-05-08 01:39:50 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>{"baggage"=>"", "category"=>"", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"5", "end_at(4i)"=>"14", "end_at(5i)"=>"43", "id"=>"43", "name"=>"tesethbjnkm.", "person"=>"", "place"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"5", "start_at(4i)"=>"14", "start_at(5i)"=>"43"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 43]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 43]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar/2016/6
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/calendar/2016/6" for ::1 at 2016-05-08 01:39:50 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.1ms)
+  Rendered calendar/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 63ms (Views: 56.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/calendar/2016/6" for ::1 at 2016-05-08 01:40:30 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (1.0ms)
+  Rendered calendar/index.html.erb within layouts/application (141.2ms)
+Completed 200 OK in 222ms (Views: 195.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-08 01:40:30 +0900
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-08 01:40:30 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-08 01:40:30 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-08 01:40:30 +0900
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-08 01:40:30 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-08 01:40:30 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-08 01:40:30 +0900
+
+
+Started GET "/calendar/index/60/2016/6" for ::1 at 2016-05-08 01:40:32 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"60", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 60]]
+  Rendered calendar/_detail.html.erb (20.7ms)
+  Rendered calendar/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 64ms (Views: 59.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/calendar/update" for ::1 at 2016-05-08 01:40:35 +0900
+Processing by CalendarController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pBbawGNBYvaSJO0l42sUKg9HNJ2nHonJKiXqdSadQdvY+KsxnI0tcIMmKKGfLKjX3h4yFDXF2m2VQVRpnlCPXw==", "event"=>{"id"=>"60", "name"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"6", "start_at(4i)"=>"05", "start_at(5i)"=>"28", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"6", "end_at(4i)"=>"05", "end_at(5i)"=>"28", "place"=>"", "person"=>"", "baggage"=>"", "category"=>""}, "delete_button"=>"削除"}
+Redirected to http://localhost:3000/events/delete?event%5Bbaggage%5D=&event%5Bcategory%5D=&event%5Bend_at%281i%29%5D=2016&event%5Bend_at%282i%29%5D=6&event%5Bend_at%283i%29%5D=6&event%5Bend_at%284i%29%5D=05&event%5Bend_at%285i%29%5D=28&event%5Bid%5D=60&event%5Bname%5D=&event%5Bperson%5D=&event%5Bplace%5D=&event%5Bstart_at%281i%29%5D=2016&event%5Bstart_at%282i%29%5D=6&event%5Bstart_at%283i%29%5D=6&event%5Bstart_at%284i%29%5D=05&event%5Bstart_at%285i%29%5D=28
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events/delete?event%5Bbaggage%5D=&event%5Bcategory%5D=&event%5Bend_at%281i%29%5D=2016&event%5Bend_at%282i%29%5D=6&event%5Bend_at%283i%29%5D=6&event%5Bend_at%284i%29%5D=05&event%5Bend_at%285i%29%5D=28&event%5Bid%5D=60&event%5Bname%5D=&event%5Bperson%5D=&event%5Bplace%5D=&event%5Bstart_at%281i%29%5D=2016&event%5Bstart_at%282i%29%5D=6&event%5Bstart_at%283i%29%5D=6&event%5Bstart_at%284i%29%5D=05&event%5Bstart_at%285i%29%5D=28" for ::1 at 2016-05-08 01:40:35 +0900
+Processing by EventsController#delete as HTML
+  Parameters: {"event"=>{"baggage"=>"", "category"=>"", "end_at(1i)"=>"2016", "end_at(2i)"=>"6", "end_at(3i)"=>"6", "end_at(4i)"=>"05", "end_at(5i)"=>"28", "id"=>"60", "name"=>"", "person"=>"", "place"=>"", "start_at(1i)"=>"2016", "start_at(2i)"=>"6", "start_at(3i)"=>"6", "start_at(4i)"=>"05", "start_at(5i)"=>"28"}}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 60]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 60]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/calendar/2016/6
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/calendar/2016/6" for ::1 at 2016-05-08 01:40:35 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.4ms)
+  Rendered calendar/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 60ms (Views: 54.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calendar/2016/6" for ::1 at 2016-05-08 01:41:23 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (1.1ms)
+  Rendered calendar/index.html.erb within layouts/application (142.6ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.6ms)
+
+SyntaxError (/Users/Reiki/GitHub/Scheduler/app/views/calendar/_detail.html.erb:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Reiki/GitHub/Scheduler/app/views/calendar/_detail.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/calendar/_detail.html.erb:32: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/calendar/_detail.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+  app/views/calendar/index.html.erb:8:in `_app_views_calendar_index_html_erb___3590296011832664441_70117836059420'
+
+
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.2ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.1ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Reiki/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (116.8ms)
+
+
+Started GET "/calendar/2016/6" for ::1 at 2016-05-08 01:41:49 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CalendarController#index as HTML
+  Parameters: {"year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT 1[0m
+  Rendered calendar/_detail.html.erb (0.7ms)
+  Rendered calendar/index.html.erb within layouts/application (140.4ms)
+Completed 200 OK in 242ms (Views: 214.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/calendar/index/41/2016/6" for ::1 at 2016-05-08 01:41:53 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"41", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 41]]
+  Rendered calendar/_detail.html.erb (17.1ms)
+  Rendered calendar/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/41/2016/6" for ::1 at 2016-05-08 01:41:55 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"41", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 41]]
+  Rendered calendar/_detail.html.erb (11.1ms)
+  Rendered calendar/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/calendar/index/45/2016/6" for ::1 at 2016-05-08 01:42:08 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"45", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 45]]
+  Rendered calendar/_detail.html.erb (9.3ms)
+  Rendered calendar/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-08 01:42:22 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-08 01:43:25 +0900
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-08 01:44:24 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 243ms (Views: 226.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar/new" for ::1 at 2016-05-08 01:44:48 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 233ms (Views: 216.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-08 01:44:49 +0900
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-08 01:44:49 +0900
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-08 01:44:49 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-08 01:44:49 +0900
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-08 01:44:49 +0900
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-08 01:44:49 +0900
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-08 01:44:49 +0900
+
+
+Started GET "/calendar/index/45/2016/6" for ::1 at 2016-05-08 01:44:53 +0900
+Processing by CalendarController#index as HTML
+  Parameters: {"id"=>"45", "year"=>"2016", "month"=>"6"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (('2016-05-28 15:00:00.000000' <= "events".end_at) AND ("events".start_at< '2016-07-02 15:00:00.000000'))  ORDER BY "events".start_at ASC
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 45]]
+  Rendered calendar/_detail.html.erb (14.6ms)
+  Rendered calendar/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 69ms (Views: 58.9ms | ActiveRecord: 0.5ms)
