@@ -15,9 +15,10 @@ class CalendarController < ApplicationController
   def update
     params.permit!
     @old_event = Event.find_by(:id=>params[:event][:id])
+    d = params[:event][:start_at]
     if @old_event.present?
       @old_event.update(params[:event])
-      redirect_to controller: "calendar", action: "index",  id: params[:event][:id]
+      redirect_to controller: "calendar", action: "index",  id: params[:event][:id], year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     end
   end
 end

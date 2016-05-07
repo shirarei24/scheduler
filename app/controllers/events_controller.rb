@@ -43,7 +43,7 @@ class EventsController < ApplicationController
     @old_event = params[:id]
     if @old_event.present?
       @old_event.update(params[:event])
-      redirect_to controller: "calendar", action: "index",  id: params[:event][:start_at]
+      redirect_to controller: "calendar", action: "index",  id: params[:id]
     end
   end
 end
