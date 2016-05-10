@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/events/delete/' => 'events#delete'
   patch '/calendar/update' => 'calendar#update'
+  patch 'calendar/todo' => 'calendar#todo'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

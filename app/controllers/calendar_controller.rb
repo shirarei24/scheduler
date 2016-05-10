@@ -8,6 +8,7 @@ class CalendarController < ApplicationController
 
     @event_strips = Event.event_strips_for_month(@shown_month)
     @event = Event.find_by(:id => params[:id])
+    @todo = Todo.all
     #event = args[:event]
     #{}%(<a href="/events/#{event.id}/delete">削除</a>)
   end
@@ -23,5 +24,10 @@ class CalendarController < ApplicationController
         redirect_to controller: "calendar", action: "index",  id: params[:event][:id], year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
       end
     end
+  end
+
+  def todo
+    redirect_to controller: "calendar"
+
   end
 end

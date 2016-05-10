@@ -1,0 +1,8 @@
+<h1>Todoリスト</h1>
+<%= todo.each do |todo| %>
+<%= form_for todo, :url => '/calendar/todo' do |t| %>
+<p><%= t.check_box :flag %>
+<b><%= todo.contents %></b>
+<%= todo.deadline %></p>
+<%= t.submit %>
+<% end end%>
