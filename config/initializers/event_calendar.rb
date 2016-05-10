@@ -186,6 +186,7 @@ module EventCalendar
                 end
 
               end
-          end
+
 
             require 'event_calendar/railtie' if defined?(::Rails::Railtie)
+end
