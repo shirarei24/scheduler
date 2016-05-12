@@ -4,4 +4,24 @@
 <h1>Today: <%= Date.today %></h1>
 <%= link_to("new", :controller => "events", :action => "new") %>
 <%= raw(event_calendar) %>
-<%= javascript_include_tag "event_calendar" %>
+<%#= javascript_include_tag "event_calendar" %>
+<%= render partial: 'detail', locals:{event: @event, id: params[:id]} %>
+
+<%= link_to 'ここ！', '#', class: 'open' %>
+<div id="modal" style="display:none;">
+  デアルカ
+</div>
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('.open').click(function() {
+      $('#modal').dialog({
+        modal: true,
+        title: 'モーダルダイアログ'
+      });
+    });
+  });
+</script>
+
+<%#= javascript_include_tag "application" %>

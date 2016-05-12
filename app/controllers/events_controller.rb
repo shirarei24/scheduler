@@ -12,8 +12,8 @@ class EventsController < ApplicationController
     params.permit!
     @event = Event.new(params[:event])
     @event.save
-    redirect_to '/calendar'
-
+    #redirect_to '/calendar/id/:event'
+    redirect_to controller: "calendar", action: "index",  id: @event.id, year: @event.start_at.year, month: @event.start_at.month
 #    respond_to do |format|
 #      if @event.save
 #        format.any { redirect_to(@event, :notice => 'Event was successfully created.') }
@@ -30,8 +30,12 @@ class EventsController < ApplicationController
   end
 
   def delete
-    @event = Event.find_by(:id => params[:id])
-    @event.destroy
-    redirect_to '/calendar'
+    @event = Event.find_by(:id => params[:event][:id])
+    #@event = params[:event]
+    if @event.present?
+      @event.destroy
+    end
+    redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
   end
+
 end

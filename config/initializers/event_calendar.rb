@@ -60,6 +60,7 @@ module EventCalendar
                   # create an inital event strip, with a nil entry for every day of the displayed days
                   event_strips = [[nil] * (strip_end - strip_start + 1)]
 
+                  events.order("start_at") #追加した処理
                   events.each do |event|
                     cur_date = event.start_at.to_date
                     end_date = event.end_at.to_date
@@ -185,6 +186,7 @@ module EventCalendar
                 end
 
               end
-          end  
+
 
             require 'event_calendar/railtie' if defined?(::Rails::Railtie)
+end
