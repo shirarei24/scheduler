@@ -7,7 +7,12 @@ class CalendarController < ApplicationController
     @shown_month = Date.civil(@year, @month)
 
     @event_strips = Event.event_strips_for_month(@shown_month)
-    @event = Event.find_by(:id => params[:id])
+    if params[:id] then
+      @event = Event.find_by(:id => params[:id])
+    else
+      @event = Event.new
+    end
+    @new_event = Event.new
     @todo = Todo.all
     #event = args[:event]
     #{}%(<a href="/events/#{event.id}/delete">削除</a>)

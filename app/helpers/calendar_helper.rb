@@ -19,24 +19,7 @@ module CalendarHelper
     calendar event_calendar_opts do |args|
       event = args[:event]
       # %(<a href="/events/#{event.id}" title="#{h(event.name)}">#{h(event.name)}</a>)
-      #%(<a href="/calendar/index/#{event.id}/#{event.start_at.year}/#{event.start_at.month}" title="#{h(event.name)}">#{h(event.name)}</a>)
-      #link_to( "ここ！", '#', class: 'open')
-      %(<a href="#" class="open" </a>
-      <div id="modal" style="display:none;">
-        デアルカ
-      </div>
-      <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
-      <script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
-      <script type="text/javascript">
-        $(function() {
-          $('.open').click(function() {
-            $('#modal').dialog({
-              modal: true,
-              title: 'モーダルダイアログ'
-            });
-          });
-        });
-      </script>)
+      %(<a href="/calendar/index/#{event.id}/#{event.start_at.year}/#{event.start_at.month}" title="#{h(event.name)}">#{h(event.name)}</a>)
     end
   end
 end
