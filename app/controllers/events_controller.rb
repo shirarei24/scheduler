@@ -15,11 +15,13 @@ class EventsController < ApplicationController
       @event.save
     else
       @old_event = Event.find_by(:id=>params[:event][:id])
-      if @old_event.present?
+      if @old_event.present? then
         @old_event.update(params[:event])
+        @event = @old_event
+      else
+        @event = Event.new(params[:event])
+        @event.save
       end
-      @event = Event.new(params[:event])
-      @event.save
     end
     #redirect_to '/calendar/id/:event'
     redirect_to controller: "calendar", action: "index",  id: @event.id, year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
