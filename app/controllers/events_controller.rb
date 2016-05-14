@@ -11,8 +11,9 @@ class EventsController < ApplicationController
   def create
     params.permit!
     if !params[:update_button] then
-      @event = Event.new(params[:event])
-      @event.save
+      @new_event = Event.new(params[:event])
+      @new_event.save
+      @event = @new_event
     else
       @old_event = Event.find_by(:id=>params[:event][:id])
       if @old_event.present? then
@@ -23,6 +24,7 @@ class EventsController < ApplicationController
         @event.save
       end
     end
+
     #redirect_to '/calendar/id/:event'
     redirect_to controller: "calendar", action: "index",  id: @event.id, year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
 #    respond_to do |format|

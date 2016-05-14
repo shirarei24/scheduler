@@ -12,7 +12,7 @@ class CalendarController < ApplicationController
     else
       @event = Event.new
     end
-    #@event = Event.new
+    @new_event = Event.new
     @todo = Todo.all
     #event = args[:event]
     #{}%(<a href="/events/#{event.id}/delete">削除</a>)
