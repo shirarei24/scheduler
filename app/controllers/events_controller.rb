@@ -14,6 +14,46 @@ class EventsController < ApplicationController
       @new_event = Event.new(params[:event])
       @new_event.save
       @event = @new_event
+      if @event.mon==1||@event.tue==1||@event.wed==1||@event.thu==1||@event.fri==1||@event.sat==1||@event.sun==1 then
+        @event.week = @event.id
+        @event.save
+        current_start = @event.start_at+1
+        current_end = @event.end_at+1
+        while current_start.to_date <= @event.deadline do
+          @wevent = Event.new
+          @wevent.week = @event.id
+          @wevent.name = @event.name
+          @wevent.start_at = current_start
+          @wevent.end_at = current_end
+          @wevent.place = @event.place
+          @wevent.person = @event.person
+          @wevent.baggage = @event.baggage
+          @wevent.category = @event.category
+          if current_start.wday == 0 && @event.sun==1 then
+            @wevent.save
+          end
+          if current_start.wday == 1 && @event.mon==1 then
+            @wevent.save
+          end
+          if current_start.wday == 2 && @event.tue==1 then
+            @wevent.save
+          end
+          if current_start.wday == 3 && @event.wed==1 then
+            @wevent.save
+          end
+          if current_start.wday == 4 && @event.thu==1 then
+            @wevent.save
+          end
+          if current_start.wday == 5 && @event.fri==1 then
+            @wevent.save
+          end
+          if current_start.wday == 6 && @event.sat==1 then
+            @wevent.save
+          end
+          current_start = current_start.tomorrow
+          current_end = current_end.tomorrow
+        end
+      end
     else
       @old_event = Event.find_by(:id=>params[:event][:id])
       if @old_event.present? then
