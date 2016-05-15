@@ -10,15 +10,15 @@ class EventsController < ApplicationController
 
   def create
     params.permit!
-    if !params[:update_button] then
+    if !params[:update_button] && !params[:delete_button] && !params[:delete_all_button] then
       @new_event = Event.new(params[:event])
       @new_event.save
       @event = @new_event
       if @event.mon==1||@event.tue==1||@event.wed==1||@event.thu==1||@event.fri==1||@event.sat==1||@event.sun==1 then
         @event.week = @event.id
         @event.save
-        current_start = @event.start_at+1
-        current_end = @event.end_at+1
+        current_start = @event.start_at.tomorrow
+        current_end = @event.end_at.tomorrow
         while current_start.to_date <= @event.deadline do
           @wevent = Event.new
           @wevent.week = @event.id
@@ -54,19 +54,31 @@ class EventsController < ApplicationController
           current_end = current_end.tomorrow
         end
       end
-    else
-      @old_event = Event.find_by(:id=>params[:event][:id])
-      if @old_event.present? then
-        @old_event.update(params[:event])
-        @event = @old_event
+      redirect_to controller: "calendar", action: "index",  id: @event.id, year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
+    elsif params[:update_button] then
+      @event = Event.find_by(:id=>params[:event][:id])
+      if @event.present? then
+        @event.update(params[:event])
       else
         @event = Event.new(params[:event])
         @event.save
       end
+      redirect_to controller: "calendar", action: "index",  id: @event.id, year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
+    elsif params[:delete_button]
+        @event = Event.find_by(:id=>params[:event][:id])
+        @event.destroy
+        redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
+    elsif params[:delete_all_button]
+      @event = Event.find_by(:id=>params[:event][:id])
+      @allevent=Event.where(:week=>@event.week)
+      @allevent.each do |a|
+        a.destroy
+      end
+      redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     end
 
     #redirect_to '/calendar/id/:event'
-    redirect_to controller: "calendar", action: "index",  id: @event.id, year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
+
 #    respond_to do |format|
 #      if @event.save
 #        format.any { redirect_to(@event, :notice => 'Event was successfully created.') }
@@ -81,6 +93,7 @@ class EventsController < ApplicationController
   def update
     @event.update
   end
+
   def show
     @event = Event.find_by(:id => params[:id])
   end

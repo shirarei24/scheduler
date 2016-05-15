@@ -68,7 +68,9 @@
     <%= f.text_field :baggage %></p>
     <p><b><%= f.label :category, "カテゴリ"%></b><br>
     <%= f.text_field :category %></p>
-    <%= f.submit "送信", name:"update_button"%>
+    <%= f.submit "送信", name:"update_button" %>
+    <%= f.submit "削除", name:"delete_button" %>
+    <%= f.submit "全ての繰り返し予定を削除", name:"delete_all_button" %>
 <% end %>
 </div>
 
