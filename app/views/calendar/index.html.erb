@@ -1,27 +1,177 @@
 <!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
 <%= stylesheet_link_tag "event_calendar" %>
+<style>
+  .selected a{
+    background: orange !important
+  }
+</style>
 
 <h1>Today: <%= Date.today %></h1>
-<%= link_to("new", :controller => "events", :action => "new") %>
+<%= link_to("newold", :controller => "events", :action => "new") %>
+<%= link_to 'new', '#', class: 'newopen' %>
+<%= link_to 'edit', '#', class: 'editopen' %>
 <%= raw(event_calendar) %>
 <%#= javascript_include_tag "event_calendar" %>
-<%= render partial: 'detail', locals:{event: @event, id: params[:id]} %>
+<div id=detail><%= render partial: 'detail', locals:{event: @event, id: params[:id]} %></div>
+<div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
 
-<%= link_to 'ここ！', '#', class: 'open' %>
-<div id="modal" style="display:none;">
-  デアルカ
+<div id="newmodal" style="display:none;">
+<%= form_for @new_event, url: '/event/create' do |f| %>
+    <%= f.hidden_field :id %>
+    <p><b><%= f.label :name, "タイトル" %></b><br>
+    <%= f.text_field :name %></p>
+    <p><b><%= f.label :start_at, "開始時刻"%></b><br>
+    <%= f.datetime_select :start_at %></p>
+    <p><b><%= f.label :end_at,"終了時刻" %></b><br>
+    <%= f.datetime_select :end_at %></p>
+    <p><b><%= f.label :place, "場所" %></b><br>
+    <%= f.text_field :place %></p>
+    <p><b><%= f.label :person, "相手" %></b><br>
+    <%= f.text_field :person %></p>
+    <p><b><%= f.label :baggage, "持ち物" %></b><br>
+    <%= f.text_field :baggage %></p>
+    <p><b><%= f.label :category, "カテゴリ"%></b><br>
+    <%= f.text_field :category %></p>
+    <div >
+      <p><b>繰り返し設定</b><br>
+      <%= f.check_box :mon %>
+      <%= f.label :mon, "月" %>
+      <%= f.check_box :tue %>
+      <%= f.label :tue, "火" %>
+      <%= f.check_box :wed %>
+      <%= f.label :wed, "水" %>
+      <%= f.check_box :thu %>
+      <%= f.label :thu, "木" %>
+      <%= f.check_box :fri %>
+      <%= f.label :fri, "金" %>
+      <%= f.check_box :sat %>
+      <%= f.label :sat, "土" %>
+      <%= f.check_box :sun %>
+      <%= f.label :sun, "日" %><br>
+      <%= f.label :deadline, "繰り返し終了" %><br>
+      <%= f.date_select :deadline %>
+    </div>
+    <p><a id="button" href="javascript:;">一括登録</a></p>
+    <div id="addMonth"></div>
+    <%= f.submit "送信"%>
+<% end %>
 </div>
-<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+
+<div id="editmodal" style="display:none;">
+<%#= form_for@event, url: event_path do |f| %>
+<%# @event = @new_event %>
+<%= form_for @event, url: '/event/create' do |f| %>
+    <%= f.hidden_field :id %>
+    <p><b><%= f.label :name, "タイトル" %></b><br>
+    <%= f.text_field :name %></p>
+    <p><b><%= f.label :start_at, "開始時刻"%></b><br>
+    <%= f.datetime_select :start_at %></p>
+    <p><b><%= f.label :end_at,"終了時刻" %></b><br>
+    <%= f.datetime_select :end_at %></p>
+    <p><b><%= f.label :place, "場所" %></b><br>
+    <%= f.text_field :place %></p>
+    <p><b><%= f.label :person, "相手" %></b><br>
+    <%= f.text_field :person %></p>
+    <p><b><%= f.label :baggage, "持ち物" %></b><br>
+    <%= f.text_field :baggage %></p>
+    <p><b><%= f.label :category, "カテゴリ"%></b><br>
+    <%= f.text_field :category %></p>
+    <%= f.submit "送信", name:"update_button" %>
+    <%= f.submit "削除", name:"delete_button" %>
+    <%= f.submit "全ての繰り返し予定を削除", name:"delete_all_button" %>
+<% end %>
+</div>
+
+
+<!-- <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript"> -->
+<script>
   $(function() {
-    $('.open').click(function() {
-      $('#modal').dialog({
+    $('.newopen').click(function() {
+      $('#newmodal').dialog({
         modal: true,
-        title: 'モーダルダイアログ'
+        resizable: true,
+        width: 'auto',
+        title: '新規作成'
+      });
+    });
+    $('.editopen').click(function() {
+      $('#editmodal').dialog({
+        modal: true,
+        resizable: true,
+        width: 'auto',
+        title: '編集'
       });
     });
   });
 </script>
 
 <%#= javascript_include_tag "application" %>
+<script>
+/**
+ * @fileOverview hoge
+ */
+ 
+// Namespace
+var PRJ = PRJ || {};
+ 
+(function($, d, ns){
+    'use strict';
+ 
+    function pad2(arg) {
+        var tmp = '00' + arg;
+ 
+        return tmp.slice(-2, tmp.length);
+    }
+ 
+    var addMonth = {
+        c: {
+            done: '<a href="javascript:;" id="done">決定</a>'
+        },
+        initialize: function() {
+            this.$elm = $('#addMonth');
+            this.$elm.datepicker({
+                onSelect: $.proxy(this.handleSelect, this),
+                beforeShowDay: $.proxy(this.beforeShowDay, this),
+                dateFormat: 'yy/mm/dd'
+            }).hide();
+            this.$done = $(this.c.done);
+            this.$done.click($.proxy(this.handleDone, this));
+            this.$elm.append(this.$done);
+            this.$btn = $('#button');
+            this.$btn.click($.proxy(this.handleClick, this));
+            this.selected = [];
+        },
+        handleClick: function() {
+            this.$elm.show();
+        },
+        handleDone: function() {
+            this.$elm.hide();
+        },
+        handleSelect: function(date) {
+            var index = $.inArray(date, this.selected);
+            if(index == -1) {
+                this.selected.push(date);
+            } else {
+                delete this.selected[index];
+            }
+        },
+        beforeShowDay: function(date) {
+            var theday = date.getFullYear() + '/' +
+                pad2(date.getMonth()+1)+'/'+
+                pad2(date.getDate());
+ 
+            return [true, $.inArray(theday, this.selected)>=0? 'selected':''];
+        }
+    };
+ 
+    // Export
+    ns.addMonth = addMonth;
+ 
+})(jQuery, document, PRJ);
+ 
+$(function() {
+    PRJ.addMonth.initialize();
+});
+</script>

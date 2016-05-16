@@ -7,8 +7,15 @@ class CalendarController < ApplicationController
     @shown_month = Date.civil(@year, @month)
 
     @event_strips = Event.event_strips_for_month(@shown_month)
-    @event = Event.find_by(:id => params[:id])
-    @todo = Todo.all
+    if params[:id] then
+      @event = Event.find_by(:id => params[:id])
+    else
+      @event = Event.new
+    end
+    @new_event = Event.new
+    Todo.order("deadline")
+    @todos = Todo.all.order("deadline")
+    @new_todo = Todo.new
     #event = args[:event]
     #{}%(<a href="/events/#{event.id}/delete">削除</a>)
   end
@@ -26,8 +33,22 @@ class CalendarController < ApplicationController
     end
   end
 
-  def todo
-    redirect_to controller: "calendar"
+  def todoupdate
+    params[:posts].each do |a|
+      if a[:flag] then
+        @todo = Todo.find_by(:id=>a[:id])
+        @todo.destroy
+      end
+    end
+    #Todo.update(params[:posts][:id],　params[:posts][:flag])
+    #flag = session[:order].todo.reload
+    redirect_to :action => 'index'
+  end
 
+  def todocreate
+    params.permit!
+    @todo = Todo.new(params[:todo])
+    @todo.save
+    redirect_to :action => 'index'
   end
 end
