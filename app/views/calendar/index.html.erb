@@ -8,6 +8,7 @@
 <%= raw(event_calendar) %>
 <%#= javascript_include_tag "event_calendar" %>
 <%= render partial: 'detail', locals:{event: @event, id: params[:id]} %>
+<%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %>
 
 <div id="newmodal" style="display:none;">
 <%= form_for @new_event, url: '/event/create' do |f| %>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   patch'event/create' => 'events#create'
   get  'event/create' => 'events#create'
   post 'calendar/new' => 'events#new'
+  post 'calendar/todoupdate' => 'calendar#todoupdate'
+  post 'calendar/todocreate' => 'calendar#todocreate'
 
   get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   get '/calendar/index/:id(/:year(/:month))' => 'calendar#index'
