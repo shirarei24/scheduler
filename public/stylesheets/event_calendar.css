@@ -43,6 +43,8 @@
 .ec-body {
   position: relative;
   border-right: 1px solid #303030;
+  width: 50%;
+  margin-left: auto;
   white-space: nowrap;
 }
 
