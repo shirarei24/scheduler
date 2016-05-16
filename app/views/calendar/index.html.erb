@@ -7,7 +7,17 @@
 <%= link_to 'edit', '#', class: 'open' %>
 <%= raw(event_calendar) %>
 <%#= javascript_include_tag "event_calendar" %>
-<%= render partial: 'detail', locals:{event: @event, id: params[:id]} %>
+<div align="right">
+<h1>メモ</h1>
+<div style="position:absolute; top:645px; left:450px; ">
+<h1>Todolist</h1>
+</div>
+<div style="display:inline-flex">
+<%= render partial: 'memo', locals:{event: @event, id: params[:id]} %>
+<%= render partial: 'list', locals:{event: @event, id: params[:id]} %>
+</div>
+</div>
+<%#= <%= render partial: 'detail', locals:{event: @event, id: params[:id]} %>
 
 <div id="modal" style="display:none;">
 <%#= form_for@event, url: event_path do |f| %>
