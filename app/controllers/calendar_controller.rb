@@ -13,9 +13,9 @@ class CalendarController < ApplicationController
       @event = Event.new
     end
     @new_event = Event.new
-    @todos = Todo.all
+    Todo.order("deadline")
+    @todos = Todo.all.order("deadline")
     @new_todo = Todo.new
-    @todos.order("deadline")
     #event = args[:event]
     #{}%(<a href="/events/#{event.id}/delete">削除</a>)
   end
