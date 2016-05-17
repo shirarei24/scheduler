@@ -1,0 +1,35 @@
+<h1>Todoリスト</h1>
+<%= link_to '新規', '#', class: 'todoedit' %>
+<%= form_tag :action => "todoupdate" do %>
+　<% todos.each do |todo| %>
+  <%= hidden_field_tag "posts[][id]", todo.id %>
+  <%= check_box_tag "posts[][flag]" %>
+　　<b><%= todo.contents %></b>
+　　<%= todo.deadline %><br>
+　<% end %>
+<%= submit_tag "更新" %>
+<% end %>
+
+<div id="todoedit" style="display:none;">
+<%= form_for new_todo, :url => '/calendar/todocreate' do |f| %>
+    <p><b><%= f.label :contents, "タイトル" %></b><br>
+    <%= f.text_field :contents %></p>
+    <p><b><%= f.label :deadline, "期限日"%></b><br>
+    <%= f.datetime_select :deadline %></p>
+    <%= f.submit "送信" %>
+<% end %>
+</div>
+
+
+<script>
+  $(function() {
+    $('.todoedit').click(function() {
+      $('#todoedit').dialog({
+        modal: true,
+        resizable: true,
+        width: 'auto',
+        title: '新規作成'
+      });
+    });
+  });
+</script>
