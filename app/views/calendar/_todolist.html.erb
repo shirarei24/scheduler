@@ -5,17 +5,17 @@
   <%= hidden_field_tag "posts[][id]", todo.id %>
   <%= check_box_tag "posts[][flag]" %>
 　　<b><%= todo.contents %></b>
-　　<%= todo.deadline %><br>
+　　<%= todo.deadline.in_time_zone('Tokyo') %><br>
 　<% end %>
 <%= submit_tag "更新" %>
 <% end %>
 
 <div id="todoedit" style="display:none;">
-<%= form_for new_todo, :url => "calendar/todocreate" do |f| %>
+<%= form_for new_todo, :url => '/calendar/todocreate' do |f| %>
     <p><b><%= f.label :contents, "タイトル" %></b><br>
     <%= f.text_field :contents %></p>
     <p><b><%= f.label :deadline, "期限日"%></b><br>
-    <%= f.datetime_select :deadline %></p>
+    <%= f.datetime_select :deadline, :default => Time.now.in_time_zone('Tokyo') %></p>
     <%= f.submit "送信" %>
 <% end %>
 </div>

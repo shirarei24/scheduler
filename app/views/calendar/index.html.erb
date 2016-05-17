@@ -20,10 +20,10 @@
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
     <%= f.text_field :name %></p>
-    <p><b><%= f.label :start_at, "開始時刻"%></b><br>
-    <%= f.datetime_select :start_at %></p>
+    <p><b><%= f.label :start_at, "開始時刻" %></b><br>
+    <%= f.datetime_select :start_at, :default => Time.now.in_time_zone('Tokyo') %></p>
     <p><b><%= f.label :end_at,"終了時刻" %></b><br>
-    <%= f.datetime_select :end_at %></p>
+    <%= f.datetime_select :end_at, :default => Time.now.in_time_zone('Tokyo') %></p>
     <p><b><%= f.label :place, "場所" %></b><br>
     <%= f.text_field :place %></p>
     <p><b><%= f.label :person, "相手" %></b><br>
@@ -65,9 +65,9 @@
     <p><b><%= f.label :name, "タイトル" %></b><br>
     <%= f.text_field :name %></p>
     <p><b><%= f.label :start_at, "開始時刻"%></b><br>
-    <%= f.datetime_select :start_at %></p>
+    <%= f.datetime_select :start_at, :default => Time.now.in_time_zone('Tokyo') %></p>
     <p><b><%= f.label :end_at,"終了時刻" %></b><br>
-    <%= f.datetime_select :end_at %></p>
+    <%= f.datetime_select :end_at, :default => Time.now.in_time_zone('Tokyo') %></p>
     <p><b><%= f.label :place, "場所" %></b><br>
     <%= f.text_field :place %></p>
     <p><b><%= f.label :person, "相手" %></b><br>

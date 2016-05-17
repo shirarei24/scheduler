@@ -34,10 +34,12 @@ class CalendarController < ApplicationController
   end
 
   def todoupdate
-    params[:posts].each do |a|
-      if a[:flag] then
-        @todo = Todo.find_by(:id=>a[:id])
-        @todo.destroy
+    if params[:posts] then
+      params[:posts].each do |a|
+        if a[:flag] then
+          @todo = Todo.find_by(:id=>a[:id])
+          @todo.destroy
+        end
       end
     end
     #Todo.update(params[:posts][:id],　params[:posts][:flag])
