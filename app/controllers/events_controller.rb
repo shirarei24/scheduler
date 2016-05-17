@@ -70,9 +70,10 @@ class EventsController < ApplicationController
         redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     elsif params[:delete_all_button]
       @event = Event.find_by(:id=>params[:event][:id])
+      delete_start = @event.start_at
       @allevent=Event.where(:week=>@event.week)
       @allevent.each do |a|
-        a.destroy
+        if(a.start_at >= delete_start) then a.destroy end
       end
       redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     end
