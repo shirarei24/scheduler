@@ -5,7 +5,7 @@
   <%= hidden_field_tag "posts[][id]", todo.id %>
   <%= check_box_tag "posts[][flag]" %>
 　　<b><%= todo.contents %></b>
-　　<%= todo.deadline.in_time_zone('Tokyo') %><br>
+　　<%= todo.deadline.in_time_zone('Tokyo').to_s(:published_on) %><br>
 　<% end %>
 <%= submit_tag "更新" %>
 <% end %>
