@@ -6,7 +6,7 @@
   }
 </style>
 
-<h1>Today: <%= Date.today %></h1>
+<h1>今日: <%= Date.today.to_s(:default) %></h1>
 <%= link_to("newold", :controller => "events", :action => "new") %>
 <%= link_to 'new', '#', class: 'newopen' %>
 <%= link_to 'edit', '#', class: 'editopen' %>
@@ -31,7 +31,7 @@
     <p><b><%= f.label :baggage, "持ち物" %></b><br>
     <%= f.text_field :baggage %></p>
     <p><b><%= f.label :category, "カテゴリ"%></b><br>
-    <%= f.text_field :category %></p>
+    <%= f.select :category, [["遊び", 1],["研究室", 2],["バイト", 3],["授業", 4]] %></p>
     <div >
       <p><b>繰り返し設定</b><br>
       <%= f.check_box :mon %>
@@ -49,6 +49,7 @@
       <%= f.check_box :sun %>
       <%= f.label :sun, "日 " %><br>
       <%= f.label :deadline, "繰り返し終了" %><br>
+      <%= raw sprintf(f.datetime_select(:deadline, :default => Time.now.in_time_zone('Tokyo'), :use_month_numbers => true, :date_separator => '%s', :datetime_separator => ' %s', :time_separator => '%s'),'年 ','月 ','日 ','時 ')+'分'%></p>
       <%= f.date_select :deadline %>
     </div>
     <p><a id="button" href="javascript:;">一括登録</a></p>
@@ -75,10 +76,10 @@
     <p><b><%= f.label :baggage, "持ち物" %></b><br>
     <%= f.text_field :baggage %></p>
     <p><b><%= f.label :category, "カテゴリ"%></b><br>
-    <%= f.text_field :category %></p>
+    <%= f.select :category, [["遊び", 1],["研究室", 2],["バイト", 3],["授業", 4]] %></p>
     <%= f.submit "送信", name:"update_button" %>
-    <%= f.submit "削除", name:"delete_button" %>
-    <%= f.submit "全ての繰り返し予定を削除", name:"delete_all_button" %>
+    <%= f.submit "削除", name:"delete_button", data:{:confirm => "本当に削除しますか?"} %>
+    <%= f.submit "全ての繰り返し予定を削除", name:"delete_all_button", data:{:confirm => "本当に削除しますか?"} %>
 <% end %>
 </div>
 
