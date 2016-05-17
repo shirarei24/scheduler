@@ -1,5 +1,10 @@
 <!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
 <%= stylesheet_link_tag "event_calendar" %>
+<style>
+  .selected a{
+    background: orange !important
+  }
+</style>
 
 <h1>Today: <%= Date.today %></h1>
 <%= link_to("newold", :controller => "events", :action => "new") %>
@@ -46,6 +51,8 @@
       <%= f.label :deadline, "繰り返し終了" %><br>
       <%= f.date_select :deadline %>
     </div>
+    <p><a id="button" href="javascript:;">一括登録</a></p>
+    <div id="addMonth"></div>
     <%= f.submit "送信"%>
 <% end %>
 </div>
@@ -101,3 +108,70 @@
 </script>
 
 <%#= javascript_include_tag "application" %>
+<script>
+/**
+ * @fileOverview hoge
+ */
+ 
+// Namespace
+var PRJ = PRJ || {};
+ 
+(function($, d, ns){
+    'use strict';
+ 
+    function pad2(arg) {
+        var tmp = '00' + arg;
+ 
+        return tmp.slice(-2, tmp.length);
+    }
+ 
+    var addMonth = {
+        c: {
+            done: '<a href="javascript:;" id="done">決定</a>'
+        },
+        initialize: function() {
+            this.$elm = $('#addMonth');
+            this.$elm.datepicker({
+                onSelect: $.proxy(this.handleSelect, this),
+                beforeShowDay: $.proxy(this.beforeShowDay, this),
+                dateFormat: 'yy/mm/dd'
+            }).hide();
+            this.$done = $(this.c.done);
+            this.$done.click($.proxy(this.handleDone, this));
+            this.$elm.append(this.$done);
+            this.$btn = $('#button');
+            this.$btn.click($.proxy(this.handleClick, this));
+            this.selected = [];
+        },
+        handleClick: function() {
+            this.$elm.show();
+        },
+        handleDone: function() {
+            this.$elm.hide();
+        },
+        handleSelect: function(date) {
+            var index = $.inArray(date, this.selected);
+            if(index == -1) {
+                this.selected.push(date);
+            } else {
+                delete this.selected[index];
+            }
+        },
+        beforeShowDay: function(date) {
+            var theday = date.getFullYear() + '/' +
+                pad2(date.getMonth()+1)+'/'+
+                pad2(date.getDate());
+ 
+            return [true, $.inArray(theday, this.selected)>=0? 'selected':''];
+        }
+    };
+ 
+    // Export
+    ns.addMonth = addMonth;
+ 
+})(jQuery, document, PRJ);
+ 
+$(function() {
+    PRJ.addMonth.initialize();
+});
+</script>
