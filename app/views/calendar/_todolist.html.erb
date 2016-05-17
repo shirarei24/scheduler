@@ -15,7 +15,7 @@
     <p><b><%= f.label :contents, "タイトル" %></b><br>
     <%= f.text_field :contents %></p>
     <p><b><%= f.label :deadline, "期限日"%></b><br>
-    <%= f.datetime_select :deadline, :default => Time.now.in_time_zone('Tokyo') %></p>
+    <%=raw sprintf(f.datetime_select(:deadline, :default => Time.now.in_time_zone('Tokyo'), :use_month_numbers => true, :date_separator => '%s', :datetime_separator => ' %s', :time_separator => '%s'),'年 ','月 ','日 ','時 ')+'分'%></p>
     <%= f.submit "送信" %>
 <% end %>
 </div>

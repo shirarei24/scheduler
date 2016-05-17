@@ -21,9 +21,9 @@
     <p><b><%= f.label :name, "タイトル" %></b><br>
     <%= f.text_field :name %></p>
     <p><b><%= f.label :start_at, "開始時刻" %></b><br>
-    <%= f.datetime_select :start_at, :default => Time.now.in_time_zone('Tokyo') %></p>
-    <p><b><%= f.label :end_at,"終了時刻" %></b><br>
-    <%= f.datetime_select :end_at, :default => Time.now.in_time_zone('Tokyo') %></p>
+      <%= raw sprintf(f.datetime_select(:start_at, :default => Time.now.in_time_zone('Tokyo'), :use_month_numbers => true, :date_separator => '%s', :datetime_separator => ' %s', :time_separator => '%s'),'年 ','月 ','日 ','時 ')+'分'%></p>
+      <p><b><%= f.label :end_at,"終了時刻" %></b><br>
+      <%= raw sprintf(f.datetime_select(:end_at, :default => Time.now.in_time_zone('Tokyo'), :use_month_numbers => true, :date_separator => '%s', :datetime_separator => ' %s', :time_separator => '%s'),'年 ','月 ','日 ','時 ')+'分'%></p>
     <p><b><%= f.label :place, "場所" %></b><br>
     <%= f.text_field :place %></p>
     <p><b><%= f.label :person, "相手" %></b><br>
@@ -35,19 +35,19 @@
     <div >
       <p><b>繰り返し設定</b><br>
       <%= f.check_box :mon %>
-      <%= f.label :mon, "月" %>
+      <%= f.label :mon, "月 " %>
       <%= f.check_box :tue %>
-      <%= f.label :tue, "火" %>
+      <%= f.label :tue, "火 " %>
       <%= f.check_box :wed %>
-      <%= f.label :wed, "水" %>
+      <%= f.label :wed, "水 " %>
       <%= f.check_box :thu %>
-      <%= f.label :thu, "木" %>
+      <%= f.label :thu, "木 " %>
       <%= f.check_box :fri %>
-      <%= f.label :fri, "金" %>
+      <%= f.label :fri, "金 " %>
       <%= f.check_box :sat %>
-      <%= f.label :sat, "土" %>
+      <%= f.label :sat, "土 " %>
       <%= f.check_box :sun %>
-      <%= f.label :sun, "日" %><br>
+      <%= f.label :sun, "日 " %><br>
       <%= f.label :deadline, "繰り返し終了" %><br>
       <%= f.date_select :deadline %>
     </div>
@@ -65,9 +65,9 @@
     <p><b><%= f.label :name, "タイトル" %></b><br>
     <%= f.text_field :name %></p>
     <p><b><%= f.label :start_at, "開始時刻"%></b><br>
-    <%= f.datetime_select :start_at, :default => Time.now.in_time_zone('Tokyo') %></p>
+    <%= raw sprintf(f.datetime_select(:start_at, :default => Time.now.in_time_zone('Tokyo'), :use_month_numbers => true, :date_separator => '%s', :datetime_separator => ' %s', :time_separator => '%s'),'年 ','月 ','日 ','時 ')+'分'%></p>
     <p><b><%= f.label :end_at,"終了時刻" %></b><br>
-    <%= f.datetime_select :end_at, :default => Time.now.in_time_zone('Tokyo') %></p>
+    <%= raw sprintf(f.datetime_select(:end_at, :default => Time.now.in_time_zone('Tokyo'), :use_month_numbers => true, :date_separator => '%s', :datetime_separator => ' %s', :time_separator => '%s'),'年 ','月 ','日 ','時 ')+'分'%></p>
     <p><b><%= f.label :place, "場所" %></b><br>
     <%= f.text_field :place %></p>
     <p><b><%= f.label :person, "相手" %></b><br>
