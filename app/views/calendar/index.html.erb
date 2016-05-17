@@ -31,7 +31,7 @@
     <p><b><%= f.label :baggage, "持ち物" %></b><br>
     <%= f.text_field :baggage %></p>
     <p><b><%= f.label :category, "カテゴリ"%></b><br>
-    <%= f.select :category, [["遊び", 1],["研究室", 2],["バイト", 3],["授業", 4]] %></p>
+    <%= f.select :category, [["遊び", 1],["研究室", 2],["バイト", 3],["授業", 4],["その他",0]] %></p>
     <div >
       <p><b>繰り返し設定</b><br>
       <%= f.check_box :mon %>
@@ -76,7 +76,7 @@
     <p><b><%= f.label :baggage, "持ち物" %></b><br>
     <%= f.text_field :baggage %></p>
     <p><b><%= f.label :category, "カテゴリ"%></b><br>
-    <%= f.select :category, [["遊び", 1],["研究室", 2],["バイト", 3],["授業", 4]] %></p>
+    <%= f.select :category, [["遊び", 1],["研究室", 2],["バイト", 3],["授業", 4],["その他", 0]] %></p>
     <%= f.submit "送信", name:"update_button" %>
     <%= f.submit "削除", name:"delete_button", data:{:confirm => "本当に削除しますか?"} %>
     <%= f.submit "全ての繰り返し予定を削除", name:"delete_all_button", data:{:confirm => "本当に削除しますか?"} %>
