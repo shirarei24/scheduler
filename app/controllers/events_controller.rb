@@ -7,6 +7,8 @@ class EventsController < ApplicationController
     #  format.html # new.html.erb
     #end
 #  end
+  # require 'repetition_create'
+  # include RepetitionEvents
 
   def create
     params.permit!
@@ -14,7 +16,33 @@ class EventsController < ApplicationController
       @new_event = Event.new(params[:event])
       @new_event.save
       @event = @new_event
-      if @event.mon==1||@event.tue==1||@event.wed==1||@event.thu==1||@event.fri==1||@event.sat==1||@event.sun==1 then
+
+      # For AddMonth
+      # if !@selected.nil?
+      # then
+      #   if !@selected.empty?
+      #   then
+      #     @selected.each do |date|
+      #       @slash_first = date.index('/')
+      #       @slash_second = date.index('/', @slash_first)
+      #
+      #       @year = date[0..@slash_first-1]
+      #       @month = date[@slash_first...@slash_second]
+      #       @day = date[@slash_second+1..date.length]
+      #
+      #       current_start_month = exchange_date(@event.start_at, @year, @month, @date)
+      #       current_end_month = exchange_date(@event.end_at, @year, @month, @date)
+      #
+      #       @mevent = Event.new
+      #       copy_event_almost(@mevent, @event)
+      #       @mevent.start_at = current_start_month
+      #       @mevent.end_at = current_end_month
+      #       @mevent.save
+      #     end
+      #   end
+      # elsif
+      if
+       @event.mon==1||@event.tue==1||@event.wed==1||@event.thu==1||@event.fri==1||@event.sat==1||@event.sun==1 then
         @event.week = @event.id
         @event.save
         current_start = @event.start_at.tomorrow
@@ -70,10 +98,13 @@ class EventsController < ApplicationController
         redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     elsif params[:delete_all_button]
       @event = Event.find_by(:id=>params[:event][:id])
-      delete_start = @event.start_at
-      @allevent=Event.where(:week=>@event.week)
-      @allevent.each do |a|
-        if(a.start_at >= delete_start) then a.destroy end
+      if !@event.week.nil? && !@event.month.nil?
+        then
+        delete_start = @event.start_at
+        @allevent=Event.where(:week=>@event.week)
+        @allevent.each do |a|
+          if(a.start_at >= delete_start) then a.destroy end
+        end
       end
       redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     end
