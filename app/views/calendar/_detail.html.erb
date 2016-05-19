@@ -1,20 +1,31 @@
 <h1>詳細</h1>
 <%= if !event.nil? then form_for event, url:'/calendar/update' do |f| %>
     <%= f.hidden_field :id %>
-    <p><b><%= f.label :name %></b>
-    <%= f.text_field :name %></p>
-    <p><b><%= f.label :start_at %></b>
-    <%= f.datetime_select :start_at %></p>
-    <p><b><%= f.label :end_at %></b>
-    <%= f.datetime_select :end_at %></p>
-    <p><b><%= f.label :place %></b>
-    <%= f.text_field :place %></p>
-    <p><b><%= f.label :person %></b>
-    <%= f.text_field :person %></p>
-    <p><b><%= f.label :baggage %></b>
-    <%= f.text_field :baggage %></p>
-    <p><b><%= f.label :category %></b>
-    <%= f.text_field :category %></p>
-    <%= f.submit "更新"%>
-    <%= submit_tag "削除", name:"delete_button" %>
+    <p><b><%= f.label :name,"タイトル" %></b><br>
+    <%= event.name %></p>
+    <p><b><%= f.label :start_at,"開始時刻" %></b><br>
+    <%= event.start_at.to_s(:published_on) %><br></p>
+    <p><b><%= f.label :end_at,"終了時刻" %></b><br>
+    <%= event.end_at.to_s(:published_on) %><br></p>
+    <p><b><%= f.label :place,"場所" %></b><br>
+    <%= event.place %></p>
+    <p><b><%= f.label :person,"相手" %></b><br>
+    <%= event.person %></p>
+    <p><b><%= f.label :baggage,"持ち物" %></b><br>
+    <%= event.baggage %></p>
+    <p><b><%= f.label :category,"カテゴリ" %></b><br>
+    <% case event.category %>
+    <% when 1 then %>
+    <%= "遊び" %>
+    <% when 2 then %>
+    <%= "研究室" %>
+    <% when 3 then %>
+    <%= "バイト" %>
+    <% when 4 then %>
+    <%= "授業" %>
+    <% else%>
+    <%= "その他" %>
+    <% end %>
+    <%#= f.submit "更新"%>
+    <%#= submit_tag "削除", name:"delete_button" %>
 <% end end%>
