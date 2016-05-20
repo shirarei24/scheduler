@@ -43,11 +43,4 @@ ActiveRecord::Schema.define(version: 20160513063218) do
     t.datetime "updated_at"
   end
 
-  create_table "today",force: :cascade do |t|
-    t.string "plan"
-    t.string "place"
-    t.integer "time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-
 end

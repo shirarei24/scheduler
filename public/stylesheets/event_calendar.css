@@ -1,6 +1,6 @@
-/* 
+/*
   Event Calendar stylesheet
-  
+
   Colors:
   #d5d5d5 - border (gray)
   #303030 - day names bg (gray)
@@ -18,16 +18,14 @@
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 11px;
   line-height: 14px;
-  margin: 0;
-  padding: 0;
+  padding: 0
   border-bottom: 1px solid #d5d5d5;
 }
 
 /* Month name header & links */
 .ec-calendar-header {
   padding: 5px 0;
-  width: 50%;
-  margin-left: auto;
+  width: 100%;
   table-layout: fixed;
 }
 
@@ -44,8 +42,7 @@
 .ec-body {
   position: relative;
   border-right: 1px solid #303030;
-  width: 50%;
-  margin-left: auto;
+  width: 100%;
   white-space: nowrap;
   font-family: Meiryo;
 }
@@ -130,7 +127,7 @@ a.ec-day-link {
 }
 
 .ec-weekend-day-header {
-  
+
 }
 
 .ec-other-month-header {
@@ -139,7 +136,7 @@ a.ec-day-link {
 }
 
 .ec-other-month-bg {
-  
+
 }
 
 
@@ -238,4 +235,20 @@ a.ec-day-link {
   -webkit-border-radius: 2px;
   -khtml-border-radius: 2px;
   -moz-border-radius: 2px;
+}
+
+/* レイアウト */
+#detail{
+  float: left;
+}
+
+#todolist{
+  float: right;
+}
+#table{
+  float: left;
+}
+#group{
+    max-width:  700px;
+  float: right;
 }

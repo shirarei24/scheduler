@@ -13,7 +13,9 @@ class CalendarController < ApplicationController
       @event = Event.new
     end
     @new_event = Event.new
-    @todo = Todo.all
+    Todo.order("deadline")
+    @todos = Todo.all.order("deadline")
+    @new_todo = Todo.new
     #event = args[:event]
     #{}%(<a href="/events/#{event.id}/delete">削除</a>)
   end
@@ -31,8 +33,24 @@ class CalendarController < ApplicationController
     end
   end
 
-  def todo
-    redirect_to controller: "calendar"
+  def todoupdate
+    if params[:posts] then
+      params[:posts].each do |a|
+        if a[:flag] then
+          @todo = Todo.find_by(:id=>a[:id])
+          @todo.destroy
+        end
+      end
+    end
+    #Todo.update(params[:posts][:id],　params[:posts][:flag])
+    #flag = session[:order].todo.reload
+    redirect_to :action => 'index'
+  end
 
+  def todocreate
+    params.permit!
+    @todo = Todo.new(params[:todo])
+    @todo.save
+    redirect_to :action => 'index'
   end
 end
