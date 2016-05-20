@@ -4,9 +4,9 @@
     <p><b><%= f.label :name,"タイトル" %></b><br>
     <%= event.name %></p>
     <p><b><%= f.label :start_at,"開始時刻" %></b><br>
-    <%= event.start_at.to_s(:published_on) %><br></p>
+    <%= event.start_at %><br></p>
     <p><b><%= f.label :end_at,"終了時刻" %></b><br>
-    <%= event.end_at.to_s(:published_on) %><br></p>
+    <%= event.end_at%><br></p>
     <p><b><%= f.label :place,"場所" %></b><br>
     <%= event.place %></p>
     <p><b><%= f.label :person,"相手" %></b><br>
@@ -27,5 +27,6 @@
     <%= "その他" %>
     <% end %>
     <%#= f.submit "更新"%>
+    <%#= .to_s(:published_on)
     <%#= submit_tag "削除", name:"delete_button" %>
 <% end end%>
