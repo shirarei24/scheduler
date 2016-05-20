@@ -1,16 +1,100 @@
 <!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
 <%= stylesheet_link_tag "event_calendar" %>
 
-<h1>Today: <%= Date.today %></h1>
+<h1>スケジューラ</h1>
 <%= link_to("newold", :controller => "events", :action => "new") %>
 <%= link_to 'new', '#', class: 'open' %>
 <%= link_to 'edit', '#', class: 'open' %>
+<div style="display:inline-flex">
+<img src="/img/timelabel2.png" alt="時間" width=100 height=1000>
+</table>
+<br>
+<br>
+<table border>
+<head>
+  <caption>today</caption>
+  <thead>
+  <tr bgcolor="green">
+    <tr><th>予定</th><th>場所</th></tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>ddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+  </tbody>
+  </head>
+</table>
+
+<table border>
+<head>
+  <caption>tomorrow</caption>
+  <thead>
+  <tr bgcolor="green">
+    <tr><th>予定</th><th>場所</th></tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>ddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+  </tbody>
+  </head>
+</table>
+
+<br>
 <%= raw(event_calendar) %>
+</div>
 <%#= javascript_include_tag "event_calendar" %>
+
 <div align="right">
+<div style="position:absolute; top:645px; left:950px; ">
 <h1>メモ</h1>
-<div style="position:absolute; top:645px; left:450px; ">
-<h1>Todolist</h1>
+</div>
+<div style="position:absolute; top:645px; left:1430px; ">
+<h1>Todoリスト</h1>
 </div>
 <div style="display:inline-flex">
 <%= render partial: 'memo', locals:{event: @event, id: params[:id]} %>
