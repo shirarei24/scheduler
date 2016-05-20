@@ -50,3 +50,9 @@ group :development do
 end
 
 gem 'event-calendar', :require => 'event_calendar'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
+group :development do
+	gem 'i18n-tasks'
+end

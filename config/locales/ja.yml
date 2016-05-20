@@ -2,11 +2,34 @@ ja:
   date:
     formats:
       default: "%Y/%m/%d"
+<<<<<<< HEAD
       yyyymm: "%Y年%B"
+=======
+      short: "%m/%d"
+      long: "%Y年%m月%d日(%a)"
+>>>>>>> b76e8f2ce761787c799ada0f44e8df1181c4d4a9
 
     day_names: [日曜日, 月曜日, 火曜日, 水曜日, 木曜日, 金曜日, 土曜日]
     abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
 
+<<<<<<< HEAD
     # Don't forget the nil at the beginning; there's no such thing as a 0th month
     month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+=======
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+
+    order:
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%y/%m/%d %H:%M"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %Z"
+    am: "午前"
+    pm: "午後"
+>>>>>>> b76e8f2ce761787c799ada0f44e8df1181c4d4a9

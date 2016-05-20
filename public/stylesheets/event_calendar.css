@@ -26,7 +26,8 @@
 /* Month name header & links */
 .ec-calendar-header {
   padding: 5px 0;
-  width: 100%;
+  width: 50%;
+  margin-left: auto;
   table-layout: fixed;
 }
 
@@ -43,7 +44,10 @@
 .ec-body {
   position: relative;
   border-right: 1px solid #303030;
+  width: 50%;
+  margin-left: auto;
   white-space: nowrap;
+  font-family: Meiryo;
 }
 
 /* Day names */
@@ -235,6 +239,7 @@ a.ec-day-link {
   -khtml-border-radius: 2px;
   -moz-border-radius: 2px;
 }
+<<<<<<< HEAD
 
 /* レイアウト */
 #detail{
@@ -244,3 +249,5 @@ a.ec-day-link {
 #todolist{
   float: right;
 }
+=======
+>>>>>>> b76e8f2ce761787c799ada0f44e8df1181c4d4a9
