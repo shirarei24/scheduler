@@ -7,11 +7,9 @@
 </style>
 
 <h1>スケジューラ</h1>
-<%= link_to("newold", :controller => "events", :action => "new") %>
-<%= link_to 'new', '#', class: 'open' %>
-<%= link_to 'edit', '#', class: 'open' %>
-<div style="display:inline-flex">
-<img src="/img/timelabel2.png" alt="時間" width=100 height=1000>
+
+<div style="display:inline-flex", id="table">
+<img src="/img/timelabel2.png" alt="時間" width=100 height=500>
 </table>
 <br>
 <br>
@@ -61,7 +59,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr><td><a href="index">1001</a></td><td><%= @event.name %></td></tr>
     <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
     <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
     <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
@@ -90,30 +88,18 @@
 </table>
 
 <br>
->>>>>>> b76e8f2ce761787c799ada0f44e8df1181c4d4a9
-<%= raw(event_calendar) %>
 </div>
 <%#= javascript_include_tag "event_calendar" %>
-<<<<<<< HEAD
+<div id="group">
+<div id="calendar">
+<%#= link_to("newold", :controller => "events", :action => "new") %>
+<%= link_to 'new', '#', class: 'newopen' %>
+<%= link_to 'edit', '#', class: 'editopen' %>
+<%= raw(event_calendar) %>
+</div>
 <div id=detail><%= render partial: 'detail', locals:{event: @event, id: params[:id]} %></div>
 <div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
-=======
-
-<div align="right">
-<div style="position:absolute; top:645px; left:950px; ">
-<h1>メモ</h1>
 </div>
-<div style="position:absolute; top:645px; left:1430px; ">
-<h1>Todoリスト</h1>
-</div>
-<div style="display:inline-flex">
-<%= render partial: 'memo', locals:{event: @event, id: params[:id]} %>
-<%= render partial: 'list', locals:{event: @event, id: params[:id]} %>
-</div>
-</div>
-<%#= <%= render partial: 'detail', locals:{event: @event, id: params[:id]} %>
->>>>>>> b76e8f2ce761787c799ada0f44e8df1181c4d4a9
-
 <div id="newmodal" style="display:none;">
 <%= form_for @new_event, url: '/event/create' do |f| %>
     <%= f.hidden_field :id %>
@@ -150,18 +136,9 @@
       <%= f.label :deadline, "繰り返し終了" %><br>
       <%= raw sprintf(f.date_select(:deadline, :default => Time.now.in_time_zone('Tokyo'), :use_month_numbers => true, :date_separator => '%s'),'年 ','月 ',)+'日'%></p>
     </div>
-<<<<<<< HEAD
     <p><a id="button" href="javascript:;">一括登録</a></p>
     <div id="addMonth"></div>
     <%= f.submit "送信"%>
-=======
-    <%= f.submit "作成"%>
-    <%= submit_tag "更新", name:"update_button" %>
-
-
-
-
->>>>>>> b76e8f2ce761787c799ada0f44e8df1181c4d4a9
 <% end %>
 </div>
 
