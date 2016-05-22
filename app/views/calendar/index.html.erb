@@ -44,15 +44,148 @@ function  selectedDates(){
   }
 </style>
 
-<h1>今日: <%= Date.today.to_s(:default) %></h1>
+<h1>スケジューラ</h1>
+<<<<<<< HEAD
+
+<div style="display:inline-flex", id="table">
+<img src="/img/timelabel2.png" alt="時間" width=100 height=500>
+</table>
+=======
 <%= link_to("newold", :controller => "events", :action => "new") %>
+<%= link_to 'new', '#', class: 'open' %>
+<%= link_to 'edit', '#', class: 'open' %>
+<div style="display:inline-flex">
+<%#= 
+<img src="/img/timelabel2.png" alt="時間" width=100 height=1000>
+</table>%>
+>>>>>>> b54b1d03401a539a7048d658857df144aa3bd310
+<br>
+<br>
+
+<table border="1">
+<head>
+<caption>(H)</caption>
+  <thead>
+  <tr bgcolor="green">
+    <tr><th>時間</th></tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="index">1:00</a></tr>
+    <tr><td><a href="index">2:00</a></tr>
+    <tr><td><a href="index">3:00</a></td></tr>
+    <tr class="odd"><td><a href="index">4:00</a></td></tr>
+    <tr><td><a href="index">5:00</a></td></tr>
+    <tr><td><a href="index">6:00</a></td></tr>
+    <tr class="odd"><td><a href="index">7:00</a></td></tr>
+    <tr><td><a href="index">8:00</a></td></tr>
+    <tr class="odd"><td><a href="index">9:00</a></td></tr>
+    <tr><td><a href="index">10:00</a></td></tr>
+    <tr><td><a href="index">11:00</a></td></tr>
+    <tr class="odd"><td><a href="index">12:00</a></td></tr>
+    <tr><td><a href="index">13:00</a></td></tr>
+    <tr class="odd"><td><a href="index">14:00</a></td></tr>
+    <tr><td><a href="index">15:00</a></td></tr>
+    <tr><td><a href="index">16:00</a></td></tr>
+    <tr class="odd"><td><a href="index">17:00</a></td></tr>
+    <tr><td><a href="index">18:00</a></td></tr>
+    <tr class="odd"><td><a href="index">19:00</a></td></tr>
+    <tr><td><a href="index">20:00</a></td></tr>
+    <tr><td><a href="index">21:00</a></td></tr>
+    <tr class="odd"><td><a href="index">22:00</a></td></tr>
+    <tr><td><a href="index">23:00</a></td></tr>
+    <tr class="odd"><td><a href="index">24:00</a></td></tr>
+  </tbody>
+  </head>
+</table>
+
+<table border>
+<head>
+  <caption>today</caption>
+  <thead>
+  <tr bgcolor="green">
+    <tr><th>予定</th><th>場所</th></tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>ddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+  </tbody>
+  </head>
+</table>
+
+<table border>
+<head>
+  <caption>tomorrow</caption>
+  <thead>
+  <tr bgcolor="green">
+    <tr><th>予定</th><th>場所</th></tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="index">1001</a></td><td><%= @event.name %></td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>ddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
+    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
+    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
+    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+  </tbody>
+  </head>
+</table>
+
+<br>
+</div>
+<%#= javascript_include_tag "event_calendar" %>
+<div id="group">
+<div id="calendar">
+<%#= link_to("newold", :controller => "events", :action => "new") %>
 <%= link_to 'new', '#', class: 'newopen' %>
 <%= link_to 'edit', '#', class: 'editopen' %>
 <%= raw(event_calendar) %>
-<%#= javascript_include_tag "event_calendar" %>
+</div>
 <div id=detail><%= render partial: 'detail', locals:{event: @event, id: params[:id]} %></div>
 <div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
-
+</div>
 <div id="newmodal" style="display:none;">
 <%= form_for @new_event, url: '/event/create', :html => {:onsubmit => "return selectedDates()"} do |f| %>
     <%= f.hidden_field :id %>

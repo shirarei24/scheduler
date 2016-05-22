@@ -18,8 +18,7 @@
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 11px;
   line-height: 14px;
-  margin: 0;
-  padding: 0;
+  padding: 0
   border-bottom: 1px solid #d5d5d5;
 }
 
@@ -43,7 +42,9 @@
 .ec-body {
   position: relative;
   border-right: 1px solid #303030;
+  width: 100%;
   white-space: nowrap;
+  font-family: Meiryo;
 }
 
 /* Day names */
@@ -242,5 +243,12 @@ a.ec-day-link {
 }
 
 #todolist{
+  float: right;
+}
+#table{
+  float: left;
+}
+#group{
+    max-width:  700px;
   float: right;
 }

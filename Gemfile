@@ -55,3 +55,7 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 gem 'coffee-script-source', '1.8.0'
+
+group :development do
+	gem 'i18n-tasks'
+end
