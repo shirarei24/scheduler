@@ -7,8 +7,8 @@ class EventsController < ApplicationController
     #  format.html # new.html.erb
     #end
 #  end
-  # require 'repetition_create'
-  # include RepetitionEvents
+  require 'repetition_create'
+  include RepetitionEvents
 
   def create
     params.permit!
@@ -18,30 +18,45 @@ class EventsController < ApplicationController
       @event = @new_event
 
       # For AddMonth
-      # if !@selected.nil?
-      # then
-      #   if !@selected.empty?
-      #   then
-      #     @selected.each do |date|
-      #       @slash_first = date.index('/')
-      #       @slash_second = date.index('/', @slash_first)
-      #
-      #       @year = date[0..@slash_first-1]
-      #       @month = date[@slash_first...@slash_second]
-      #       @day = date[@slash_second+1..date.length]
-      #
-      #       current_start_month = exchange_date(@event.start_at, @year, @month, @date)
-      #       current_end_month = exchange_date(@event.end_at, @year, @month, @date)
-      #
-      #       @mevent = Event.new
-      #       copy_event_almost(@mevent, @event)
-      #       @mevent.start_at = current_start_month
-      #       @mevent.end_at = current_end_month
-      #       @mevent.save
-      #     end
-      #   end
-      # elsif
-      if
+      selected = params[:selected];
+      if !selected.nil?
+      then
+        if !selected.empty?
+          then
+          @event.week = @event.id
+          @event.save
+          selected.each do |date|
+            if date == "undefined"
+              next
+            end
+            @slash_first = date.index('/')
+            @slash_second = date.index('/', @slash_first+1)
+
+            @year = date[0..@slash_first-1]
+            @month = date[@slash_first+1...@slash_second]
+            @day = date[@slash_second+1..date.length]
+
+            if(@month.first == "0")
+               @month.slice!(0)
+            end
+            if(@day.first == "0")
+              @day.slice!(0)
+            end
+
+            @mevent = Event.new
+            copy_event_almost(@mevent, @event)
+            @mevent.start_at = @event.start_at
+            @mevent.end_at = @event.end_at
+            @mevent.start_at = @mevent.start_at.change(year: @year,
+                                      month: @month, day: @day)
+            @mevent.end_at = @mevent.end_at.change(year: @year,
+                                    month: @month, day: @day)
+            puts @mevent.start_at
+            puts @mevent.end_at
+            @mevent.save
+          end
+        end
+      elsif
        @event.mon==1||@event.tue==1||@event.wed==1||@event.thu==1||@event.fri==1||@event.sat==1||@event.sun==1 then
         @event.week = @event.id
         @event.save
@@ -98,7 +113,7 @@ class EventsController < ApplicationController
         redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     elsif params[:delete_all_button]
       @event = Event.find_by(:id=>params[:event][:id])
-      if !@event.week.nil? && !@event.month.nil?
+      if !@event.week.nil?
         then
         delete_start = @event.start_at
         @allevent=Event.where(:week=>@event.week)
