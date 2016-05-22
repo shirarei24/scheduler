@@ -45,24 +45,21 @@ function  selectedDates(){
 </style>
 
 <h1>スケジューラ</h1>
-<<<<<<< HEAD
 
 <div style="display:inline-flex", id="table">
 <img src="/img/timelabel2.png" alt="時間" width=100 height=500>
 </table>
-=======
 <%= link_to("newold", :controller => "events", :action => "new") %>
 <%= link_to 'new', '#', class: 'open' %>
 <%= link_to 'edit', '#', class: 'open' %>
 <div style="display:inline-flex">
-<%#= 
+<%#=
 <img src="/img/timelabel2.png" alt="時間" width=100 height=1000>
 </table>%>
->>>>>>> b54b1d03401a539a7048d658857df144aa3bd310
 <br>
 <br>
 
-<table border="1">
+<table border="1", onmousedown="mouseDown(this, event); return false;" onmouseup="mouseUp(this, event);" onmousemove="mouseMove(this, event); return false;">
 <head>
 <caption>(H)</caption>
   <thead>
@@ -349,4 +346,90 @@ dates = [];
 $(function() {
     PRJ.addMonth.initialize();
 });
+</script>
+
+<!-- For input with drag -->
+<script>
+var startCell = null;
+// マウスダウンのイベント処理
+function mouseDown(table, e){
+    console.log("Into mouseDown()!!")
+    if (!e) var e = window.event;
+    startCell = e.srcElement? e.srcElement: e.target;
+    if(startCell.tagName != "TD"){
+        startCell = null;
+        return;
+    }
+    mouseMove(table, e);
+}
+
+
+// マウス移動のイベント処理
+function mouseMove(table, e){
+    if (!e) var e = window.event;
+
+    var endCell = e.srcElement?e.srcElement:e.target;
+    if(!(endCell.tagName=="TD" && startCell))
+        return false;
+
+    // セルの位置を取得
+    var from = getCellPos(table, startCell);
+    var to = getCellPos(table, endCell);
+    if(!from || !to)
+        return false;
+
+    // 色を変更
+    var x, y, cells;
+    for(y=0; y<table.rows.length; y++){
+        row = table.rows.item(y);
+        for(x=0; x<row.cells.length; x++){
+            if((from.row-y)*(y-to.row)>=0 && (from.col-x)*(x-to.col)>=0)
+                row.cells.item(x).style.backgroundColor = "#ffdddd";// 選択状態の色
+            else
+                row.cells.item(x).style.backgroundColor = "transparent";// 未選択状態の色
+        }
+    }
+}
+
+
+// tableの中のcellの位置を取得する
+function getCellPos(table, cell){
+    var pos = new Object();
+    if(cell.nodeName == "TD"){
+        var x, y, cells;
+        for(y=0; y<table.rows.length; y++){
+            row = table.rows.item(y);
+            for(x=0; x<row.cells.length; x++){
+                if(row.cells.item(x) == cell){
+                    pos.row = y;
+                    pos.col = x;
+                    return pos;
+                }
+            }
+        }
+    }
+    return null;
+}
+
+
+// マウスアップのイベント処理
+function mouseUp(table, e){
+    if (!e) var e = window.event;
+
+    var endCell = e.srcElement?e.srcElement:e.target;
+    if(!(endCell.tagName=="TD" && startCell))
+        return false;
+
+    // セルの位置を取得
+    var from = getCellPos(table, startCell);
+    var to = getCellPos(table, endCell);
+    if(!from || !to)
+        return false;
+
+    // mouseMoveで選択状態表示の更新をさせないようにする
+    startCell = null;
+
+    // ここに選択後の処理を書く
+    console.log("("+from.col+", "+from.row+") -> ("+to.col+", "+to.row+")");
+}
 </script>
