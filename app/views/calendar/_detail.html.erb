@@ -5,9 +5,9 @@
     <%= event.name %></p>
     <p><b><%= f.label :start_at,"開始時刻" %></b><br>
     <%#= event.start_at.to_s %>
-    <%= if !event.nil? then I18n.localize(event.start_at, :format => :long) end %><br></p>
+    <%= if !event.start_at.nil? then I18n.localize(event.start_at, :format => :long) end %><br></p>
     <p><b><%= f.label :end_at,"終了時刻" %></b><br>
-    <%= if !event.nil? then I18n.localize(event.end_at, :format => :long) end %><br></p>
+    <%= if !event.end_at.nil? then I18n.localize(event.end_at, :format => :long) end %><br></p>
     <p><b><%= f.label :place,"場所" %></b><br>
     <%= event.place %></p>
     <p><b><%= f.label :person,"相手" %></b><br>

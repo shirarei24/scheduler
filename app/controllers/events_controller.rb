@@ -24,7 +24,7 @@ class EventsController < ApplicationController
       when 4 then
         @new_event.color = "#FFD700"
       else
-        
+
       end
 
       @new_event.save
