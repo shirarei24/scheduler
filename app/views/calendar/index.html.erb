@@ -443,6 +443,13 @@ function mouseUp(table, e){
     startCell = null;
 
     // ここに選択後の処理を書く
-    console.log("start: "+time_start+"\n"+"end: "+time_end+"\n");
+    $(function(){
+      $('#newmodal').dialog({
+        modal: true,
+        resizable: true,
+        width: 'auto',
+        title: '新規作成'
+      });
+    });
 }
 </script>
