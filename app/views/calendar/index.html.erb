@@ -1,6 +1,5 @@
 <!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
 <%= stylesheet_link_tag "event_calendar" %>
-
 <script>
 function make_hidden( name, value, formid ){
     var q = document.createElement('input');
@@ -44,57 +43,51 @@ function  selectedDates(){
   }
 </style>
 
-<!-- <table bordercolorlight="white", height = 1000, margin = 20> -->
 <div style="display:inline-flex", id="table">
-<img src="/img/timelabel2.png" alt="時間" width=100 height=500>
-</table>
-<!-- <%= link_to("newold", :controller => "events", :action => "new") %> -->
-<!-- <%= link_to 'new', '#', class: 'open' %>
-<%= link_to 'edit', '#', class: 'open' %> -->
-<div style="display:inline-flex">
-<%#=
-<img src="/img/timelabel2.png" alt="時間" width=100 height=1000>
-</table>%>
-<br>
-<br>
+
+
+
 
 <table border="1", onmousedown="mouseDown(this, event); return false;" onmouseup="mouseUp(this, event);" onmousemove="mouseMove(this, event); return false;">
 <head>
-<caption>h</caption>
+<caption>(H)</caption>
   <thead>
   <tr bgcolor="green">
-    <tr height=65><th></th></tr>
+    <tr><th>時間</th></tr>
     </tr>
   </thead>
   <tbody>
-<!-- <<<<<<< HEAD -->
-    <tr><th style="line-height:3.2" align="right"><a>1:00</a></tr>
-    <tr><th style="line-height:0" align="right"><a>2:00</a></tr>
-    <tr><th style="line-height:3.0" align="right"><a>3:00</a></td></tr>
-    <tr class="odd"><th style="line-height:0" align="right"><a>4:00</a></td></tr>
-    <tr><th style="line-height:3.0" align="right"><a>5:00</a></td></tr>
-    <tr><th style="line-height:0" align="right"><a>6:00</a></td></tr>
-    <tr class="odd"><th style="line-height:3.0" align="right"><a>7:00</a></td></tr>
-    <tr><th style="line-height:0" align="right"><a>8:00</a></td></tr>
-    <tr class="odd"><th style="line-height:3.0" align="right"><a>9:00</a></td></tr>
-    <tr><th style="line-height:0"><a>10:00</a></td></tr>
-    <tr><th style="line-height:3.0"><a>11:00</a></td></tr>
-    <tr class="odd"><th style="line-height:0"><a>12:00</a></td></tr>
-    <tr><th style="line-height:3.0"><a>13:00</a></td></tr>
-    <tr class="odd"><th style="line-height:0"><a>14:00</a></td></tr>
-    <tr><th style="line-height:3.0"><a>15:00</a></td></tr>
-    <tr><th style="line-height:0"><a>16:00</a></td></tr>
-    <tr class="odd"><th style="line-height:3.0"><a>17:00</a></td></tr>
-    <tr><th style="line-height:0"><a>18:00</a></td></tr>
-    <tr class="odd"><th style="line-height:3.0"><a>19:00</a></td></tr>
-    <tr><th style="line-height:0"><a>20:00</a></td></tr>
-    <tr><th style="line-height:3.0"><a>21:00</a></td></tr>
-    <tr class="odd"><th style="line-height:0"><a>22:00</a></td></tr>
-    <tr><th style="line-height:3.0"><a>23:00</a></td></tr>
-    <tr class="odd"><th style="line-height:0"><a>24:00</a></td></tr>
+    <!-- <tr><td><a href="index">1:00</a></td></tr> -->
+    <tr><td>1:00</td></tr>
+    <tr><td>2:00</td></tr>
+    <tr><td>3:00</td></tr>
+    <tr class="odd"><td>4:00</td></tr>
+    <tr><td>5:00</td></tr>
+    <tr><td>6:00</td></tr>
+    <tr class="odd"><td>7:00</td></tr>
+    <tr><td>8:00</td></tr>
+    <tr class="odd"><td>9:00</td></tr>
+    <tr><td>10:00</td></tr>
+    <tr><td>11:00</td></tr>
+    <tr class="odd"><td>12:00</td></tr>
+    <tr><td>13:00</td></tr>
+    <tr class="odd"><td>14:00</td></tr>
+    <tr><td>15:00</td></tr>
+    <tr><td>16:00</td></tr>
+    <tr class="odd"><td>17:00</td></tr>
+    <tr><td>18:00</td></tr>
+    <tr class="odd"><td>19:00</td></tr>
+    <tr><td>20:00</td></tr>
+    <tr><td>21:00</td></tr>
+    <tr class="odd"><td>22:00</td></tr>
+    <tr><td>23:00</td></tr>
+    <tr class="odd"><td>24:00</td></tr>
   </tbody>
   </head>
 </table>
+
+
+
 
 <table border width=160, height=1000 >
 <head>
@@ -197,6 +190,9 @@ function  selectedDates(){
 <div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
 </div>
 <div id="newmodal" style="display:none;">
+<%= javascript_tag do %>
+"alert("2")"; 
+<% end %>
 <%= form_for @new_event, url: '/event/create', :html => {:onsubmit => "return selectedDates()"} do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
@@ -241,6 +237,7 @@ function  selectedDates(){
 <div id="editmodal" style="display:none;">
 <%#= form_for@event, url: event_path do |f| %>
 <%# @event = @new_event %>
+    %input{:type => "hidden", :hoge => "memo", "data-bind" => "value: time_start"}
 <%= form_for @event, url: '/event/create' do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
@@ -365,10 +362,6 @@ $(function() {
 <!-- ++++++++++++ For input with drag ++++++++++++++++++ -->
 <script>
 var startCell = null;
-
-
-
-
 // tableの中のcellの位置を取得する
 function getCellPos(table, cell){
     var pos = new Object();
@@ -432,28 +425,25 @@ function mouseDown(table, e){
 
 
 // マウスアップのイベント処理
+
+// マウスアップのイベント処理
 function mouseUp(table, e){
     if (!e) var e = window.event;
-
     var endCell = e.target;
     if(!(endCell.tagName=="TD" && startCell)){
         return false;
     }
-
     // セルの位置を取得
     var from = getCellPos(table, startCell);
     var to = getCellPos(table, endCell);
     if(!from || !to){
         return false;
     }
-
     // セル内の文字を取得
     var time_start = startCell.innerText
     var time_end = endCell.innerText
-
     // mouseMoveで選択状態表示の更新をさせないようにする
     startCell = null;
-
     // ここに選択後の処理を書く
     $(function(){
       $('#newmodal').dialog({
