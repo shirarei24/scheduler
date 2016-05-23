@@ -1,5 +1,43 @@
 <!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
 <%= stylesheet_link_tag "event_calendar" %>
+
+<script>
+function make_hidden( name, value, formid ){
+    var q = document.createElement('input');
+    q.type = 'hidden';
+    q.name = name;
+    q.value = value;
+    if (formid){
+      var elm = document.getElementById(formid);
+      elm.appendChild(q);
+    }
+    else{
+      document.forms[0].appendChild(q);
+    }
+    // if (formname){ document.forms[formname].appendChild(q); }
+    // else{ document.forms[0].appendChild(q); }
+}
+
+function delete_hidden( name, value, formname ){
+    var dom_obj_array = window.document.getElementsByName(name);
+    for (var i=0; i<dom_obj_array.length; i++){
+        if ( dom_obj_array[i].value === value ){
+            element = dom_obj_array[i];
+            element.parentNode.removeChild(element);
+        }
+    }
+}
+</script>
+
+<script>
+function  selectedDates(){
+
+  $.each(dates, function(index, value){
+    make_hidden('selected[]', value, 'new_event');
+  });
+  return true;
+}
+</script>
 <style>
   .selected a{
     background: orange !important
@@ -148,7 +186,7 @@
 <div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
 </div>
 <div id="newmodal" style="display:none;">
-<%= form_for @new_event, url: '/event/create' do |f| %>
+<%= form_for @new_event, url: '/event/create', :html => {:onsubmit => "return selectedDates()"} do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
     <%= f.text_field :name %></p>
@@ -183,8 +221,8 @@
       <%= f.label :deadline, "繰り返し終了" %><br>
       <%= raw sprintf(f.date_select(:deadline, :default => Time.now.in_time_zone('Tokyo'), :use_month_numbers => true, :date_separator => '%s'),'年 ','月 ',)+'日'%></p>
     </div>
-    <p><a id="button" href="javascript:;">一括登録</a></p>
-    <div id="addMonth"></div>
+    <p><b><a id="button" href="javascript:;">一括登録</a></b></p>
+    <p><div id="addMonth"></div></p>
     <%= f.submit "送信"%>
 <% end %>
 </div>
@@ -240,14 +278,16 @@
 </script>
 
 <%#= javascript_include_tag "application" %>
+
+
+
 <script>
-/**
- * @fileOverview hoge
- */
- 
 // Namespace
+
+// var sel = document.getElementById('addMonth');
 var PRJ = PRJ || {};
- 
+dates = [];
+
 (function($, d, ns){
     'use strict';
  
@@ -259,7 +299,7 @@ var PRJ = PRJ || {};
  
     var addMonth = {
         c: {
-            done: '<a href="javascript:;" id="done">決定</a>'
+            done: '<a href="javascript:;" id="done">非表示</a>'
         },
         initialize: function() {
             this.$elm = $('#addMonth');
@@ -285,8 +325,10 @@ var PRJ = PRJ || {};
             var index = $.inArray(date, this.selected);
             if(index == -1) {
                 this.selected.push(date);
+                dates.push(date);
             } else {
                 delete this.selected[index];
+                delete dates[index];
             }
         },
         beforeShowDay: function(date) {

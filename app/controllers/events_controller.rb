@@ -7,6 +7,8 @@ class EventsController < ApplicationController
     #  format.html # new.html.erb
     #end
 #  end
+  require 'repetition_create'
+  include RepetitionEvents
 
   def create
     params.permit!
@@ -27,7 +29,48 @@ class EventsController < ApplicationController
 
       @new_event.save
       @event = @new_event
-      if @event.mon==1||@event.tue==1||@event.wed==1||@event.thu==1||@event.fri==1||@event.sat==1||@event.sun==1 then
+
+      # For AddMonth
+      selected = params[:selected];
+      if !selected.nil?
+      then
+        if !selected.empty?
+          then
+          @event.week = @event.id
+          @event.save
+          selected.each do |date|
+            if date == "undefined"
+              next
+            end
+            @slash_first = date.index('/')
+            @slash_second = date.index('/', @slash_first+1)
+
+            @year = date[0..@slash_first-1]
+            @month = date[@slash_first+1...@slash_second]
+            @day = date[@slash_second+1..date.length]
+
+            if(@month.first == "0")
+               @month.slice!(0)
+            end
+            if(@day.first == "0")
+              @day.slice!(0)
+            end
+
+            @mevent = Event.new
+            copy_event_almost(@mevent, @event)
+            @mevent.start_at = @event.start_at
+            @mevent.end_at = @event.end_at
+            @mevent.start_at = @mevent.start_at.change(year: @year,
+                                      month: @month, day: @day)
+            @mevent.end_at = @mevent.end_at.change(year: @year,
+                                    month: @month, day: @day)
+            puts @mevent.start_at
+            puts @mevent.end_at
+            @mevent.save
+          end
+        end
+      elsif
+       @event.mon==1||@event.tue==1||@event.wed==1||@event.thu==1||@event.fri==1||@event.sat==1||@event.sun==1 then
         @event.week = @event.id
         @event.save
         current_start = @event.start_at.tomorrow
@@ -95,10 +138,13 @@ class EventsController < ApplicationController
         redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     elsif params[:delete_all_button]
       @event = Event.find_by(:id=>params[:event][:id])
-      delete_start = @event.start_at
-      @allevent=Event.where(:week=>@event.week)
-      @allevent.each do |a|
-        if(a.start_at >= delete_start) then a.destroy end
+      if !@event.week.nil?
+        then
+        delete_start = @event.start_at
+        @allevent=Event.where(:week=>@event.week)
+        @allevent.each do |a|
+          if(a.start_at >= delete_start) then a.destroy end
+        end
       end
       redirect_to controller: "calendar", year: params[:event]["start_at(1i)"], month: params[:event]["start_at(2i)"]
     end
