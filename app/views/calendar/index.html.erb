@@ -44,11 +44,21 @@ function  selectedDates(){
   }
 </style>
 
+<!-- <table bordercolorlight="white", height = 1000, margin = 20> -->
 <div style="display:inline-flex", id="table">
+<img src="/img/timelabel2.png" alt="時間" width=100 height=500>
+</table>
+<!-- <%= link_to("newold", :controller => "events", :action => "new") %> -->
+<!-- <%= link_to 'new', '#', class: 'open' %>
+<%= link_to 'edit', '#', class: 'open' %> -->
+<div style="display:inline-flex">
+<%#=
+<img src="/img/timelabel2.png" alt="時間" width=100 height=1000>
+</table>%>
 <br>
 <br>
 
-<table bordercolorlight="white", height = 1000, margin = 20>
+<table border="1", onmousedown="mouseDown(this, event); return false;" onmouseup="mouseUp(this, event);" onmousemove="mouseMove(this, event); return false;">
 <head>
 <caption>h</caption>
   <thead>
@@ -57,6 +67,7 @@ function  selectedDates(){
     </tr>
   </thead>
   <tbody>
+<!-- <<<<<<< HEAD -->
     <tr><th style="line-height:3.2" align="right"><a>1:00</a></tr>
     <tr><th style="line-height:0" align="right"><a>2:00</a></tr>
     <tr><th style="line-height:3.0" align="right"><a>3:00</a></td></tr>
@@ -348,4 +359,109 @@ dates = [];
 $(function() {
     PRJ.addMonth.initialize();
 });
+</script>
+
+
+<!-- ++++++++++++ For input with drag ++++++++++++++++++ -->
+<script>
+var startCell = null;
+
+
+
+
+// tableの中のcellの位置を取得する
+function getCellPos(table, cell){
+    var pos = new Object();
+    if(cell.nodeName == "TD"){
+        var x, y, cells;
+        for(y=0; y<table.rows.length; y++){
+            row = table.rows.item(y);
+            for(x=0; x<row.cells.length; x++){
+                if(row.cells.item(x) == cell){
+                    pos.row = y;
+                    pos.col = x;
+                    return pos;
+                }
+            }
+        }
+    }
+    return null;
+}
+
+
+// マウス移動のイベント処理
+function mouseMove(table, e){
+    if (!e) var e = window.event;
+
+    var endCell = e.target;
+    if(!(endCell.tagName=="TD" && startCell)){
+      return false;
+    }
+
+    // セルの位置を取得
+    var from = getCellPos(table, startCell);
+    var to = getCellPos(table, endCell);
+    if(!from || !to){
+        return false;
+    }
+
+    // 色を変更
+    var x, y, cells;
+    for(y=0; y<table.rows.length; y++){
+        row = table.rows.item(y);
+        for(x=0; x<row.cells.length; x++){
+            if((from.row-y)*(y-to.row)>=0 && (from.col-x)*(x-to.col)>=0)
+                row.cells.item(x).style.backgroundColor = "#ffdddd";// 選択状態の色
+            else
+                row.cells.item(x).style.backgroundColor = "transparent";// 未選択状態の色
+        }
+    }
+}
+
+
+// マウスダウンのイベント処理
+function mouseDown(table, e){
+    if (!e) var e = window.event;
+    startCell = e.target;
+    if(startCell.tagName != "TD"){
+        startCell = null;
+        return;
+    }
+    mouseMove(table, e);
+}
+
+
+// マウスアップのイベント処理
+function mouseUp(table, e){
+    if (!e) var e = window.event;
+
+    var endCell = e.target;
+    if(!(endCell.tagName=="TD" && startCell)){
+        return false;
+    }
+
+    // セルの位置を取得
+    var from = getCellPos(table, startCell);
+    var to = getCellPos(table, endCell);
+    if(!from || !to){
+        return false;
+    }
+
+    // セル内の文字を取得
+    var time_start = startCell.innerText
+    var time_end = endCell.innerText
+
+    // mouseMoveで選択状態表示の更新をさせないようにする
+    startCell = null;
+
+    // ここに選択後の処理を書く
+    $(function(){
+      $('#newmodal').dialog({
+        modal: true,
+        resizable: true,
+        width: 'auto',
+        title: '新規作成'
+      });
+    });
+}
 </script>
