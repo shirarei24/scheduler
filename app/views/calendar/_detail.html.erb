@@ -1,12 +1,13 @@
 <h1>詳細</h1>
-<%= if !event.nil? then form_for event, url:'/calendar/update' do |f| %>
+<%= if event.present? then form_for event, url:'/calendar/update' do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name,"タイトル" %></b><br>
     <%= event.name %></p>
     <p><b><%= f.label :start_at,"開始時刻" %></b><br>
-    <%= event.start_at %><br></p>
+    <%#= event.start_at.to_s %>
+    <%= if !event.nil? then I18n.localize(event.start_at, :format => :long) end %><br></p>
     <p><b><%= f.label :end_at,"終了時刻" %></b><br>
-    <%= event.end_at%><br></p>
+    <%= if !event.nil? then I18n.localize(event.end_at, :format => :long) end %><br></p>
     <p><b><%= f.label :place,"場所" %></b><br>
     <%= event.place %></p>
     <p><b><%= f.label :person,"相手" %></b><br>
@@ -25,7 +26,8 @@
     <%= "授業" %>
     <% else%>
     <%= "その他" %>
-    <% end %>
+    <% end %><br><br>
+    <%= link_to '編集', '#', class: 'editopen' %>
     <%#= f.submit "更新"%>
     <%#= .to_s(:published_on)
     <%#= submit_tag "削除", name:"delete_button" %>

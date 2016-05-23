@@ -1,11 +1,15 @@
 class CalendarController < ApplicationController
 
   def index
+    @ar = ["apple", "orange"]
     @month = (params[:month] || (Time.zone || Time).now.month).to_i
     @year = (params[:year] || (Time.zone || Time).now.year).to_i
 
     @shown_month = Date.civil(@year, @month)
+    from = DateTime.now.at_beginning_of_day
+    to = DateTime.tomorrow.at_beginning_of_day
 
+    @today_event = Event.where(start_at: from...to).order(start_at: :desc)
     @event_strips = Event.event_strips_for_month(@shown_month)
     if params[:id] then
       @event = Event.find_by(:id => params[:id])

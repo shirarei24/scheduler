@@ -12,6 +12,19 @@ class EventsController < ApplicationController
     params.permit!
     if !params[:update_button] && !params[:delete_button] && !params[:delete_all_button] then
       @new_event = Event.new(params[:event])
+      case @new_event.category
+      when 1 then
+        @new_event.color = "#32CD32"
+      when 2 then
+        @new_event.color = "#FF6347"
+      when 3 then
+        @new_event.color = "#4682B4"
+      when 4 then
+        @new_event.color = "#FFD700"
+      else
+        
+      end
+
       @new_event.save
       @event = @new_event
       if @event.mon==1||@event.tue==1||@event.wed==1||@event.thu==1||@event.fri==1||@event.sat==1||@event.sun==1 then
@@ -59,6 +72,18 @@ class EventsController < ApplicationController
       @event = Event.find_by(:id=>params[:event][:id])
       if @event.present? then
         @event.update(params[:event])
+        case (params[:event][:category])
+        when '1' then
+          c = "#32CD32"
+        when '2' then
+          c = "#FF6347"
+        when '3' then
+          c = "#4682B4"
+        when '4' then
+          c = "#FFD700"
+        else
+        end
+        @event.update(:color => c)
       else
         @event = Event.new(params[:event])
         @event.save

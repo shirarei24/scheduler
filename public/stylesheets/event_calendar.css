@@ -18,7 +18,8 @@
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 11px;
   line-height: 14px;
-  padding: 0
+  padding: 0;
+  margin: 0;
   border-bottom: 1px solid #d5d5d5;
 }
 
@@ -243,12 +244,15 @@ a.ec-day-link {
 }
 
 #todolist{
+  max-width:  50%;
   float: right;
 }
 #table{
+  /*color: white; */
+  max-width:  50%;
   float: left;
 }
 #group{
-    max-width:  700px;
+    max-width: 50%;
   float: right;
 }

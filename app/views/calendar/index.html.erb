@@ -5,31 +5,16 @@
     background: orange !important
   }
 </style>
-
-<h1>スケジューラ</h1>
-<<<<<<< HEAD
-
 <div style="display:inline-flex", id="table">
-<img src="/img/timelabel2.png" alt="時間" width=100 height=500>
-</table>
-=======
-<%= link_to("newold", :controller => "events", :action => "new") %>
-<%= link_to 'new', '#', class: 'open' %>
-<%= link_to 'edit', '#', class: 'open' %>
-<div style="display:inline-flex">
-<%#= 
-<img src="/img/timelabel2.png" alt="時間" width=100 height=1000>
-</table>%>
->>>>>>> b54b1d03401a539a7048d658857df144aa3bd310
 <br>
 <br>
 
-<table border="1">
+<table border="1", height = 1000, margin = 20>
 <head>
-<caption>(H)</caption>
+<caption></caption>
   <thead>
   <tr bgcolor="green">
-    <tr><th>時間</th></tr>
+    <tr height=65><th></th></tr>
     </tr>
   </thead>
   <tbody>
@@ -61,16 +46,16 @@
   </head>
 </table>
 
-<table border>
+<table border=1, width=160, height=1000 >
 <head>
-  <caption>today</caption>
+  <caption><%= I18n.localize(Date.today, :format => :short) %></caption>
   <thead>
   <tr bgcolor="green">
     <tr><th>予定</th><th>場所</th></tr>
     </tr>
   </thead>
   <tbody>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
+    <tr><td><a href="index">1001</a></td><td></td></tr>
     <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
     <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
     <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
@@ -98,9 +83,11 @@
   </head>
 </table>
 
-<table border>
+
+
+<table border=1, width=160, height=1000>
 <head>
-  <caption>tomorrow</caption>
+  <caption><%= I18n.localize(Date.tomorrow, :format => :short) %></caption>
   <thead>
   <tr bgcolor="green">
     <tr><th>予定</th><th>場所</th></tr>
@@ -141,8 +128,7 @@
 <div id="group">
 <div id="calendar">
 <%#= link_to("newold", :controller => "events", :action => "new") %>
-<%= link_to 'new', '#', class: 'newopen' %>
-<%= link_to 'edit', '#', class: 'editopen' %>
+<%= link_to '新規', '#', class: 'newopen' %>
 <%= raw(event_calendar) %>
 </div>
 <div id=detail><%= render partial: 'detail', locals:{event: @event, id: params[:id]} %></div>
