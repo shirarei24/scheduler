@@ -1,6 +1,5 @@
 <!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
 <%= stylesheet_link_tag "event_calendar" %>
-
 <script>
 function make_hidden( name, value, formid ){
     var q = document.createElement('input');
@@ -44,20 +43,10 @@ function  selectedDates(){
   }
 </style>
 
-<h1>スケジューラ</h1>
-
 <div style="display:inline-flex", id="table">
-<img src="/img/timelabel2.png" alt="時間" width=100 height=500>
-</table>
-<!-- <%= link_to("newold", :controller => "events", :action => "new") %> -->
-<!-- <%= link_to 'new', '#', class: 'open' %>
-<%= link_to 'edit', '#', class: 'open' %> -->
-<div style="display:inline-flex">
-<%#=
-<img src="/img/timelabel2.png" alt="時間" width=100 height=1000>
-</table>%>
-<br>
-<br>
+
+
+
 
 <table border="1", onmousedown="mouseDown(this, event); return false;" onmouseup="mouseUp(this, event);" onmousemove="mouseMove(this, event); return false;">
 <head>
@@ -70,80 +59,97 @@ function  selectedDates(){
   <tbody>
     <!-- <tr><td><a href="index">1:00</a></td></tr> -->
     <tr><td>1:00</td></tr>
-    <tr><td><a href="index">2:00</a></td></tr>
-    <tr><td><a href="index">3:00</a></td></tr>
-    <tr class="odd"><td><a href="index">4:00</a></td></tr>
-    <tr><td><a href="index">5:00</a></td></tr>
-    <tr><td><a href="index">6:00</a></td></tr>
-    <tr class="odd"><td><a href="index">7:00</a></td></tr>
-    <tr><td><a href="index">8:00</a></td></tr>
-    <tr class="odd"><td><a href="index">9:00</a></td></tr>
-    <tr><td><a href="index">10:00</a></td></tr>
-    <tr><td><a href="index">11:00</a></td></tr>
-    <tr class="odd"><td><a href="index">12:00</a></td></tr>
-    <tr><td><a href="index">13:00</a></td></tr>
-    <tr class="odd"><td><a href="index">14:00</a></td></tr>
-    <tr><td><a href="index">15:00</a></td></tr>
-    <tr><td><a href="index">16:00</a></td></tr>
-    <tr class="odd"><td><a href="index">17:00</a></td></tr>
-    <tr><td><a href="index">18:00</a></td></tr>
-    <tr class="odd"><td><a href="index">19:00</a></td></tr>
-    <tr><td><a href="index">20:00</a></td></tr>
-    <tr><td><a href="index">21:00</a></td></tr>
-    <tr class="odd"><td><a href="index">22:00</a></td></tr>
-    <tr><td><a href="index">23:00</a></td></tr>
-    <tr class="odd"><td><a href="index">24:00</a></td></tr>
+    <tr><td>2:00</td></tr>
+    <tr><td>3:00</td></tr>
+    <tr class="odd"><td>4:00</td></tr>
+    <tr><td>5:00</td></tr>
+    <tr><td>6:00</td></tr>
+    <tr class="odd"><td>7:00</td></tr>
+    <tr><td>8:00</td></tr>
+    <tr class="odd"><td>9:00</td></tr>
+    <tr><td>10:00</td></tr>
+    <tr><td>11:00</td></tr>
+    <tr class="odd"><td>12:00</td></tr>
+    <tr><td>13:00</td></tr>
+    <tr class="odd"><td>14:00</td></tr>
+    <tr><td>15:00</td></tr>
+    <tr><td>16:00</td></tr>
+    <tr class="odd"><td>17:00</td></tr>
+    <tr><td>18:00</td></tr>
+    <tr class="odd"><td>19:00</td></tr>
+    <tr><td>20:00</td></tr>
+    <tr><td>21:00</td></tr>
+    <tr class="odd"><td>22:00</td></tr>
+    <tr><td>23:00</td></tr>
+    <tr class="odd"><td>24:00</td></tr>
   </tbody>
   </head>
 </table>
 
-<table border>
+
+
+
+<table border width=160, height=1000 >
 <head>
-  <caption>today</caption>
+  <caption><%= I18n.localize(Date.today, :format => :short) %></caption>
   <thead>
-  <tr bgcolor="green">
-    <tr><th>予定</th><th>場所</th></tr>
+  <tr>
+    <tr height = "38"><th>予定</th><th>場所</th><th>相手</th></tr>
     </tr>
   </thead>
   <tbody>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>ddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[0].nil? then @today[0].name end %></a></td><td><%= if !@today[0].nil? then @today[0].place else "\n" end %></td><th></th>
+    <tr class="odd"  height = "38"><td><a href="index"><%= if !@today[1].nil? then @today[1].name end %></a></td><td><%= if !@today[1].nil? then @today[1].place end %></td></tr>
+    <tr height = "40"><td><a href="index"><%= if !@today[2].nil? then @today[2].name end %></a></td><td><%= if !@today[2].nil? then @today[2].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[3].nil? then @today[3].name end %></a></td><td><%= if !@today[3].nil? then @today[3].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[4].nil? then @today[4].name end %></a></td><td><%= if !@today[4].nil? then @today[4].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[5].nil? then @today[5].name end %></a></td><td><%= if !@today[5].nil? then @today[5].place end %></td></tr>
+    <tr height = "38" class="odd"><td><a href="index"><%= if !@today[6].nil? then @today[6].name end %></a></td><td><%= if !@today[6].nil? then @today[6].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[7].nil? then @today[7].name end %></a></td><td><%= if !@today[7].nil? then @today[7].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[8].nil? then @today[8].name end %></a></td><td><%= if !@today[8].nil? then @today[8].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[9].nil? then @today[9].name end %></a></td><td><%= if !@today[9].nil? then @today[9].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[10].nil? then @today[10].name end %></a></td><td><%= if !@today[10].nil? then @today[10].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[11].nil? then @today[11].name end %></a></td><td><%= if !@today[11].nil? then @today[11].place end %></td></tr>
+    <tr height = "38"><td><a href="index"></a><%= if !@today[12].nil? then @today[12].name end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[13].nil? then @today[13].name end %></a></td><td><%= if !@today[13].nil? then @today[13].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[14].nil? then @today[14].name end %></a></td><td><%= if !@today[14].nil? then @today[14].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[15].nil? then @today[15].name end %></a></td><td><%= if !@today[15].nil? then @today[15].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[16].nil? then @today[16].name end %></a></td><td><%= if !@today[16].nil? then @today[16].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[17].nil? then @today[17].name end %></a></td><td><%= if !@today[17].nil? then @today[17].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[18].nil? then @today[18].name end %></a></td><td><%= if !@today[18].nil? then @today[18].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[19].nil? then @today[19].name end %></a></td><td><%= if !@today[19].nil? then @today[19].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[20].nil? then @today[20].name end %></a></td><td><%= if !@today[20].nil? then @today[20].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[21].nil? then @today[21].name end %></a></td><td><%= if !@today[21].nil? then @today[21].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[22].nil? then @today[22].name end %></a></td><td><%= if !@today[22].nil? then @today[22].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[23].nil? then @today[23].name end %></a></td><td><%= if !@today[23].nil? then @today[23].place end %></td></tr>
   </tbody>
   </head>
 </table>
 
-<table border>
+<table border, width=160, height=1000>
+
 <head>
-  <caption>tomorrow</caption>
+  <caption><%= I18n.localize(Date.tomorrow, :format => :short) %></caption>
   <thead>
-  <tr bgcolor="green">
-    <tr><th>予定</th><th>場所</th></tr>
+  <tr>
+    <tr><th>予定</th><th>場所</th><th>相手</th></tr>
     </tr>
   </thead>
   <tbody>
-    <tr><td><a href="index">1001</a></td><td><%= @event.name %></td></tr>
+  <% if @event.category == 1 %>
+    <tr bgcolor="green"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+    <% elsif @event.category == 2 %>
+      <tr bgcolor="blue"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+    <% elsif @event.category == 3 %>
+      <tr bgcolor="red"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+    <% elsif @event.category == 4 %>
+      <tr bgcolor="yellow"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+    <% elsif @event.category == 5 %>
+      <tr bgcolor="magenta"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+      <% else %>
+    <tr><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th></tr>
+    <% end %>
+
     <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
     <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
     <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
@@ -177,14 +183,16 @@ function  selectedDates(){
 <div id="group">
 <div id="calendar">
 <%#= link_to("newold", :controller => "events", :action => "new") %>
-<%= link_to 'new', '#', class: 'newopen' %>
-<%= link_to 'edit', '#', class: 'editopen' %>
+<%= link_to '新規', '#', class: 'newopen' %>
 <%= raw(event_calendar) %>
 </div>
 <div id=detail><%= render partial: 'detail', locals:{event: @event, id: params[:id]} %></div>
 <div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
 </div>
 <div id="newmodal" style="display:none;">
+<%= javascript_tag do %>
+"alert("2")";
+<% end %>
 <%= form_for @new_event, url: '/event/create', :html => {:onsubmit => "return selectedDates()"} do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
@@ -229,6 +237,7 @@ function  selectedDates(){
 <div id="editmodal" style="display:none;">
 <%#= form_for@event, url: event_path do |f| %>
 <%# @event = @new_event %>
+    %input{:type => "hidden", :hoge => "memo", "data-bind" => "value: time_start"}
 <%= form_for @event, url: '/event/create' do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
@@ -277,8 +286,6 @@ function  selectedDates(){
 </script>
 
 <%#= javascript_include_tag "application" %>
-
-
 
 <script>
 // Namespace
@@ -352,10 +359,6 @@ $(function() {
 <!-- ++++++++++++ For input with drag ++++++++++++++++++ -->
 <script>
 var startCell = null;
-
-
-
-
 // tableの中のcellの位置を取得する
 function getCellPos(table, cell){
     var pos = new Object();
@@ -419,14 +422,14 @@ function mouseDown(table, e){
 
 
 // マウスアップのイベント処理
+
+// マウスアップのイベント処理
 function mouseUp(table, e){
     if (!e) var e = window.event;
-
     var endCell = e.target;
     if(!(endCell.tagName=="TD" && startCell)){
         return false;
     }
-
     // セルの位置を取得
     var from = getCellPos(table, startCell);
     var to = getCellPos(table, endCell);
@@ -484,6 +487,8 @@ function mouseUp(table, e){
     $('#event_end_at_4i').find('option')[time_end[0]].selected = true;
     $('#event_end_at_5i').find('option')[time_end[1]].selected = true;
 
+    // mouseMoveで選択状態表示の更新をさせないようにする
+    startCell = null;
     // ここに選択後の処理を書く
     $(function(){
       $('#newmodal').dialog({

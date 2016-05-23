@@ -4,10 +4,12 @@
 　<% todos.each do |todo| %>
   <%= hidden_field_tag "posts[][id]", todo.id %>
   <%= check_box_tag "posts[][flag]" %>
-　　<b><%= todo.contents %></b>
-　　<%= todo.deadline.to_s(:published_on) %><br>
+　　<b><%= todo.contents %></b><br>
+　　<%= if !todo.nil? then I18n.localize(todo.deadline, :format => :long) end %><br>
 　<% end %>
+<% if todos.present? then %>
 <%= submit_tag "更新" %>
+<% end %>
 <% end %>
 
 <div id="todoedit" style="display:none;">
