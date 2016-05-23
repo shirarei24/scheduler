@@ -1,9 +1,23 @@
 class CalendarController < ApplicationController
 
   def index
-    @ar = ["apple", "orange"]
+    @today = Array.new(24)
+    @tomorrow = Array.new(24)
     @month = (params[:month] || (Time.zone || Time).now.month).to_i
     @year = (params[:year] || (Time.zone || Time).now.year).to_i
+    from =DateTime.now.at_beginning_of_day
+    to = DateTime.tomorrow.at_beginning_of_day
+    @today_event = Event.where(start_at: from...to).order(start_at: :asc)
+
+    from2 =DateTime.tomorrow.at_beginning_of_day
+    to2 = DateTime.tomorrow.tomorrow.at_beginning_of_day
+    @tomorrow_event = Event.where(start_at: from2...to2).order(start_at: :asc)
+
+    @today_event.each do |x|
+        @today[x.start_at.hour]=x
+
+    end
+
 
     @shown_month = Date.civil(@year, @month)
     from = DateTime.now.at_beginning_of_day

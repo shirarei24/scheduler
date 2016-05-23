@@ -5,96 +5,109 @@
     background: orange !important
   }
 </style>
+
 <div style="display:inline-flex", id="table">
 <br>
 <br>
 
-<table border="1", height = 1000, margin = 20>
+<table bordercolorlight="white", height = 1000, margin = 20>
 <head>
-<caption></caption>
+<caption>h</caption>
   <thead>
   <tr bgcolor="green">
     <tr height=65><th></th></tr>
     </tr>
   </thead>
   <tbody>
-    <tr><td><a href="index">1:00</a></tr>
-    <tr><td><a href="index">2:00</a></tr>
-    <tr><td><a href="index">3:00</a></td></tr>
-    <tr class="odd"><td><a href="index">4:00</a></td></tr>
-    <tr><td><a href="index">5:00</a></td></tr>
-    <tr><td><a href="index">6:00</a></td></tr>
-    <tr class="odd"><td><a href="index">7:00</a></td></tr>
-    <tr><td><a href="index">8:00</a></td></tr>
-    <tr class="odd"><td><a href="index">9:00</a></td></tr>
-    <tr><td><a href="index">10:00</a></td></tr>
-    <tr><td><a href="index">11:00</a></td></tr>
-    <tr class="odd"><td><a href="index">12:00</a></td></tr>
-    <tr><td><a href="index">13:00</a></td></tr>
-    <tr class="odd"><td><a href="index">14:00</a></td></tr>
-    <tr><td><a href="index">15:00</a></td></tr>
-    <tr><td><a href="index">16:00</a></td></tr>
-    <tr class="odd"><td><a href="index">17:00</a></td></tr>
-    <tr><td><a href="index">18:00</a></td></tr>
-    <tr class="odd"><td><a href="index">19:00</a></td></tr>
-    <tr><td><a href="index">20:00</a></td></tr>
-    <tr><td><a href="index">21:00</a></td></tr>
-    <tr class="odd"><td><a href="index">22:00</a></td></tr>
-    <tr><td><a href="index">23:00</a></td></tr>
-    <tr class="odd"><td><a href="index">24:00</a></td></tr>
+    <tr><th style="line-height:3.2" align="right"><a>1:00</a></tr>
+    <tr><th style="line-height:0" align="right"><a>2:00</a></tr>
+    <tr><th style="line-height:3.0" align="right"><a>3:00</a></td></tr>
+    <tr class="odd"><th style="line-height:0" align="right"><a>4:00</a></td></tr>
+    <tr><th style="line-height:3.0" align="right"><a>5:00</a></td></tr>
+    <tr><th style="line-height:0" align="right"><a>6:00</a></td></tr>
+    <tr class="odd"><th style="line-height:3.0" align="right"><a>7:00</a></td></tr>
+    <tr><th style="line-height:0" align="right"><a>8:00</a></td></tr>
+    <tr class="odd"><th style="line-height:3.0" align="right"><a>9:00</a></td></tr>
+    <tr><th style="line-height:0"><a>10:00</a></td></tr>
+    <tr><th style="line-height:3.0"><a>11:00</a></td></tr>
+    <tr class="odd"><th style="line-height:0"><a>12:00</a></td></tr>
+    <tr><th style="line-height:3.0"><a>13:00</a></td></tr>
+    <tr class="odd"><th style="line-height:0"><a>14:00</a></td></tr>
+    <tr><th style="line-height:3.0"><a>15:00</a></td></tr>
+    <tr><th style="line-height:0"><a>16:00</a></td></tr>
+    <tr class="odd"><th style="line-height:3.0"><a>17:00</a></td></tr>
+    <tr><th style="line-height:0"><a>18:00</a></td></tr>
+    <tr class="odd"><th style="line-height:3.0"><a>19:00</a></td></tr>
+    <tr><th style="line-height:0"><a>20:00</a></td></tr>
+    <tr><th style="line-height:3.0"><a>21:00</a></td></tr>
+    <tr class="odd"><th style="line-height:0"><a>22:00</a></td></tr>
+    <tr><th style="line-height:3.0"><a>23:00</a></td></tr>
+    <tr class="odd"><th style="line-height:0"><a>24:00</a></td></tr>
   </tbody>
   </head>
 </table>
 
-<table border=1, width=160, height=1000 >
+<table border width=160, height=1000 >
 <head>
   <caption><%= I18n.localize(Date.today, :format => :short) %></caption>
   <thead>
-  <tr bgcolor="green">
-    <tr><th>予定</th><th>場所</th></tr>
+  <tr>
+    <tr height = "38"><th>予定</th><th>場所</th><th>相手</th></tr>
     </tr>
   </thead>
   <tbody>
-    <tr><td><a href="index">1001</a></td><td></td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>ddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[0].nil? then @today[0].name end %></a></td><td><%= if !@today[0].nil? then @today[0].place else "\n" end %></td><th></th>
+    <tr class="odd"  height = "38"><td><a href="index"><%= if !@today[1].nil? then @today[1].name end %></a></td><td><%= if !@today[1].nil? then @today[1].place end %></td></tr>
+    <tr height = "40"><td><a href="index"><%= if !@today[2].nil? then @today[2].name end %></a></td><td><%= if !@today[2].nil? then @today[2].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[3].nil? then @today[3].name end %></a></td><td><%= if !@today[3].nil? then @today[3].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[4].nil? then @today[4].name end %></a></td><td><%= if !@today[4].nil? then @today[4].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[5].nil? then @today[5].name end %></a></td><td><%= if !@today[5].nil? then @today[5].place end %></td></tr>
+    <tr height = "38" class="odd"><td><a href="index"><%= if !@today[6].nil? then @today[6].name end %></a></td><td><%= if !@today[6].nil? then @today[6].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[7].nil? then @today[7].name end %></a></td><td><%= if !@today[7].nil? then @today[7].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[8].nil? then @today[8].name end %></a></td><td><%= if !@today[8].nil? then @today[8].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[9].nil? then @today[9].name end %></a></td><td><%= if !@today[9].nil? then @today[9].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[10].nil? then @today[10].name end %></a></td><td><%= if !@today[10].nil? then @today[10].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[11].nil? then @today[11].name end %></a></td><td><%= if !@today[11].nil? then @today[11].place end %></td></tr>
+    <tr height = "38"><td><a href="index"></a><%= if !@today[12].nil? then @today[12].name end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[13].nil? then @today[13].name end %></a></td><td><%= if !@today[13].nil? then @today[13].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[14].nil? then @today[14].name end %></a></td><td><%= if !@today[14].nil? then @today[14].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[15].nil? then @today[15].name end %></a></td><td><%= if !@today[15].nil? then @today[15].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[16].nil? then @today[16].name end %></a></td><td><%= if !@today[16].nil? then @today[16].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[17].nil? then @today[17].name end %></a></td><td><%= if !@today[17].nil? then @today[17].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[18].nil? then @today[18].name end %></a></td><td><%= if !@today[18].nil? then @today[18].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[19].nil? then @today[19].name end %></a></td><td><%= if !@today[19].nil? then @today[19].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[20].nil? then @today[20].name end %></a></td><td><%= if !@today[20].nil? then @today[20].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[21].nil? then @today[21].name end %></a></td><td><%= if !@today[21].nil? then @today[21].place end %></td></tr>
+    <tr height = "38"><td><a href="index"><%= if !@today[22].nil? then @today[22].name end %></a></td><td><%= if !@today[22].nil? then @today[22].place end %></td></tr>
+    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[23].nil? then @today[23].name end %></a></td><td><%= if !@today[23].nil? then @today[23].place end %></td></tr>
   </tbody>
   </head>
 </table>
 
+<table border, width=160, height=1000>
 
-
-<table border=1, width=160, height=1000>
 <head>
   <caption><%= I18n.localize(Date.tomorrow, :format => :short) %></caption>
   <thead>
-  <tr bgcolor="green">
-    <tr><th>予定</th><th>場所</th></tr>
+  <tr>
+    <tr><th>予定</th><th>場所</th><th>相手</th></tr>
     </tr>
   </thead>
   <tbody>
-    <tr><td><a href="index">1001</a></td><td><%= @event.name %></td></tr>
+  <% if @event.category == 1 %>
+    <tr bgcolor="green"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+    <% elsif @event.category == 2 %>
+      <tr bgcolor="blue"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+    <% elsif @event.category == 3 %>
+      <tr bgcolor="red"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+    <% elsif @event.category == 4 %>
+      <tr bgcolor="yellow"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+    <% elsif @event.category == 5 %>
+      <tr bgcolor="magenta"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
+      <% else %>
+    <tr><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th></tr>
+    <% end %>
+
     <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
     <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
     <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
