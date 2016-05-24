@@ -2,18 +2,18 @@
 <%= if event.present? then form_for event, url:'/calendar/update' do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name,"タイトル" %></b><br>
-    <%= event.name %></p>
+    <%= event.name %><br></p>
     <p><b><%= f.label :start_at,"開始時刻" %></b><br>
     <%#= event.start_at.to_s %>
     <%= if !event.start_at.nil? then I18n.localize(event.start_at, :format => :long) end %><br></p>
     <p><b><%= f.label :end_at,"終了時刻" %></b><br>
     <%= if !event.end_at.nil? then I18n.localize(event.end_at, :format => :long) end %><br></p>
     <p><b><%= f.label :place,"場所" %></b><br>
-    <%= event.place %></p>
+    <%= event.place %><br></p>
     <p><b><%= f.label :person,"相手" %></b><br>
-    <%= event.person %></p>
+    <%= event.person %><br></p>
     <p><b><%= f.label :baggage,"持ち物" %></b><br>
-    <%= event.baggage %></p>
+    <%= event.baggage %><br></p>
     <p><b><%= f.label :category,"カテゴリ" %></b><br>
     <% case event.category %>
     <% when 1 then %>
@@ -24,8 +24,9 @@
     <%= "バイト" %>
     <% when 4 then %>
     <%= "授業" %>
-    <% else%>
+    <% when 0 then %>
     <%= "その他" %>
+    <% else%>
     <% end %><br><br>
     <%= link_to '編集', '#', class: 'editopen' %>
     <%#= f.submit "更新"%>

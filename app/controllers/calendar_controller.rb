@@ -7,10 +7,7 @@ class CalendarController < ApplicationController
     @year = (params[:year] || (Time.zone || Time).now.year).to_i
 
     @shown_month = Date.civil(@year, @month)
-    from = DateTime.now.at_beginning_of_day
-    to = DateTime.tomorrow.at_beginning_of_day
-
-    @today_event = Event.where(start_at: from...to).order(start_at: :desc)
+    
     @event_strips = Event.event_strips_for_month(@shown_month)
     if params[:id] then
       @event = Event.find_by(:id => params[:id])
@@ -18,21 +15,23 @@ class CalendarController < ApplicationController
       @event = Event.new
     end
 
-    from =DateTime.now.at_beginning_of_day
-    to = DateTime.tomorrow.at_beginning_of_day
-    # from = @event.start_at.at_beginning_of_day
-    # to = DateTime.tomorrow.at_beginning_of_day
+    from =DateTime.now.in_time_zone('Tokyo').at_beginning_of_day
+    to = DateTime.tomorrow.in_time_zone('Tokyo').at_beginning_of_day
+    # from = @event.start_at.beginning_of_day
+    # to = @event.start_at.beginning_of_day
     @today_event = Event.where(start_at: from...to).order(start_at: :asc)
 
-    from2 =DateTime.tomorrow.at_beginning_of_day
-    to2 = DateTime.tomorrow.tomorrow.at_beginning_of_day
-    # from2 =DateTime.tomorrow.at_beginning_of_day
-    # to2 = DateTime.tomorrow.tomorrow.at_beginning_of_day
+    from2 =DateTime.tomorrow.in_time_zone('Tokyo').at_beginning_of_day
+    to2 = DateTime.tomorrow.tomorrow.in_time_zone('Tokyo').at_beginning_of_day
+    # from2 = to
+    # to2 = to.tomorrow.beginning_of_day
     @tomorrow_event = Event.where(start_at: from2...to2).order(start_at: :asc)
 
     @today_event.each do |x|
         @today[x.start_at.hour]=x
-
+    end
+    @tomorrow_event.each do |y|
+        @tomorrow[y.start_at.hour]=y
     end
 
     @new_event = Event.new

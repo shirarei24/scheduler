@@ -1,5 +1,6 @@
 <!-- Probably move the stylesheet to you layout. Also make sure you include the javascript. -->
 <%= stylesheet_link_tag "event_calendar" %>
+
 <script>
 function make_hidden( name, value, formid ){
     var q = document.createElement('input');
@@ -48,16 +49,17 @@ function  selectedDates(){
 
 
 
-<table border="1", onmousedown="mouseDown(this, event); return false;" onmouseup="mouseUp(this, event);" onmousemove="mouseMove(this, event); return false;">
+<table border="0", height=1050, onmousedown="mouseDown(this, event); return false;" onmouseup="mouseUp(this, event);" onmousemove="mouseMove(this, event); return false;">
 <head>
-<caption>(H)</caption>
+<caption></caption>
   <thead>
   <tr bgcolor="green">
-    <tr><th>時間</th></tr>
+    <tr height =50><th></th></tr>
     </tr>
   </thead>
   <tbody>
     <!-- <tr><td><a href="index">1:00</a></td></tr> -->
+    <tr><td>0:00</td></tr>
     <tr><td>1:00</td></tr>
     <tr><td>2:00</td></tr>
     <tr><td>3:00</td></tr>
@@ -94,92 +96,78 @@ function  selectedDates(){
   <caption><%= I18n.localize(Date.today, :format => :short) %></caption>
   <thead>
   <tr>
-    <tr height = "38"><th>予定</th><th>場所</th><th>相手</th></tr>
+    <tr height = "38"><th>予定</th><th>場所</th></tr>
     </tr>
   </thead>
   <tbody>
-    <tr height = "38"><td><a href="index"><%= if !@today[0].nil? then @today[0].name end %></a></td><td><%= if !@today[0].nil? then @today[0].place else "\n" end %></td><th></th>
-    <tr class="odd"  height = "38"><td><a href="index"><%= if !@today[1].nil? then @today[1].name end %></a></td><td><%= if !@today[1].nil? then @today[1].place end %></td></tr>
-    <tr height = "40"><td><a href="index"><%= if !@today[2].nil? then @today[2].name end %></a></td><td><%= if !@today[2].nil? then @today[2].place end %></td></tr>
-    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[3].nil? then @today[3].name end %></a></td><td><%= if !@today[3].nil? then @today[3].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[4].nil? then @today[4].name end %></a></td><td><%= if !@today[4].nil? then @today[4].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[5].nil? then @today[5].name end %></a></td><td><%= if !@today[5].nil? then @today[5].place end %></td></tr>
-    <tr height = "38" class="odd"><td><a href="index"><%= if !@today[6].nil? then @today[6].name end %></a></td><td><%= if !@today[6].nil? then @today[6].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[7].nil? then @today[7].name end %></a></td><td><%= if !@today[7].nil? then @today[7].place end %></td></tr>
-    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[8].nil? then @today[8].name end %></a></td><td><%= if !@today[8].nil? then @today[8].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[9].nil? then @today[9].name end %></a></td><td><%= if !@today[9].nil? then @today[9].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[10].nil? then @today[10].name end %></a></td><td><%= if !@today[10].nil? then @today[10].place end %></td></tr>
-    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[11].nil? then @today[11].name end %></a></td><td><%= if !@today[11].nil? then @today[11].place end %></td></tr>
-    <tr height = "38"><td><a href="index"></a><%= if !@today[12].nil? then @today[12].name end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></tr>
-    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[13].nil? then @today[13].name end %></a></td><td><%= if !@today[13].nil? then @today[13].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[14].nil? then @today[14].name end %></a></td><td><%= if !@today[14].nil? then @today[14].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[15].nil? then @today[15].name end %></a></td><td><%= if !@today[15].nil? then @today[15].place end %></td></tr>
-    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[16].nil? then @today[16].name end %></a></td><td><%= if !@today[16].nil? then @today[16].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[17].nil? then @today[17].name end %></a></td><td><%= if !@today[17].nil? then @today[17].place end %></td></tr>
-    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[18].nil? then @today[18].name end %></a></td><td><%= if !@today[18].nil? then @today[18].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[19].nil? then @today[19].name end %></a></td><td><%= if !@today[19].nil? then @today[19].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[20].nil? then @today[20].name end %></a></td><td><%= if !@today[20].nil? then @today[20].place end %></td></tr>
-    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[21].nil? then @today[21].name end %></a></td><td><%= if !@today[21].nil? then @today[21].place end %></td></tr>
-    <tr height = "38"><td><a href="index"><%= if !@today[22].nil? then @today[22].name end %></a></td><td><%= if !@today[22].nil? then @today[22].place end %></td></tr>
-    <tr class="odd" height = "38"><td><a href="index"><%= if !@today[23].nil? then @today[23].name end %></a></td><td><%= if !@today[23].nil? then @today[23].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[0].nil? then link_to @today[0].name, action: 'index', id: @today[0].id end %></td><td><%= if !@today[0].nil? then @today[0].place else "\n" end %></td></tr>
+    <tr class="odd"  height = "38"><td><%= if !@today[1].nil? then link_to @today[1].name, action: 'index', id: @today[1].id end %></td><td><%= if !@today[1].nil? then @today[1].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[2].nil? then link_to @today[2].name, action: 'index', id: @today[2].id end %></td><td><%= if !@today[2].nil? then @today[2].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@today[3].nil? then link_to @today[3].name, action: 'index', id: @today[3].id end %></td><td><%= if !@today[3].nil? then @today[3].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[4].nil? then link_to @today[4].name, action: 'index', id: @today[3].id end %></td><td><%= if !@today[4].nil? then @today[4].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[5].nil? then link_to @today[5].name, action: 'index', id: @today[5].id end %></td><td><%= if !@today[5].nil? then @today[5].place end %></td></tr>
+    <tr height = "38" class="odd"><td><%= if !@today[6].nil? then link_to @today[6].name, action: 'index', id: @today[6].id end %></td><td><%= if !@today[6].nil? then @today[6].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[7].nil? then link_to @today[7].name, action: 'index', id: @today[7].id end %></td><td><%= if !@today[7].nil? then @today[7].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@today[8].nil? then link_to @today[8].name, action: 'index', id: @today[8].id end %></td><td><%= if !@today[8].nil? then @today[8].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[9].nil? then link_to @today[9].name, action: 'index', id: @today[9].id end %></td><td><%= if !@today[9].nil? then @today[9].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[10].nil? then link_to @today[10].name, action: 'index', id: @today[10].id end %></td><td><%= if !@today[10].nil? then @today[10].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@today[11].nil? then link_to @today[11].name, action: 'index', id: @today[11].id end %></td><td><%= if !@today[11].nil? then @today[11].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[12].nil? then link_to @today[12].name, action: 'index', id: @today[12].id end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@today[13].nil? then link_to @today[13].name, action: 'index', id: @today[13].id end %></td><td><%= if !@today[13].nil? then @today[13].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[14].nil? then link_to @today[14].name, action: 'index', id: @today[14].id end %></td><td><%= if !@today[14].nil? then @today[14].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[15].nil? then link_to @today[15].name, action: 'index', id: @today[15].id end %></td><td><%= if !@today[15].nil? then @today[15].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@today[16].nil? then link_to @today[16].name, action: 'index', id: @today[16].id end %></td><td><%= if !@today[16].nil? then @today[16].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[17].nil? then link_to @today[17].name, action: 'index', id: @today[17].id end %></td><td><%= if !@today[17].nil? then @today[17].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@today[18].nil? then link_to @today[18].name, action: 'index', id: @today[18].id end %></td><td><%= if !@today[18].nil? then @today[18].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[19].nil? then link_to @today[19].name, action: 'index', id: @today[19].id end %></td><td><%= if !@today[19].nil? then @today[19].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[20].nil? then link_to @today[20].name, action: 'index', id: @today[20].id end %></td><td><%= if !@today[20].nil? then @today[20].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@today[21].nil? then link_to @today[21].name, action: 'index', id: @today[21].id end %></td><td><%= if !@today[21].nil? then @today[21].place end %></td></tr>
+    <tr height = "38"><td><%= if !@today[22].nil? then link_to @today[22].name, action: 'index', id: @today[22].id end %></td><td><%= if !@today[22].nil? then @today[22].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@today[23].nil? then link_to @today[23].name, action: 'index', id: @today[23].id end %></td><td><%= if !@today[23].nil? then @today[23].place end %></td></tr>
   </tbody>
   </head>
 </table>
 
-<table border, width=160, height=1000>
-
+<table border width=160, height=1000>
 <head>
   <caption><%= I18n.localize(Date.tomorrow, :format => :short) %></caption>
   <thead>
   <tr>
-    <tr><th>予定</th><th>場所</th><th>相手</th></tr>
+    <tr height = "38"><th>予定</th><th>場所</th></tr>
     </tr>
   </thead>
   <tbody>
-  <% if @event.category == 1 %>
-    <tr bgcolor="green"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
-    <% elsif @event.category == 2 %>
-      <tr bgcolor="blue"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
-    <% elsif @event.category == 3 %>
-      <tr bgcolor="red"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
-    <% elsif @event.category == 4 %>
-      <tr bgcolor="yellow"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
-    <% elsif @event.category == 5 %>
-      <tr bgcolor="magenta"><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th>
-      <% else %>
-    <tr><td><a href="index">1001</a></td><td><%= @event.name %></td><th></th></tr>
-    <% end %>
-
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>ddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
-    <tr><td><a href="index">5001</a></td><td>eeee</td></tr>
-    <tr><td><a href="index">1001</a></td><td>aaaa</td></tr>
-    <tr class="odd"><td><a href="index">2001</a></td><td>bbbb</td></tr>
-    <tr><td><a href="index">3001</a></td><td>cccc</td></tr>
-    <tr class="odd"><td><a href="index">4001</a></td><td>dddd</td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[0].nil? then link_to @tomorrow[0].name, action: 'index', id: @tomorrow[0].id end %></td><td><%= if !@tomorrow[0].nil? then @tomorrow[0].place else "\n" end %></td></tr>
+    <tr class="odd"  height = "38"><td><%= if !@tomorrow[1].nil? then link_to @tomorrow[1].name, action: 'index', id: @tomorrow[1].id end %></td><td><%= if !@tomorrow[1].nil? then @tomorrow[1].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[2].nil? then link_to @tomorrow[2].name, action: 'index', id: @tomorrow[2].id end %></td><td><%= if !@tomorrow[2].nil? then @tomorrow[2].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@tomorrow[3].nil? then link_to @tomorrow[3].name, action: 'index', id: @tomorrow[3].id end %></td><td><%= if !@tomorrow[3].nil? then @tomorrow[3].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[4].nil? then link_to @tomorrow[4].name, action: 'index', id: @tomorrow[3].id end %></td><td><%= if !@tomorrow[4].nil? then @tomorrow[4].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[5].nil? then link_to @tomorrow[5].name, action: 'index', id: @tomorrow[5].id end %></td><td><%= if !@tomorrow[5].nil? then @tomorrow[5].place end %></td></tr>
+    <tr height = "38" class="odd"><td><%= if !@tomorrow[6].nil? then link_to @tomorrow[6].name, action: 'index', id: @tomorrow[6].id end %></td><td><%= if !@tomorrow[6].nil? then @tomorrow[6].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[7].nil? then link_to @tomorrow[7].name, action: 'index', id: @tomorrow[7].id end %></td><td><%= if !@tomorrow[7].nil? then @tomorrow[7].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@tomorrow[8].nil? then link_to @tomorrow[8].name, action: 'index', id: @tomorrow[8].id end %></td><td><%= if !@tomorrow[8].nil? then @tomorrow[8].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[9].nil? then link_to @tomorrow[9].name, action: 'index', id: @tomorrow[9].id end %></td><td><%= if !@tomorrow[9].nil? then @tomorrow[9].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[10].nil? then link_to @tomorrow[10].name, action: 'index', id: @tomorrow[10].id end %></td><td><%= if !@tomorrow[10].nil? then @tomorrow[10].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@tomorrow[11].nil? then link_to @tomorrow[11].name, action: 'index', id: @tomorrow[11].id end %></td><td><%= if !@tomorrow[11].nil? then @tomorrow[11].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[12].nil? then link_to @tomorrow[12].name, action: 'index', id: @tomorrow[12].id end %></td><td><%= if !@tomorrow[12].nil? then @tomorrow[12].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@tomorrow[13].nil? then link_to @tomorrow[13].name, action: 'index', id: @tomorrow[13].id end %></td><td><%= if !@tomorrow[13].nil? then @tomorrow[13].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[14].nil? then link_to @tomorrow[14].name, action: 'index', id: @tomorrow[14].id end %></td><td><%= if !@tomorrow[14].nil? then @tomorrow[14].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[15].nil? then link_to @tomorrow[15].name, action: 'index', id: @tomorrow[15].id end %></td><td><%= if !@tomorrow[15].nil? then @tomorrow[15].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@tomorrow[16].nil? then link_to @tomorrow[16].name, action: 'index', id: @tomorrow[16].id end %></td><td><%= if !@tomorrow[16].nil? then @tomorrow[16].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[17].nil? then link_to @tomorrow[17].name, action: 'index', id: @tomorrow[17].id end %></td><td><%= if !@tomorrow[17].nil? then @tomorrow[17].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@tomorrow[18].nil? then link_to @tomorrow[18].name, action: 'index', id: @tomorrow[18].id end %></td><td><%= if !@tomorrow[18].nil? then @tomorrow[18].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[19].nil? then link_to @tomorrow[19].name, action: 'index', id: @tomorrow[19].id end %></td><td><%= if !@tomorrow[19].nil? then @tomorrow[19].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[20].nil? then link_to @tomorrow[20].name, action: 'index', id: @tomorrow[20].id end %></td><td><%= if !@tomorrow[20].nil? then @tomorrow[20].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@tomorrow[21].nil? then link_to @tomorrow[21].name, action: 'index', id: @tomorrow[21].id end %></td><td><%= if !@tomorrow[21].nil? then @tomorrow[21].place end %></td></tr>
+    <tr height = "38"><td><%= if !@tomorrow[22].nil? then link_to @tomorrow[22].name, action: 'index', id: @tomorrow[22].id end %></td><td><%= if !@tomorrow[22].nil? then @tomorrow[22].place end %></td></tr>
+    <tr class="odd" height = "38"><td><%= if !@tomorrow[23].nil? then link_to @tomorrow[23].name, action: 'index', id: @tomorrow[23].id end %></td><td><%= if !@tomorrow[23].nil? then @tomorrow[23].place end %></td></tr>
   </tbody>
   </head>
 </table>
 
 <br>
 </div>
-<%#= javascript_include_tag "event_calendar" %>
+<%= javascript_include_tag "event_calendar" %>
 <div id="group">
 <div id="calendar">
 <%#= link_to("newold", :controller => "events", :action => "new") %>
@@ -190,9 +178,7 @@ function  selectedDates(){
 <div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
 </div>
 <div id="newmodal" style="display:none;">
-<%= javascript_tag do %>
-"alert("2")"; 
-<% end %>
+
 <%= form_for @new_event, url: '/event/create', :html => {:onsubmit => "return selectedDates()"} do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
@@ -237,7 +223,6 @@ function  selectedDates(){
 <div id="editmodal" style="display:none;">
 <%#= form_for@event, url: event_path do |f| %>
 <%# @event = @new_event %>
-    %input{:type => "hidden", :hoge => "memo", "data-bind" => "value: time_start"}
 <%= form_for @event, url: '/event/create' do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
