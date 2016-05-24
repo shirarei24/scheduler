@@ -96,6 +96,7 @@ function  selectedDates(){
   <caption><%= I18n.localize(Date.today, :format => :short) %></caption>
   <thead>
   <tr>
+<!-- <<<<<<< HEAD
     <tr height = "38"><th>予定</th><th>場所</th></tr>
     </tr>
   </thead>
@@ -124,6 +125,299 @@ function  selectedDates(){
     <tr class="odd" height = "38"><td><%= if !@today[21].nil? then link_to @today[21].name, action: 'index', id: @today[21].id end %></td><td><%= if !@today[21].nil? then @today[21].place end %></td></tr>
     <tr height = "38"><td><%= if !@today[22].nil? then link_to @today[22].name, action: 'index', id: @today[22].id end %></td><td><%= if !@today[22].nil? then @today[22].place end %></td></tr>
     <tr class="odd" height = "38"><td><%= if !@today[23].nil? then link_to @today[23].name, action: 'index', id: @today[23].id end %></td><td><%= if !@today[23].nil? then @today[23].place end %></td></tr>
+======= -->
+    <tr height = "38" bgcolor="#c0c0c0"><th>予定</th><th>場所</th></tr>
+    </tr>
+  </thead>
+  <tbody>
+   <% if !@today[0].nil? && @today[0].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[0].nil? then link_to @today[0].name, action: 'index', id: @today[0].id end %></td><td><%= if !@today[0].nil? then @today[0].place end %></td></th>
+    <% elsif !@today[0].nil? && @today[0].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[0].nil? then link_to @today[0].name, action: 'index', id: @today[0].id end %></td><td><%= if !@today[0].nil? then @today[0].place end %></td></th>
+    <% elsif !@today[0].nil? && @today[0].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[0].nil? then link_to @today[0].name, action: 'index', id: @today[0].id end %></td><td><%= if !@today[0].nil? then @today[0].place end %></td></th>
+    <% elsif !@today[0].nil? && @today[0].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[0].nil? then link_to @today[0].name, action: 'index', id: @today[0].id end %></td><td><%= if !@today[0].nil? then @today[0].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[0].nil? then link_to @today[0].name, action: 'index', id: @today[0].id end %></td><td><%= if !@today[0].nil? then @today[0].place end %></td></tr>
+     <% end %>
+
+   <% if !@today[1].nil? && @today[1].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[1].nil? then link_to @today[1].name, action: 'index', id: @today[1].id end %></td><td><%= if !@today[1].nil? then @today[1].place end %></td></th>
+    <% elsif !@today[1].nil? && @today[1].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[1].nil? then link_to @today[1].name, action: 'index', id: @today[1].id end %></td><td><%= if !@today[1].nil? then @today[1].place end %></td></th>
+    <% elsif !@today[1].nil? && @today[1].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[1].nil? then link_to @today[1].name, action: 'index', id: @today[1].id end %></td><td><%= if !@today[1].nil? then @today[1].place end %></td></th>
+    <% elsif !@today[1].nil? && @today[1].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[1].nil? then link_to @today[1].name, action: 'index', id: @today[1].id end %></td><td><%= if !@today[1].nil? then @today[1].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[1].nil? then link_to @today[1].name, action: 'index', id: @today[1].id end %></td><td><%= if !@today[1].nil? then @today[1].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[2].nil? && @today[2].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[2].nil? then link_to @today[2].name, action: 'index', id: @today[2].id end %></td><td><%= if !@today[2].nil? then @today[2].place end %></td></th>
+    <% elsif !@today[2].nil? && @today[2].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[2].nil? then link_to @today[2].name, action: 'index', id: @today[2].id end %></td><td><%= if !@today[2].nil? then @today[2].place end %></td></th>
+    <% elsif !@today[2].nil? && @today[2].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[2].nil? then link_to @today[2].name, action: 'index', id: @today[2].id end %></td><td><%= if !@today[2].nil? then @today[2].place end %></td></th>
+    <% elsif !@today[2].nil? && @today[2].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[2].nil? then link_to @today[2].name, action: 'index', id: @today[2].id end %></td><td><%= if !@today[2].nil? then @today[2].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[2].nil? then link_to @today[2].name, action: 'index', id: @today[2].id end %></td><td><%= if !@today[2].nil? then @today[2].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[3].nil? && @today[3].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[3].nil? then link_to @today[3].name, action: 'index', id: @today[3].id end %></td><td><%= if !@today[3].nil? then @today[3].place end %></td></th>
+    <% elsif !@today[3].nil? && @today[3].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[3].nil? then link_to @today[3].name, action: 'index', id: @today[3].id end %></td><td><%= if !@today[3].nil? then @today[3].place end %></td></th>
+    <% elsif !@today[3].nil? && @today[3].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[3].nil? then link_to @today[3].name, action: 'index', id: @today[3].id end %></td><td><%= if !@today[3].nil? then @today[3].place end %></td></th>
+    <% elsif !@today[3].nil? && @today[3].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[3].nil? then link_to @today[3].name, action: 'index', id: @today[3].id end %></td><td><%= if !@today[3].nil? then @today[3].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[3].nil? then link_to @today[3].name, action: 'index', id: @today[3].id end %></td><td><%= if !@today[3].nil? then @today[3].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[4].nil? && @today[4].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[4].nil? then link_to @today[4].name, action: 'index', id: @today[4].id end %></td><td><%= if !@today[4].nil? then @today[4].place end %></td></th>
+    <% elsif !@today[4].nil? && @today[4].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[4].nil? then link_to @today[4].name, action: 'index', id: @today[4].id end %></td><td><%= if !@today[4].nil? then @today[4].place end %></td></th>
+    <% elsif !@today[4].nil? && @today[4].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[4].nil? then link_to @today[4].name, action: 'index', id: @today[4].id end %></td><td><%= if !@today[4].nil? then @today[4].place end %></td></th>
+    <% elsif !@today[4].nil? && @today[4].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[4].nil? then link_to @today[4].name, action: 'index', id: @today[4].id end %></td><td><%= if !@today[4].nil? then @today[4].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[4].nil? then link_to @today[4].name, action: 'index', id: @today[4].id end %></td><td><%= if !@today[4].nil? then @today[4].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[5].nil? && @today[5].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[5].nil? then link_to @today[5].name, action: 'index', id: @today[5].id end %></td><td><%= if !@today[5].nil? then @today[5].place end %></td></th>
+    <% elsif !@today[5].nil? && @today[5].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[5].nil? then link_to @today[5].name, action: 'index', id: @today[5].id end %></td><td><%= if !@today[5].nil? then @today[5].place end %></td></th>
+    <% elsif !@today[5].nil? && @today[5].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[5].nil? then link_to @today[5].name, action: 'index', id: @today[5].id end %></td><td><%= if !@today[5].nil? then @today[5].place end %></td></th>
+    <% elsif !@today[5].nil? && @today[5].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[5].nil? then link_to @today[5].name, action: 'index', id: @today[5].id end %></td><td><%= if !@today[5].nil? then @today[5].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[5].nil? then link_to @today[5].name, action: 'index', id: @today[5].id end %></td><td><%= if !@today[5].nil? then @today[5].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[6].nil? && @today[6].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[6].nil? then link_to @today[6].name, action: 'index', id: @today[6].id end %></td><td><%= if !@today[6].nil? then @today[6].place end %></td></th>
+    <% elsif !@today[6].nil? && @today[6].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[6].nil? then link_to @today[6].name, action: 'index', id: @today[6].id end %></td><td><%= if !@today[6].nil? then @today[6].place end %></td></th>
+    <% elsif !@today[6].nil? && @today[6].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[6].nil? then link_to @today[6].name, action: 'index', id: @today[6].id end %></td><td><%= if !@today[6].nil? then @today[6].place end %></td></th>
+    <% elsif !@today[6].nil? && @today[6].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[6].nil? then link_to @today[6].name, action: 'index', id: @today[6].id end %></td><td><%= if !@today[6].nil? then @today[6].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[6].nil? then link_to @today[6].name, action: 'index', id: @today[6].id end %></td><td><%= if !@today[6].nil? then @today[6].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[7].nil? && @today[7].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[7].nil? then link_to @today[7].name, action: 'index', id: @today[7].id end %></td><td><%= if !@today[7].nil? then @today[7].place end %></td></th>
+    <% elsif !@today[7].nil? && @today[7].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[7].nil? then link_to @today[7].name, action: 'index', id: @today[7].id end %></td><td><%= if !@today[7].nil? then @today[7].place end %></td></th>
+    <% elsif !@today[7].nil? && @today[7].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[7].nil? then link_to @today[7].name, action: 'index', id: @today[7].id end %></td><td><%= if !@today[7].nil? then @today[7].place end %></td></th>
+    <% elsif !@today[7].nil? && @today[7].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[7].nil? then link_to @today[7].name, action: 'index', id: @today[7].id end %></td><td><%= if !@today[7].nil? then @today[7].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[7].nil? then link_to @today[7].name, action: 'index', id: @today[7].id end %></td><td><%= if !@today[7].nil? then @today[7].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[8].nil? && @today[8].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[8].nil? then link_to @today[8].name, action: 'index', id: @today[8].id end %></td><td><%= if !@today[8].nil? then @today[8].place end %></td></th>
+    <% elsif !@today[8].nil? && @today[8].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[8].nil? then link_to @today[8].name, action: 'index', id: @today[8].id end %></td><td><%= if !@today[8].nil? then @today[8].place end %></td></th>
+    <% elsif !@today[8].nil? && @today[8].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[8].nil? then link_to @today[8].name, action: 'index', id: @today[8].id end %></td><td><%= if !@today[8].nil? then @today[8].place end %></td></th>
+    <% elsif !@today[8].nil? && @today[8].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[8].nil? then link_to @today[8].name, action: 'index', id: @today[8].id end %></td><td><%= if !@today[8].nil? then @today[8].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[8].nil? then link_to @today[8].name, action: 'index', id: @today[8].id end %></td><td><%= if !@today[8].nil? then @today[8].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[9].nil? && @today[9].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[9].nil? then link_to @today[9].name, action: 'index', id: @today[9].id end %></td><td><%= if !@today[9].nil? then @today[9].place end %></td></th>
+    <% elsif !@today[9].nil? && @today[9].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[9].nil? then link_to @today[9].name, action: 'index', id: @today[9].id end %></td><td><%= if !@today[9].nil? then @today[9].place end %></td></th>
+    <% elsif !@today[9].nil? && @today[9].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[9].nil? then link_to @today[9].name, action: 'index', id: @today[9].id end %></td><td><%= if !@today[9].nil? then @today[9].place end %></td></th>
+    <% elsif !@today[9].nil? && @today[9].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[9].nil? then link_to @today[9].name, action: 'index', id: @today[9].id end %></td><td><%= if !@today[9].nil? then @today[9].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[9].nil? then link_to @today[9].name, action: 'index', id: @today[9].id end %></td><td><%= if !@today[9].nil? then @today[9].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[10].nil? && @today[10].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[10].nil? then link_to @today[10].name, action: 'index', id: @today[10].id end %></td><td><%= if !@today[10].nil? then @today[10].place end %></td></th>
+    <% elsif !@today[10].nil? && @today[10].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[10].nil? then link_to @today[10].name, action: 'index', id: @today[10].id end %></td><td><%= if !@today[10].nil? then @today[10].place end %></td></th>
+    <% elsif !@today[10].nil? && @today[10].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[10].nil? then link_to @today[10].name, action: 'index', id: @today[10].id end %></td><td><%= if !@today[10].nil? then @today[10].place end %></td></th>
+    <% elsif !@today[10].nil? && @today[10].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[10].nil? then link_to @today[10].name, action: 'index', id: @today[10].id end %></td><td><%= if !@today[10].nil? then @today[10].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[10].nil? then link_to @today[10].name, action: 'index', id: @today[10].id end %></td><td><%= if !@today[10].nil? then @today[10].place end %></td></tr>
+     <% end %>
+
+   <% if !@today[11].nil? && @today[11].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[11].nil? then link_to @today[11].name, action: 'index', id: @today[11].id end %></td><td><%= if !@today[11].nil? then @today[11].place end %></td></th>
+    <% elsif !@today[11].nil? && @today[11].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[11].nil? then link_to @today[11].name, action: 'index', id: @today[11].id end %></td><td><%= if !@today[11].nil? then @today[11].place end %></td></th>
+    <% elsif !@today[11].nil? && @today[11].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[11].nil? then link_to @today[11].name, action: 'index', id: @today[11].id end %></td><td><%= if !@today[11].nil? then @today[11].place end %></td></th>
+    <% elsif !@today[11].nil? && @today[11].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[11].nil? then link_to @today[11].name, action: 'index', id: @today[11].id end %></td><td><%= if !@today[11].nil? then @today[11].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[11].nil? then link_to @today[11].name, action: 'index', id: @today[11].id end %></td><td><%= if !@today[11].nil? then @today[11].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[12].nil? && @today[12].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[12].nil? then link_to @today[12].name, action: 'index', id: @today[12].id end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></th>
+    <% elsif !@today[12].nil? && @today[12].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[12].nil? then link_to @today[12].name, action: 'index', id: @today[12].id end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></th>
+    <% elsif !@today[12].nil? && @today[12].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[12].nil? then link_to @today[12].name, action: 'index', id: @today[12].id end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></th>
+    <% elsif !@today[12].nil? && @today[12].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[12].nil? then link_to @today[12].name, action: 'index', id: @today[12].id end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[12].nil? then link_to @today[12].name, action: 'index', id: @today[12].id end %></td><td><%= if !@today[12].nil? then @today[12].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[13].nil? && @today[13].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[13].nil? then link_to @today[13].name, action: 'index', id: @today[13].id end %></td><td><%= if !@today[13].nil? then @today[13].place end %></td></th>
+    <% elsif !@today[13].nil? && @today[13].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[13].nil? then link_to @today[13].name, action: 'index', id: @today[13].id end %></td><td><%= if !@today[13].nil? then @today[13].place end %></td></th>
+    <% elsif !@today[13].nil? && @today[13].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[13].nil? then link_to @today[13].name, action: 'index', id: @today[13].id end %></td><td><%= if !@today[13].nil? then @today[13].place end %></td></th>
+    <% elsif !@today[13].nil? && @today[13].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[13].nil? then link_to @today[13].name, action: 'index', id: @today[13].id end %></td><td><%= if !@today[13].nil? then @today[13].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[13].nil? then link_to @today[13].name, action: 'index', id: @today[13].id end %></td><td><%= if !@today[13].nil? then @today[13].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[14].nil? && @today[14].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[14].nil? then link_to @today[14].name, action: 'index', id: @today[14].id end %></td><td><%= if !@today[14].nil? then @today[14].place end %></td></th>
+    <% elsif !@today[14].nil? && @today[14].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[14].nil? then link_to @today[14].name, action: 'index', id: @today[14].id end %></td><td><%= if !@today[14].nil? then @today[14].place end %></td></th>
+    <% elsif !@today[14].nil? && @today[14].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[14].nil? then link_to @today[14].name, action: 'index', id: @today[14].id end %></td><td><%= if !@today[14].nil? then @today[14].place end %></td></th>
+    <% elsif !@today[14].nil? && @today[14].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[14].nil? then link_to @today[14].name, action: 'index', id: @today[14].id end %></td><td><%= if !@today[14].nil? then @today[14].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[14].nil? then link_to @today[14].name, action: 'index', id: @today[14].id end %></td><td><%= if !@today[14].nil? then @today[14].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[15].nil? && @today[15].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[15].nil? then link_to @today[15].name, action: 'index', id: @today[15].id end %></td><td><%= if !@today[15].nil? then @today[15].place end %></td></th>
+    <% elsif !@today[15].nil? && @today[15].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[15].nil? then link_to @today[15].name, action: 'index', id: @today[15].id end %></td><td><%= if !@today[15].nil? then @today[15].place end %></td></th>
+    <% elsif !@today[15].nil? && @today[15].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[15].nil? then link_to @today[15].name, action: 'index', id: @today[15].id end %></td><td><%= if !@today[15].nil? then @today[15].place end %></td></th>
+    <% elsif !@today[15].nil? && @today[15].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[15].nil? then link_to @today[15].name, action: 'index', id: @today[15].id end %></td><td><%= if !@today[15].nil? then @today[15].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[15].nil? then link_to @today[15].name, action: 'index', id: @today[15].id end %></td><td><%= if !@today[15].nil? then @today[15].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[16].nil? && @today[16].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[16].nil? then link_to @today[16].name, action: 'index', id: @today[16].id end %></td><td><%= if !@today[16].nil? then @today[16].place end %></td></th>
+    <% elsif !@today[16].nil? && @today[16].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[16].nil? then link_to @today[16].name, action: 'index', id: @today[16].id end %></td><td><%= if !@today[16].nil? then @today[16].place end %></td></th>
+    <% elsif !@today[16].nil? && @today[16].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[16].nil? then link_to @today[16].name, action: 'index', id: @today[16].id end %></td><td><%= if !@today[16].nil? then @today[16].place end %></td></th>
+    <% elsif !@today[16].nil? && @today[16].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[16].nil? then link_to @today[16].name, action: 'index', id: @today[16].id end %></td><td><%= if !@today[16].nil? then @today[16].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[16].nil? then link_to @today[16].name, action: 'index', id: @today[16].id end %></td><td><%= if !@today[16].nil? then @today[16].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[17].nil? && @today[17].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[17].nil? then link_to @today[17].name, action: 'index', id: @today[17].id end %></td><td><%= if !@today[17].nil? then @today[17].place end %></td></th>
+    <% elsif !@today[17].nil? && @today[17].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[17].nil? then link_to @today[17].name, action: 'index', id: @today[17].id end %></td><td><%= if !@today[17].nil? then @today[17].place end %></td></th>
+    <% elsif !@today[17].nil? && @today[17].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[17].nil? then link_to @today[17].name, action: 'index', id: @today[17].id end %></td><td><%= if !@today[17].nil? then @today[17].place end %></td></th>
+    <% elsif !@today[17].nil? && @today[17].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[17].nil? then link_to @today[17].name, action: 'index', id: @today[17].id end %></td><td><%= if !@today[17].nil? then @today[17].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[17].nil? then link_to @today[17].name, action: 'index', id: @today[17].id end %></td><td><%= if !@today[17].nil? then @today[17].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[18].nil? && @today[18].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[18].nil? then link_to @today[18].name, action: 'index', id: @today[18].id end %></td><td><%= if !@today[18].nil? then @today[18].place end %></td></th>
+    <% elsif !@today[18].nil? && @today[18].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[18].nil? then link_to @today[18].name, action: 'index', id: @today[18].id end %></td><td><%= if !@today[18].nil? then @today[18].place end %></td></th>
+    <% elsif !@today[18].nil? && @today[18].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[18].nil? then link_to @today[18].name, action: 'index', id: @today[18].id end %></td><td><%= if !@today[18].nil? then @today[18].place end %></td></th>
+    <% elsif !@today[18].nil? && @today[18].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[18].nil? then link_to @today[18].name, action: 'index', id: @today[18].id end %></td><td><%= if !@today[18].nil? then @today[18].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[18].nil? then link_to @today[18].name, action: 'index', id: @today[18].id end %></td><td><%= if !@today[18].nil? then @today[18].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[19].nil? && @today[19].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[19].nil? then link_to @today[19].name, action: 'index', id: @today[19].id end %></td><td><%= if !@today[19].nil? then @today[19].place end %></td></th>
+    <% elsif !@today[19].nil? && @today[19].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[19].nil? then link_to @today[19].name, action: 'index', id: @today[19].id end %></td><td><%= if !@today[19].nil? then @today[19].place end %></td></th>
+    <% elsif !@today[19].nil? && @today[19].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[19].nil? then link_to @today[19].name, action: 'index', id: @today[19].id end %></td><td><%= if !@today[19].nil? then @today[19].place end %></td></th>
+    <% elsif !@today[19].nil? && @today[19].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[19].nil? then link_to @today[19].name, action: 'index', id: @today[19].id end %></td><td><%= if !@today[19].nil? then @today[19].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[19].nil? then link_to @today[19].name, action: 'index', id: @today[19].id end %></td><td><%= if !@today[19].nil? then @today[19].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[20].nil? && @today[20].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[20].nil? then link_to @today[20].name, action: 'index', id: @today[20].id end %></td><td><%= if !@today[20].nil? then @today[20].place end %></td></th>
+    <% elsif !@today[20].nil? && @today[20].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[20].nil? then link_to @today[20].name, action: 'index', id: @today[20].id end %></td><td><%= if !@today[20].nil? then @today[20].place end %></td></th>
+    <% elsif !@today[20].nil? && @today[20].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[20].nil? then link_to @today[20].name, action: 'index', id: @today[20].id end %></td><td><%= if !@today[20].nil? then @today[20].place end %></td></th>
+    <% elsif !@today[20].nil? && @today[20].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[20].nil? then link_to @today[20].name, action: 'index', id: @today[20].id end %></td><td><%= if !@today[20].nil? then @today[20].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[20].nil? then link_to @today[20].name, action: 'index', id: @today[20].id end %></td><td><%= if !@today[20].nil? then @today[20].place end %></td></tr>
+     <% end %>
+
+   <% if !@today[21].nil? && @today[21].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[21].nil? then link_to @today[21].name, action: 'index', id: @today[21].id end %></td><td><%= if !@today[21].nil? then @today[21].place end %></td></th>
+    <% elsif !@today[21].nil? && @today[21].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[21].nil? then link_to @today[21].name, action: 'index', id: @today[21].id end %></td><td><%= if !@today[21].nil? then @today[21].place end %></td></th>
+    <% elsif !@today[21].nil? && @today[21].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[21].nil? then link_to @today[21].name, action: 'index', id: @today[21].id end %></td><td><%= if !@today[21].nil? then @today[21].place end %></td></th>
+    <% elsif !@today[21].nil? && @today[21].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[21].nil? then link_to @today[21].name, action: 'index', id: @today[21].id end %></td><td><%= if !@today[21].nil? then @today[21].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[21].nil? then link_to @today[21].name, action: 'index', id: @today[21].id end %></td><td><%= if !@today[21].nil? then @today[21].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[22].nil? && @today[22].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[22].nil? then link_to @today[22].name, action: 'index', id: @today[22].id end %></td><td><%= if !@today[22].nil? then @today[22].place end %></td></th>
+    <% elsif !@today[22].nil? && @today[22].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[22].nil? then link_to @today[22].name, action: 'index', id: @today[22].id end %></td><td><%= if !@today[22].nil? then @today[22].place end %></td></th>
+    <% elsif !@today[22].nil? && @today[22].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[22].nil? then link_to @today[22].name, action: 'index', id: @today[22].id end %></td><td><%= if !@today[22].nil? then @today[22].place end %></td></th>
+    <% elsif !@today[22].nil? && @today[22].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[22].nil? then link_to @today[22].name, action: 'index', id: @today[22].id end %></td><td><%= if !@today[22].nil? then @today[22].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[22].nil? then link_to @today[22].name, action: 'index', id: @today[22].id end %></td><td><%= if !@today[22].nil? then @today[22].place end %></td></tr>
+     <% end %>
+
+  <% if !@today[23].nil? && @today[23].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@today[23].nil? then link_to @today[23].name, action: 'index', id: @today[23].id end %></td><td><%= if !@today[23].nil? then @today[23].place end %></td></th>
+    <% elsif !@today[23].nil? && @today[23].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@today[23].nil? then link_to @today[23].name, action: 'index', id: @today[23].id end %></td><td><%= if !@today[23].nil? then @today[23].place end %></td></th>
+    <% elsif !@today[23].nil? && @today[23].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@today[23].nil? then link_to @today[23].name, action: 'index', id: @today[23].id end %></td><td><%= if !@today[23].nil? then @today[23].place end %></td></th>
+    <% elsif !@today[23].nil? && @today[23].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@today[23].nil? then link_to @today[23].name, action: 'index', id: @today[23].id end %></td><td><%= if !@today[23].nil? then @today[23].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@today[23].nil? then link_to @today[23].name, action: 'index', id: @today[23].id end %></td><td><%= if !@today[23].nil? then @today[23].place end %></td></tr>
+     <% end %>
+
   </tbody>
   </head>
 </table>
@@ -133,6 +427,7 @@ function  selectedDates(){
   <caption><%= I18n.localize(Date.tomorrow, :format => :short) %></caption>
   <thead>
   <tr>
+<!-- <<<<<<< HEAD
     <tr height = "38"><th>予定</th><th>場所</th></tr>
     </tr>
   </thead>
@@ -161,6 +456,299 @@ function  selectedDates(){
     <tr class="odd" height = "38"><td><%= if !@tomorrow[21].nil? then link_to @tomorrow[21].name, action: 'index', id: @tomorrow[21].id end %></td><td><%= if !@tomorrow[21].nil? then @tomorrow[21].place end %></td></tr>
     <tr height = "38"><td><%= if !@tomorrow[22].nil? then link_to @tomorrow[22].name, action: 'index', id: @tomorrow[22].id end %></td><td><%= if !@tomorrow[22].nil? then @tomorrow[22].place end %></td></tr>
     <tr class="odd" height = "38"><td><%= if !@tomorrow[23].nil? then link_to @tomorrow[23].name, action: 'index', id: @tomorrow[23].id end %></td><td><%= if !@tomorrow[23].nil? then @tomorrow[23].place end %></td></tr>
+======= -->
+    <tr height = "38" bgcolor="#c0c0c0"><th>予定</th><th>場所</th></tr>
+    </tr>
+  </thead>
+  <tbody>
+   <% if !@tomorrow[0].nil? && @tomorrow[0].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[0].nil? then link_to @tomorrow[0].name, action: 'index', id: @tomorrow[0].id end %></td><td><%= if !@tomorrow[0].nil? then @tomorrow[0].place end %></td></th>
+    <% elsif !@tomorrow[0].nil? && @tomorrow[0].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[0].nil? then link_to @tomorrow[0].name, action: 'index', id: @tomorrow[0].id end %></td><td><%= if !@tomorrow[0].nil? then @tomorrow[0].place end %></td></th>
+    <% elsif !@tomorrow[0].nil? && @tomorrow[0].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[0].nil? then link_to @tomorrow[0].name, action: 'index', id: @tomorrow[0].id end %></td><td><%= if !@tomorrow[0].nil? then @tomorrow[0].place end %></td></th>
+    <% elsif !@tomorrow[0].nil? && @tomorrow[0].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[0].nil? then link_to @tomorrow[0].name, action: 'index', id: @tomorrow[0].id end %></td><td><%= if !@tomorrow[0].nil? then @tomorrow[0].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[0].nil? then link_to @tomorrow[0].name, action: 'index', id: @tomorrow[0].id end %></td><td><%= if !@tomorrow[0].nil? then @tomorrow[0].place end %></td></tr>
+     <% end %>
+
+   <% if !@tomorrow[1].nil? && @tomorrow[1].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[1].nil? then link_to @tomorrow[1].name, action: 'index', id: @tomorrow[1].id end %></td><td><%= if !@tomorrow[1].nil? then @tomorrow[1].place end %></td></th>
+    <% elsif !@tomorrow[1].nil? && @tomorrow[1].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[1].nil? then link_to @tomorrow[1].name, action: 'index', id: @tomorrow[1].id end %></td><td><%= if !@tomorrow[1].nil? then @tomorrow[1].place end %></td></th>
+    <% elsif !@tomorrow[1].nil? && @tomorrow[1].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[1].nil? then link_to @tomorrow[1].name, action: 'index', id: @tomorrow[1].id end %></td><td><%= if !@tomorrow[1].nil? then @tomorrow[1].place end %></td></th>
+    <% elsif !@tomorrow[1].nil? && @tomorrow[1].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[1].nil? then link_to @tomorrow[1].name, action: 'index', id: @tomorrow[1].id end %></td><td><%= if !@tomorrow[1].nil? then @tomorrow[1].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[1].nil? then link_to @tomorrow[1].name, action: 'index', id: @tomorrow[1].id end %></td><td><%= if !@tomorrow[1].nil? then @tomorrow[1].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[2].nil? && @tomorrow[2].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[2].nil? then link_to @tomorrow[2].name, action: 'index', id: @tomorrow[2].id end %></td><td><%= if !@tomorrow[2].nil? then @tomorrow[2].place end %></td></th>
+    <% elsif !@tomorrow[2].nil? && @tomorrow[2].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[2].nil? then link_to @tomorrow[2].name, action: 'index', id: @tomorrow[2].id end %></td><td><%= if !@tomorrow[2].nil? then @tomorrow[2].place end %></td></th>
+    <% elsif !@tomorrow[2].nil? && @tomorrow[2].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[2].nil? then link_to @tomorrow[2].name, action: 'index', id: @tomorrow[2].id end %></td><td><%= if !@tomorrow[2].nil? then @tomorrow[2].place end %></td></th>
+    <% elsif !@tomorrow[2].nil? && @tomorrow[2].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[2].nil? then link_to @tomorrow[2].name, action: 'index', id: @tomorrow[2].id end %></td><td><%= if !@tomorrow[2].nil? then @tomorrow[2].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[2].nil? then link_to @tomorrow[2].name, action: 'index', id: @tomorrow[2].id end %></td><td><%= if !@tomorrow[2].nil? then @tomorrow[2].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[3].nil? && @tomorrow[3].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[3].nil? then link_to @tomorrow[3].name, action: 'index', id: @tomorrow[3].id end %></td><td><%= if !@tomorrow[3].nil? then @tomorrow[3].place end %></td></th>
+    <% elsif !@tomorrow[3].nil? && @tomorrow[3].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[3].nil? then link_to @tomorrow[3].name, action: 'index', id: @tomorrow[3].id end %></td><td><%= if !@tomorrow[3].nil? then @tomorrow[3].place end %></td></th>
+    <% elsif !@tomorrow[3].nil? && @tomorrow[3].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[3].nil? then link_to @tomorrow[3].name, action: 'index', id: @tomorrow[3].id end %></td><td><%= if !@tomorrow[3].nil? then @tomorrow[3].place end %></td></th>
+    <% elsif !@tomorrow[3].nil? && @tomorrow[3].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[3].nil? then link_to @tomorrow[3].name, action: 'index', id: @tomorrow[3].id end %></td><td><%= if !@tomorrow[3].nil? then @tomorrow[3].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[3].nil? then link_to @tomorrow[3].name, action: 'index', id: @tomorrow[3].id end %></td><td><%= if !@tomorrow[3].nil? then @tomorrow[3].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[4].nil? && @tomorrow[4].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[4].nil? then link_to @tomorrow[4].name, action: 'index', id: @tomorrow[4].id end %></td><td><%= if !@tomorrow[4].nil? then @tomorrow[4].place end %></td></th>
+    <% elsif !@tomorrow[4].nil? && @tomorrow[4].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[4].nil? then link_to @tomorrow[4].name, action: 'index', id: @tomorrow[4].id end %></td><td><%= if !@tomorrow[4].nil? then @tomorrow[4].place end %></td></th>
+    <% elsif !@tomorrow[4].nil? && @tomorrow[4].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[4].nil? then link_to @tomorrow[4].name, action: 'index', id: @tomorrow[4].id end %></td><td><%= if !@tomorrow[4].nil? then @tomorrow[4].place end %></td></th>
+    <% elsif !@tomorrow[4].nil? && @tomorrow[4].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[4].nil? then link_to @tomorrow[4].name, action: 'index', id: @tomorrow[4].id end %></td><td><%= if !@tomorrow[4].nil? then @tomorrow[4].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[4].nil? then link_to @tomorrow[4].name, action: 'index', id: @tomorrow[4].id end %></td><td><%= if !@tomorrow[4].nil? then @tomorrow[4].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[5].nil? && @tomorrow[5].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[5].nil? then link_to @tomorrow[5].name, action: 'index', id: @tomorrow[5].id end %></td><td><%= if !@tomorrow[5].nil? then @tomorrow[5].place end %></td></th>
+    <% elsif !@tomorrow[5].nil? && @tomorrow[5].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[5].nil? then link_to @tomorrow[5].name, action: 'index', id: @tomorrow[5].id end %></td><td><%= if !@tomorrow[5].nil? then @tomorrow[5].place end %></td></th>
+    <% elsif !@tomorrow[5].nil? && @tomorrow[5].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[5].nil? then link_to @tomorrow[5].name, action: 'index', id: @tomorrow[5].id end %></td><td><%= if !@tomorrow[5].nil? then @tomorrow[5].place end %></td></th>
+    <% elsif !@tomorrow[5].nil? && @tomorrow[5].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[5].nil? then link_to @tomorrow[5].name, action: 'index', id: @tomorrow[5].id end %></td><td><%= if !@tomorrow[5].nil? then @tomorrow[5].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[5].nil? then link_to @tomorrow[5].name, action: 'index', id: @tomorrow[5].id end %></td><td><%= if !@tomorrow[5].nil? then @tomorrow[5].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[6].nil? && @tomorrow[6].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[6].nil? then link_to @tomorrow[6].name, action: 'index', id: @tomorrow[6].id end %></td><td><%= if !@tomorrow[6].nil? then @tomorrow[6].place end %></td></th>
+    <% elsif !@tomorrow[6].nil? && @tomorrow[6].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[6].nil? then link_to @tomorrow[6].name, action: 'index', id: @tomorrow[6].id end %></td><td><%= if !@tomorrow[6].nil? then @tomorrow[6].place end %></td></th>
+    <% elsif !@tomorrow[6].nil? && @tomorrow[6].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[6].nil? then link_to @tomorrow[6].name, action: 'index', id: @tomorrow[6].id end %></td><td><%= if !@tomorrow[6].nil? then @tomorrow[6].place end %></td></th>
+    <% elsif !@tomorrow[6].nil? && @tomorrow[6].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[6].nil? then link_to @tomorrow[6].name, action: 'index', id: @tomorrow[6].id end %></td><td><%= if !@tomorrow[6].nil? then @tomorrow[6].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[6].nil? then link_to @tomorrow[6].name, action: 'index', id: @tomorrow[6].id end %></td><td><%= if !@tomorrow[6].nil? then @tomorrow[6].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[7].nil? && @tomorrow[7].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[7].nil? then link_to @tomorrow[7].name, action: 'index', id: @tomorrow[7].id end %></td><td><%= if !@tomorrow[7].nil? then @tomorrow[7].place end %></td></th>
+    <% elsif !@tomorrow[7].nil? && @tomorrow[7].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[7].nil? then link_to @tomorrow[7].name, action: 'index', id: @tomorrow[7].id end %></td><td><%= if !@tomorrow[7].nil? then @tomorrow[7].place end %></td></th>
+    <% elsif !@tomorrow[7].nil? && @tomorrow[7].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[7].nil? then link_to @tomorrow[7].name, action: 'index', id: @tomorrow[7].id end %></td><td><%= if !@tomorrow[7].nil? then @tomorrow[7].place end %></td></th>
+    <% elsif !@tomorrow[7].nil? && @tomorrow[7].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[7].nil? then link_to @tomorrow[7].name, action: 'index', id: @tomorrow[7].id end %></td><td><%= if !@tomorrow[7].nil? then @tomorrow[7].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[7].nil? then link_to @tomorrow[7].name, action: 'index', id: @tomorrow[7].id end %></td><td><%= if !@tomorrow[7].nil? then @tomorrow[7].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[8].nil? && @tomorrow[8].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[8].nil? then link_to @tomorrow[8].name, action: 'index', id: @tomorrow[8].id end %></td><td><%= if !@tomorrow[8].nil? then @tomorrow[8].place end %></td></th>
+    <% elsif !@tomorrow[8].nil? && @tomorrow[8].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[8].nil? then link_to @tomorrow[8].name, action: 'index', id: @tomorrow[8].id end %></td><td><%= if !@tomorrow[8].nil? then @tomorrow[8].place end %></td></th>
+    <% elsif !@tomorrow[8].nil? && @tomorrow[8].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[8].nil? then link_to @tomorrow[8].name, action: 'index', id: @tomorrow[8].id end %></td><td><%= if !@tomorrow[8].nil? then @tomorrow[8].place end %></td></th>
+    <% elsif !@tomorrow[8].nil? && @tomorrow[8].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[8].nil? then link_to @tomorrow[8].name, action: 'index', id: @tomorrow[8].id end %></td><td><%= if !@tomorrow[8].nil? then @tomorrow[8].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[8].nil? then link_to @tomorrow[8].name, action: 'index', id: @tomorrow[8].id end %></td><td><%= if !@tomorrow[8].nil? then @tomorrow[8].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[9].nil? && @tomorrow[9].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[9].nil? then link_to @tomorrow[9].name, action: 'index', id: @tomorrow[9].id end %></td><td><%= if !@tomorrow[9].nil? then @tomorrow[9].place end %></td></th>
+    <% elsif !@tomorrow[9].nil? && @tomorrow[9].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[9].nil? then link_to @tomorrow[9].name, action: 'index', id: @tomorrow[9].id end %></td><td><%= if !@tomorrow[9].nil? then @tomorrow[9].place end %></td></th>
+    <% elsif !@tomorrow[9].nil? && @tomorrow[9].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[9].nil? then link_to @tomorrow[9].name, action: 'index', id: @tomorrow[9].id end %></td><td><%= if !@tomorrow[9].nil? then @tomorrow[9].place end %></td></th>
+    <% elsif !@tomorrow[9].nil? && @tomorrow[9].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[9].nil? then link_to @tomorrow[9].name, action: 'index', id: @tomorrow[9].id end %></td><td><%= if !@tomorrow[9].nil? then @tomorrow[9].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[9].nil? then link_to @tomorrow[9].name, action: 'index', id: @tomorrow[9].id end %></td><td><%= if !@tomorrow[9].nil? then @tomorrow[9].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[10].nil? && @tomorrow[10].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[10].nil? then link_to @tomorrow[10].name, action: 'index', id: @tomorrow[10].id end %></td><td><%= if !@tomorrow[10].nil? then @tomorrow[10].place end %></td></th>
+    <% elsif !@tomorrow[10].nil? && @tomorrow[10].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[10].nil? then link_to @tomorrow[10].name, action: 'index', id: @tomorrow[10].id end %></td><td><%= if !@tomorrow[10].nil? then @tomorrow[10].place end %></td></th>
+    <% elsif !@tomorrow[10].nil? && @tomorrow[10].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[10].nil? then link_to @tomorrow[10].name, action: 'index', id: @tomorrow[10].id end %></td><td><%= if !@tomorrow[10].nil? then @tomorrow[10].place end %></td></th>
+    <% elsif !@tomorrow[10].nil? && @tomorrow[10].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[10].nil? then link_to @tomorrow[10].name, action: 'index', id: @tomorrow[10].id end %></td><td><%= if !@tomorrow[10].nil? then @tomorrow[10].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[10].nil? then link_to @tomorrow[10].name, action: 'index', id: @tomorrow[10].id end %></td><td><%= if !@tomorrow[10].nil? then @tomorrow[10].place end %></td></tr>
+     <% end %>
+
+   <% if !@tomorrow[11].nil? && @tomorrow[11].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[11].nil? then link_to @tomorrow[11].name, action: 'index', id: @tomorrow[11].id end %></td><td><%= if !@tomorrow[11].nil? then @tomorrow[11].place end %></td></th>
+    <% elsif !@tomorrow[11].nil? && @tomorrow[11].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[11].nil? then link_to @tomorrow[11].name, action: 'index', id: @tomorrow[11].id end %></td><td><%= if !@tomorrow[11].nil? then @tomorrow[11].place end %></td></th>
+    <% elsif !@tomorrow[11].nil? && @tomorrow[11].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[11].nil? then link_to @tomorrow[11].name, action: 'index', id: @tomorrow[11].id end %></td><td><%= if !@tomorrow[11].nil? then @tomorrow[11].place end %></td></th>
+    <% elsif !@tomorrow[11].nil? && @tomorrow[11].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[11].nil? then link_to @tomorrow[11].name, action: 'index', id: @tomorrow[11].id end %></td><td><%= if !@tomorrow[11].nil? then @tomorrow[11].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[11].nil? then link_to @tomorrow[11].name, action: 'index', id: @tomorrow[11].id end %></td><td><%= if !@tomorrow[11].nil? then @tomorrow[11].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[12].nil? && @tomorrow[12].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[12].nil? then link_to @tomorrow[12].name, action: 'index', id: @tomorrow[12].id end %></td><td><%= if !@tomorrow[12].nil? then @tomorrow[12].place end %></td></th>
+    <% elsif !@tomorrow[12].nil? && @tomorrow[12].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[12].nil? then link_to @tomorrow[12].name, action: 'index', id: @tomorrow[12].id end %></td><td><%= if !@tomorrow[12].nil? then @tomorrow[12].place end %></td></th>
+    <% elsif !@tomorrow[12].nil? && @tomorrow[12].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[12].nil? then link_to @tomorrow[12].name, action: 'index', id: @tomorrow[12].id end %></td><td><%= if !@tomorrow[12].nil? then @tomorrow[12].place end %></td></th>
+    <% elsif !@tomorrow[12].nil? && @tomorrow[12].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[12].nil? then link_to @tomorrow[12].name, action: 'index', id: @tomorrow[12].id end %></td><td><%= if !@tomorrow[12].nil? then @tomorrow[12].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[12].nil? then link_to @tomorrow[12].name, action: 'index', id: @tomorrow[12].id end %></td><td><%= if !@tomorrow[12].nil? then @tomorrow[12].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[13].nil? && @tomorrow[13].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[13].nil? then link_to @tomorrow[13].name, action: 'index', id: @tomorrow[13].id end %></td><td><%= if !@tomorrow[13].nil? then @tomorrow[13].place end %></td></th>
+    <% elsif !@tomorrow[13].nil? && @tomorrow[13].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[13].nil? then link_to @tomorrow[13].name, action: 'index', id: @tomorrow[13].id end %></td><td><%= if !@tomorrow[13].nil? then @tomorrow[13].place end %></td></th>
+    <% elsif !@tomorrow[13].nil? && @tomorrow[13].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[13].nil? then link_to @tomorrow[13].name, action: 'index', id: @tomorrow[13].id end %></td><td><%= if !@tomorrow[13].nil? then @tomorrow[13].place end %></td></th>
+    <% elsif !@tomorrow[13].nil? && @tomorrow[13].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[13].nil? then link_to @tomorrow[13].name, action: 'index', id: @tomorrow[13].id end %></td><td><%= if !@tomorrow[13].nil? then @tomorrow[13].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[13].nil? then link_to @tomorrow[13].name, action: 'index', id: @tomorrow[13].id end %></td><td><%= if !@tomorrow[13].nil? then @tomorrow[13].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[14].nil? && @tomorrow[14].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[14].nil? then link_to @tomorrow[14].name, action: 'index', id: @tomorrow[14].id end %></td><td><%= if !@tomorrow[14].nil? then @tomorrow[14].place end %></td></th>
+    <% elsif !@tomorrow[14].nil? && @tomorrow[14].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[14].nil? then link_to @tomorrow[14].name, action: 'index', id: @tomorrow[14].id end %></td><td><%= if !@tomorrow[14].nil? then @tomorrow[14].place end %></td></th>
+    <% elsif !@tomorrow[14].nil? && @tomorrow[14].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[14].nil? then link_to @tomorrow[14].name, action: 'index', id: @tomorrow[14].id end %></td><td><%= if !@tomorrow[14].nil? then @tomorrow[14].place end %></td></th>
+    <% elsif !@tomorrow[14].nil? && @tomorrow[14].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[14].nil? then link_to @tomorrow[14].name, action: 'index', id: @tomorrow[14].id end %></td><td><%= if !@tomorrow[14].nil? then @tomorrow[14].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[14].nil? then link_to @tomorrow[14].name, action: 'index', id: @tomorrow[14].id end %></td><td><%= if !@tomorrow[14].nil? then @tomorrow[14].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[15].nil? && @tomorrow[15].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[15].nil? then link_to @tomorrow[15].name, action: 'index', id: @tomorrow[15].id end %></td><td><%= if !@tomorrow[15].nil? then @tomorrow[15].place end %></td></th>
+    <% elsif !@tomorrow[15].nil? && @tomorrow[15].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[15].nil? then link_to @tomorrow[15].name, action: 'index', id: @tomorrow[15].id end %></td><td><%= if !@tomorrow[15].nil? then @tomorrow[15].place end %></td></th>
+    <% elsif !@tomorrow[15].nil? && @tomorrow[15].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[15].nil? then link_to @tomorrow[15].name, action: 'index', id: @tomorrow[15].id end %></td><td><%= if !@tomorrow[15].nil? then @tomorrow[15].place end %></td></th>
+    <% elsif !@tomorrow[15].nil? && @tomorrow[15].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[15].nil? then link_to @tomorrow[15].name, action: 'index', id: @tomorrow[15].id end %></td><td><%= if !@tomorrow[15].nil? then @tomorrow[15].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[15].nil? then link_to @tomorrow[15].name, action: 'index', id: @tomorrow[15].id end %></td><td><%= if !@tomorrow[15].nil? then @tomorrow[15].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[16].nil? && @tomorrow[16].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[16].nil? then link_to @tomorrow[16].name, action: 'index', id: @tomorrow[16].id end %></td><td><%= if !@tomorrow[16].nil? then @tomorrow[16].place end %></td></th>
+    <% elsif !@tomorrow[16].nil? && @tomorrow[16].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[16].nil? then link_to @tomorrow[16].name, action: 'index', id: @tomorrow[16].id end %></td><td><%= if !@tomorrow[16].nil? then @tomorrow[16].place end %></td></th>
+    <% elsif !@tomorrow[16].nil? && @tomorrow[16].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[16].nil? then link_to @tomorrow[16].name, action: 'index', id: @tomorrow[16].id end %></td><td><%= if !@tomorrow[16].nil? then @tomorrow[16].place end %></td></th>
+    <% elsif !@tomorrow[16].nil? && @tomorrow[16].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[16].nil? then link_to @tomorrow[16].name, action: 'index', id: @tomorrow[16].id end %></td><td><%= if !@tomorrow[16].nil? then @tomorrow[16].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[16].nil? then link_to @tomorrow[16].name, action: 'index', id: @tomorrow[16].id end %></td><td><%= if !@tomorrow[16].nil? then @tomorrow[16].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[17].nil? && @tomorrow[17].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[17].nil? then link_to @tomorrow[17].name, action: 'index', id: @tomorrow[17].id end %></td><td><%= if !@tomorrow[17].nil? then @tomorrow[17].place end %></td></th>
+    <% elsif !@tomorrow[17].nil? && @tomorrow[17].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[17].nil? then link_to @tomorrow[17].name, action: 'index', id: @tomorrow[17].id end %></td><td><%= if !@tomorrow[17].nil? then @tomorrow[17].place end %></td></th>
+    <% elsif !@tomorrow[17].nil? && @tomorrow[17].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[17].nil? then link_to @tomorrow[17].name, action: 'index', id: @tomorrow[17].id end %></td><td><%= if !@tomorrow[17].nil? then @tomorrow[17].place end %></td></th>
+    <% elsif !@tomorrow[17].nil? && @tomorrow[17].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[17].nil? then link_to @tomorrow[17].name, action: 'index', id: @tomorrow[17].id end %></td><td><%= if !@tomorrow[17].nil? then @tomorrow[17].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[17].nil? then link_to @tomorrow[17].name, action: 'index', id: @tomorrow[17].id end %></td><td><%= if !@tomorrow[17].nil? then @tomorrow[17].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[18].nil? && @tomorrow[18].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[18].nil? then link_to @tomorrow[18].name, action: 'index', id: @tomorrow[18].id end %></td><td><%= if !@tomorrow[18].nil? then @tomorrow[18].place end %></td></th>
+    <% elsif !@tomorrow[18].nil? && @tomorrow[18].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[18].nil? then link_to @tomorrow[18].name, action: 'index', id: @tomorrow[18].id end %></td><td><%= if !@tomorrow[18].nil? then @tomorrow[18].place end %></td></th>
+    <% elsif !@tomorrow[18].nil? && @tomorrow[18].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[18].nil? then link_to @tomorrow[18].name, action: 'index', id: @tomorrow[18].id end %></td><td><%= if !@tomorrow[18].nil? then @tomorrow[18].place end %></td></th>
+    <% elsif !@tomorrow[18].nil? && @tomorrow[18].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[18].nil? then link_to @tomorrow[18].name, action: 'index', id: @tomorrow[18].id end %></td><td><%= if !@tomorrow[18].nil? then @tomorrow[18].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[18].nil? then link_to @tomorrow[18].name, action: 'index', id: @tomorrow[18].id end %></td><td><%= if !@tomorrow[18].nil? then @tomorrow[18].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[19].nil? && @tomorrow[19].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[19].nil? then link_to @tomorrow[19].name, action: 'index', id: @tomorrow[19].id end %></td><td><%= if !@tomorrow[19].nil? then @tomorrow[19].place end %></td></th>
+    <% elsif !@tomorrow[19].nil? && @tomorrow[19].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[19].nil? then link_to @tomorrow[19].name, action: 'index', id: @tomorrow[19].id end %></td><td><%= if !@tomorrow[19].nil? then @tomorrow[19].place end %></td></th>
+    <% elsif !@tomorrow[19].nil? && @tomorrow[19].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[19].nil? then link_to @tomorrow[19].name, action: 'index', id: @tomorrow[19].id end %></td><td><%= if !@tomorrow[19].nil? then @tomorrow[19].place end %></td></th>
+    <% elsif !@tomorrow[19].nil? && @tomorrow[19].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[19].nil? then link_to @tomorrow[19].name, action: 'index', id: @tomorrow[19].id end %></td><td><%= if !@tomorrow[19].nil? then @tomorrow[19].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[19].nil? then link_to @tomorrow[19].name, action: 'index', id: @tomorrow[19].id end %></td><td><%= if !@tomorrow[19].nil? then @tomorrow[19].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[20].nil? && @tomorrow[20].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[20].nil? then link_to @tomorrow[20].name, action: 'index', id: @tomorrow[20].id end %></td><td><%= if !@tomorrow[20].nil? then @tomorrow[20].place end %></td></th>
+    <% elsif !@tomorrow[20].nil? && @tomorrow[20].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[20].nil? then link_to @tomorrow[20].name, action: 'index', id: @tomorrow[20].id end %></td><td><%= if !@tomorrow[20].nil? then @tomorrow[20].place end %></td></th>
+    <% elsif !@tomorrow[20].nil? && @tomorrow[20].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[20].nil? then link_to @tomorrow[20].name, action: 'index', id: @tomorrow[20].id end %></td><td><%= if !@tomorrow[20].nil? then @tomorrow[20].place end %></td></th>
+    <% elsif !@tomorrow[20].nil? && @tomorrow[20].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[20].nil? then link_to @tomorrow[20].name, action: 'index', id: @tomorrow[20].id end %></td><td><%= if !@tomorrow[20].nil? then @tomorrow[20].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[20].nil? then link_to @tomorrow[20].name, action: 'index', id: @tomorrow[20].id end %></td><td><%= if !@tomorrow[20].nil? then @tomorrow[20].place end %></td></tr>
+     <% end %>
+
+   <% if !@tomorrow[21].nil? && @tomorrow[21].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[21].nil? then link_to @tomorrow[21].name, action: 'index', id: @tomorrow[21].id end %></td><td><%= if !@tomorrow[21].nil? then @tomorrow[21].place end %></td></th>
+    <% elsif !@tomorrow[21].nil? && @tomorrow[21].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[21].nil? then link_to @tomorrow[21].name, action: 'index', id: @tomorrow[21].id end %></td><td><%= if !@tomorrow[21].nil? then @tomorrow[21].place end %></td></th>
+    <% elsif !@tomorrow[21].nil? && @tomorrow[21].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[21].nil? then link_to @tomorrow[21].name, action: 'index', id: @tomorrow[21].id end %></td><td><%= if !@tomorrow[21].nil? then @tomorrow[21].place end %></td></th>
+    <% elsif !@tomorrow[21].nil? && @tomorrow[21].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[21].nil? then link_to @tomorrow[21].name, action: 'index', id: @tomorrow[21].id end %></td><td><%= if !@tomorrow[21].nil? then @tomorrow[21].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[21].nil? then link_to @tomorrow[21].name, action: 'index', id: @tomorrow[21].id end %></td><td><%= if !@tomorrow[21].nil? then @tomorrow[21].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[22].nil? && @tomorrow[22].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[22].nil? then link_to @tomorrow[22].name, action: 'index', id: @tomorrow[22].id end %></td><td><%= if !@tomorrow[22].nil? then @tomorrow[22].place end %></td></th>
+    <% elsif !@tomorrow[22].nil? && @tomorrow[22].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[22].nil? then link_to @tomorrow[22].name, action: 'index', id: @tomorrow[22].id end %></td><td><%= if !@tomorrow[22].nil? then @tomorrow[22].place end %></td></th>
+    <% elsif !@tomorrow[22].nil? && @tomorrow[22].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[22].nil? then link_to @tomorrow[22].name, action: 'index', id: @tomorrow[22].id end %></td><td><%= if !@tomorrow[22].nil? then @tomorrow[22].place end %></td></th>
+    <% elsif !@tomorrow[22].nil? && @tomorrow[22].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[22].nil? then link_to @tomorrow[22].name, action: 'index', id: @tomorrow[22].id end %></td><td><%= if !@tomorrow[22].nil? then @tomorrow[22].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[22].nil? then link_to @tomorrow[22].name, action: 'index', id: @tomorrow[22].id end %></td><td><%= if !@tomorrow[22].nil? then @tomorrow[22].place end %></td></tr>
+     <% end %>
+
+  <% if !@tomorrow[23].nil? && @tomorrow[23].category == 1 %>
+    <tr height = "38" bgcolor="#32CD32"><td><%= if !@tomorrow[23].nil? then link_to @tomorrow[23].name, action: 'index', id: @tomorrow[23].id end %></td><td><%= if !@tomorrow[23].nil? then @tomorrow[23].place end %></td></th>
+    <% elsif !@tomorrow[23].nil? && @tomorrow[23].category == 2 %>
+      <tr height = "38" bgcolor="#FF6347"><td><%= if !@tomorrow[23].nil? then link_to @tomorrow[23].name, action: 'index', id: @tomorrow[23].id end %></td><td><%= if !@tomorrow[23].nil? then @tomorrow[23].place end %></td></th>
+    <% elsif !@tomorrow[23].nil? && @tomorrow[23].category == 3 %>
+      <tr height = "38" bgcolor="#4682B4"><td><%= if !@tomorrow[23].nil? then link_to @tomorrow[23].name, action: 'index', id: @tomorrow[23].id end %></td><td><%= if !@tomorrow[23].nil? then @tomorrow[23].place end %></td></th>
+    <% elsif !@tomorrow[23].nil? && @tomorrow[23].category == 4 %>
+      <tr height = "38" bgcolor="#FFD700"><td><%= if !@tomorrow[23].nil? then link_to @tomorrow[23].name, action: 'index', id: @tomorrow[23].id end %></td><td><%= if !@tomorrow[23].nil? then @tomorrow[23].place end %></td></th>
+      <% else %>
+    <tr height = "38"><td><%= if !@tomorrow[23].nil? then link_to @tomorrow[23].name, action: 'index', id: @tomorrow[23].id end %></td><td><%= if !@tomorrow[23].nil? then @tomorrow[23].place end %></td></tr>
+     <% end %>
+
   </tbody>
   </head>
 </table>
