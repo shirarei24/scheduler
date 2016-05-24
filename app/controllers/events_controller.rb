@@ -85,6 +85,7 @@ class EventsController < ApplicationController
           @wevent.person = @event.person
           @wevent.baggage = @event.baggage
           @wevent.category = @event.category
+          @wevent.color = @event.color
           if current_start.wday == 0 && @event.sun==1 then
             @wevent.save
           end

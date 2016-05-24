@@ -28,7 +28,9 @@
     <%= "その他" %>
     <% else%>
     <% end %><br><br>
+    <% if !event.start_at.nil? then %>
     <%= link_to '編集', '#', class: 'editopen' %>
+    <% end %>
     <%#= f.submit "更新"%>
     <%#= .to_s(:published_on)
     <%#= submit_tag "削除", name:"delete_button" %>

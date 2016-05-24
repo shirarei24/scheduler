@@ -12,5 +12,6 @@ module RepetitionEvents
       copy_enevt.person = origin_enevt.person
       copy_enevt.baggage = origin_enevt.baggage
       copy_enevt.category = origin_enevt.category
+      copy_enevt.color = origin_enevt.color
     end
 end
