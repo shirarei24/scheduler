@@ -178,13 +178,7 @@ function  selectedDates(){
 <div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
 </div>
 <div id="newmodal" style="display:none;">
-<<<<<<< HEAD
 
-=======
-<%= javascript_tag do %>
-"alert("2")";
-<% end %>
->>>>>>> 8a5d2f69a0d3e7faece9e68e1686a4eca3ac86e9
 <%= form_for @new_event, url: '/event/create', :html => {:onsubmit => "return selectedDates()"} do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
