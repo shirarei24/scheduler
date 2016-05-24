@@ -3,6 +3,7 @@ class CalendarController < ApplicationController
   def index
     @today = Array.new(24)
     @tomorrow = Array.new(24)
+    @dif = Array.new(24) 
     @month = (params[:month] || (Time.zone || Time).now.month).to_i
     @year = (params[:year] || (Time.zone || Time).now.year).to_i
     from =DateTime.now.at_beginning_of_day
@@ -15,8 +16,12 @@ class CalendarController < ApplicationController
 
     @today_event.each do |x|
         @today[x.start_at.hour]=x
+        @dif[x.start_at.hour]=x.end_at.hour - x.start_at.hour
 
     end
+
+
+
 
     @tomorrow_event.each do |y|
         @tomorrow[y.start_at.hour]=y
