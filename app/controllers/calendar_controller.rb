@@ -15,6 +15,11 @@ class CalendarController < ApplicationController
 
     @today_event.each do |x|
         @today[x.start_at.hour]=x
+
+    end
+
+    @tomorrow_event.each do |y|
+        @tomorrow[y.start_at.hour]=y
   
     end
 
