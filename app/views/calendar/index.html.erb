@@ -178,7 +178,13 @@ function  selectedDates(){
 <div id=todolist><%= render partial: 'todolist', locals:{todos: @todos, new_todo: @new_todo} %></div>
 </div>
 <div id="newmodal" style="display:none;">
+<<<<<<< HEAD
 
+=======
+<%= javascript_tag do %>
+"alert("2")";
+<% end %>
+>>>>>>> 8a5d2f69a0d3e7faece9e68e1686a4eca3ac86e9
 <%= form_for @new_event, url: '/event/create', :html => {:onsubmit => "return selectedDates()"} do |f| %>
     <%= f.hidden_field :id %>
     <p><b><%= f.label :name, "タイトル" %></b><br>
@@ -272,8 +278,6 @@ function  selectedDates(){
 
 <%#= javascript_include_tag "application" %>
 
-
-
 <script>
 // Namespace
 
@@ -281,14 +285,13 @@ function  selectedDates(){
 var PRJ = PRJ || {};
 dates = [];
 
+function pad2(arg) {
+  var tmp = '00' + arg;
+  return tmp.slice(-2, tmp.length);
+}
+
 (function($, d, ns){
     'use strict';
- 
-    function pad2(arg) {
-        var tmp = '00' + arg;
- 
-        return tmp.slice(-2, tmp.length);
-    }
  
     var addMonth = {
         c: {
@@ -408,9 +411,6 @@ function mouseDown(table, e){
     mouseMove(table, e);
 }
 
-
-// マウスアップのイベント処理
-
 // マウスアップのイベント処理
 function mouseUp(table, e){
     if (!e) var e = window.event;
@@ -424,9 +424,57 @@ function mouseUp(table, e){
     if(!from || !to){
         return false;
     }
+
     // セル内の文字を取得
     var time_start = startCell.innerText
     var time_end = endCell.innerText
+
+    // hourとminuteに分解して配列にする
+    time_start = time_start.split(':');
+    time_end = time_end.split(':')
+
+    // 下から上にドラッグした際のスワップ操作
+    if(time_start[0].to_i > time_end[0].to_i){
+      var temp = time_end[0]
+      time_end[0] = time_start[0]
+      time_start = temp;
+    }
+
+    // minuteの値が一桁の場合は先頭の"0"を削除
+    time_start[1] = (time_start[1].indexOf("0") == 0) ?
+                    time_start[1].substr(1) : time_start[1];
+
+    time_end[1] = (time_end[1].indexOf("0") == 0) ?
+                    time_end[1].substr(1) : time_end[1];
+
+    // mouseMoveで選択状態表示の更新をさせないようにする
+    startCell = null;
+
+    // // デフォルト選択の解除
+    // var elm_hour = $('#event_start_at_4i').find('option')
+    // elm_hour = [elm_hour[elm_hour.selectedIndex],
+    //                   elm_hour[elm_hour.selectedIndex]];
+    //                   console.log(elm_hour);
+    //
+    // var elm_minute = $('#event_start_at_5i').find('option')
+    // elm_minute = [elm_minute[elm_minute.selectedIndex],
+    //                   elm_minute[elm_minute.selectedIndex]]
+    //                   console.log(elm_minute);
+    //
+    // $.each(elm_hour, function(selected_hour, index){
+    //   selected_hour.selected = false;
+    // });
+    //
+    // $.each(elm_minute, function(selected_minute, index){
+    //   selected_minute.selected = false;
+    // });
+
+    // ドラッグで選択した始点と終点の値をデフォルトに設定
+    $('#event_start_at_4i').find('option')[time_start[0]].selected = true;
+    $('#event_start_at_5i').find('option')[time_start[1]].selected = true;
+    $('#event_end_at_4i').find('option')[time_end[0]].selected = true;
+    $('#event_end_at_5i').find('option')[time_end[1]].selected = true;
+
     // mouseMoveで選択状態表示の更新をさせないようにする
     startCell = null;
     // ここに選択後の処理を書く
